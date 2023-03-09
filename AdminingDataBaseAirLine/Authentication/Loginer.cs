@@ -8,6 +8,8 @@ namespace AdminingDataBaseAirLine.Authentication
 {
     public class Loginer
     {
+        private readonly AccountContext _db;
 
+        public Loginer(AccountContext db) => _db = db;
     }
 }
