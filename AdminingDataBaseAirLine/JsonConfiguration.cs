@@ -10,11 +10,11 @@ namespace AdminingDataBaseAirLine
     public class JsonConfiguration
     {
 
-        public async Task<string> GetConnectionString(string path)
+        public static async Task<string> GetConnectionString(string path)
         {
-            using (JsonDocument jsonDocument = await JsonDocument.ParseAsync(File.Open(path, FileMode.Open)))
+            using (JsonDocument jsonDocument = await JsonDocument.ParseAsync(File.OpenRead(path)))
             {
-               return jsonDocument.RootElement.GetProperty("MsSqlConnection").GetString()!;           
+               return jsonDocument.RootElement.GetProperty("Connections").GetProperty("MsSqlConnection").GetString()!;           
             }
 
         }
