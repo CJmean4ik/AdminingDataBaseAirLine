@@ -1,0 +1,5 @@
+{
+  "Connections": {
+    "MsSqlConnection": "Data Source=СТАС-ПК\\SQLEXPRESS;Initial Catalog=AIRCOMPANYS;Integrated Security=True"
+  }
+}
