@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine
+namespace AdminingDataBaseAirLine.Configs
 {
     public class JsonConfiguration
     {
@@ -14,7 +14,7 @@ namespace AdminingDataBaseAirLine
         {
             using (JsonDocument jsonDocument = await JsonDocument.ParseAsync(File.OpenRead(path)))
             {
-               return jsonDocument.RootElement.GetProperty("Connections").GetProperty("MsSqlConnection").GetString()!;           
+                return jsonDocument.RootElement.GetProperty("Connections").GetProperty("MsSqlConnection").GetString()!;
             }
 
         }

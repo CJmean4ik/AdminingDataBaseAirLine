@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdminingDataBaseAirLine.Forms
+﻿namespace AdminingDataBaseAirLine.Forms.ButtonSettings
 {
     public class ButtonProperty
     {
@@ -21,8 +15,7 @@ namespace AdminingDataBaseAirLine.Forms
             BlueImage = blueImage;
         }
 
-
     }
 
-      
+
 }

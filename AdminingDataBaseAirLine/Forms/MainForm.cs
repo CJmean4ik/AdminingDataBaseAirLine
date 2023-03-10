@@ -1,5 +1,6 @@
 
 using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Forms;
 using DataBaseModel.Entities.Accounts;
 using System.ComponentModel;
@@ -12,13 +13,9 @@ namespace AdminingDataBaseAirLine
         private Loginer _loginer;
         private string _connectString;
         private AirlineContext _airlineContext;
-       
-        private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configurations.json";
-        public MainForm()
-        {
-            InitializeComponent();
-           
-        }
+        private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
+
+        public MainForm() => InitializeComponent();
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
