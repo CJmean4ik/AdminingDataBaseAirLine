@@ -56,6 +56,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.Controls.Add(this.TicketButton);
             this.BackPanel.Controls.Add(this.pictureBox1);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BackPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(240, 633);
@@ -63,7 +64,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // AccountButton
             // 
-            this.AccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.AccountButton.FlatAppearance.BorderSize = 0;
             this.AccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AccountButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -81,7 +82,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // OrdersButton
             // 
-            this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.OrdersButton.FlatAppearance.BorderSize = 0;
             this.OrdersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OrdersButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -98,7 +99,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // PassengerButton
             // 
-            this.PassengerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PassengerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.PassengerButton.FlatAppearance.BorderSize = 0;
             this.PassengerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PassengerButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -115,7 +116,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // FlightButton
             // 
-            this.FlightButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FlightButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.FlightButton.FlatAppearance.BorderSize = 0;
             this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FlightButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -132,7 +133,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // TicketButton
             // 
-            this.TicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.TicketButton.FlatAppearance.BorderSize = 0;
             this.TicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TicketButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -170,7 +171,7 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // ThemeButton
             // 
-            this.ThemeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ThemeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.ThemeButton.FlatAppearance.BorderSize = 0;
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
@@ -190,6 +191,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.ClientSize = new System.Drawing.Size(1021, 633);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CashierForm";
@@ -254,15 +256,24 @@ namespace AdminingDataBaseAirLine.Forms
 
         #endregion
 
+        private PictureBox pictureBox1;
         private Panel BackPanel;
         private Panel panel1;
-        private PictureBox pictureBox1;
         private Button TicketButton;
         private Button FlightButton;
         private Button AccountButton;
         private Button OrdersButton;
         private Button PassengerButton;
         private Button ThemeButton;
+
+        public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
+        public Panel Panel_P { get => panel1; set => panel1 = value; }
+        public Button Ticket_P { get => TicketButton; set => TicketButton = value; }
+        public Button FlightButton_P { get => FlightButton; set => FlightButton = value; }
+        public Button AccountButton_P { get => AccountButton; set => AccountButton = value; }
+        public Button OrdersButton1_P { get => OrdersButton; set => OrdersButton = value; }
+        public Button PassengerButton_P { get => PassengerButton; set => PassengerButton = value; }
+        public Button ThemeButton_P { get => ThemeButton; set => ThemeButton = value; }
     }
 }
 
