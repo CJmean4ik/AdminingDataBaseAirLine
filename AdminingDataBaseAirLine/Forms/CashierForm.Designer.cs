@@ -1,4 +1,7 @@
-﻿namespace AdminingDataBaseAirLine.Forms
+﻿using AdminingDataBaseAirLine.Forms.ButtonSettings;
+using AdminingDataBaseAirLine.Properties;
+
+namespace AdminingDataBaseAirLine.Forms
 {
     partial class CashierForm
     {
@@ -37,8 +40,10 @@
             this.TicketButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ThemeButton = new System.Windows.Forms.Button();
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
@@ -58,7 +63,7 @@
             // 
             // AccountButton
             // 
-            this.AccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.AccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AccountButton.FlatAppearance.BorderSize = 0;
             this.AccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AccountButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -76,7 +81,7 @@
             // 
             // OrdersButton
             // 
-            this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.OrdersButton.FlatAppearance.BorderSize = 0;
             this.OrdersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OrdersButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -93,7 +98,7 @@
             // 
             // PassengerButton
             // 
-            this.PassengerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.PassengerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PassengerButton.FlatAppearance.BorderSize = 0;
             this.PassengerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PassengerButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -110,7 +115,7 @@
             // 
             // FlightButton
             // 
-            this.FlightButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.FlightButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FlightButton.FlatAppearance.BorderSize = 0;
             this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FlightButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,7 +132,7 @@
             // 
             // TicketButton
             // 
-            this.TicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.TicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.TicketButton.FlatAppearance.BorderSize = 0;
             this.TicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TicketButton.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -144,6 +149,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(53, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -156,15 +162,31 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel1.Controls.Add(this.ThemeButton);
             this.panel1.Location = new System.Drawing.Point(236, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(785, 55);
+            this.panel1.Size = new System.Drawing.Size(785, 49);
             this.panel1.TabIndex = 1;
+            // 
+            // ThemeButton
+            // 
+            this.ThemeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ThemeButton.FlatAppearance.BorderSize = 0;
+            this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
+            this.ThemeButton.Location = new System.Drawing.Point(580, 0);
+            this.ThemeButton.Name = "ThemeButton";
+            this.ThemeButton.Size = new System.Drawing.Size(55, 49);
+            this.ThemeButton.TabIndex = 0;
+            this.ThemeButton.UseVisualStyleBackColor = false;
+            this.ThemeButton.Click += new System.EventHandler(this.ChangeTheme);
             // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1021, 633);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
@@ -176,9 +198,59 @@
             this.BackPanel.ResumeLayout(false);
             this.BackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
+        public Dictionary<string, ButtonProperty> GetButtonProperties()
+        {
+             return new Dictionary<string, ButtonProperty>()
+            {
+                ["ticketButtonOpen"] = new ButtonPropertyBuilder()
+                 .SetIsOpen(false)
+                 .SetButton(TicketButton)
+                 .SetWhiteImage(Resources.ticket_white)
+                 .SetBlueImage(Resources.ticket_blue)
+                 .SetDarkImage(Resources.ticket_dark)
+                 .Build(),
+
+                ["flightButtonOpen"] = new ButtonPropertyBuilder()
+                 .SetIsOpen(false)
+                 .SetButton(FlightButton)
+                 .SetWhiteImage(Resources.flight_white)
+                 .SetBlueImage(Resources.flight_blue)
+                 .SetDarkImage(Resources.flight_dark)
+                 .Build(),
+
+
+                ["passengerButtonOpen"] = new ButtonPropertyBuilder()
+                 .SetIsOpen(false)
+                 .SetButton(PassengerButton)
+                 .SetWhiteImage(Resources.pass_white)
+                 .SetBlueImage(Resources.passenger_blue)
+                 .SetDarkImage(Resources.pass_dark)
+                 .Build(),
+
+                ["ordersButtonOpen"] = new ButtonPropertyBuilder()
+                 .SetIsOpen(false)
+                 .SetButton(OrdersButton)
+                 .SetWhiteImage(Resources.order_white)
+                 .SetBlueImage(Resources.receipt_blue)
+                 .SetDarkImage(Resources.order_dark)
+                 .Build(),
+
+                 ["accountButtonOpen"] = new ButtonPropertyBuilder()
+                 .SetIsOpen(false)
+                 .SetButton(AccountButton)
+                 .SetWhiteImage(Resources.profile_white)
+                 .SetBlueImage(Resources.profile_blue)
+                 .SetDarkImage(Resources.profile_dark)
+                 .Build()
+             };
+
+    }
+    
 
         #endregion
 
@@ -190,5 +262,8 @@
         private Button AccountButton;
         private Button OrdersButton;
         private Button PassengerButton;
+        private Button ThemeButton;
     }
 }
+
+

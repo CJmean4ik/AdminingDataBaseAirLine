@@ -5,26 +5,31 @@ namespace AdminingDataBaseAirLine.Forms
     internal class ButtonChanges
     {
         private Dictionary<string, ButtonProperty> _buttonResourse;
-
         public ButtonChanges(Dictionary<string, ButtonProperty> buttonResourse)
         {
             _buttonResourse = buttonResourse;
         }
 
-        public void ChangeButtonProperties(string butnName)
+        public void ChangeButtonProperties(string butnName, bool _IsDark)
         {
             Button button = _buttonResourse[butnName].Button;
             _buttonResourse[butnName].IsOpen = true;
-            ButtonColorChangingToWhite(button);
-            button.Image = _buttonResourse[butnName].BlueImage;
+            if (_IsDark)
+            {
+                button.BackColor = Color.FromArgb(20, 21, 23);
+                button.Image = _buttonResourse[butnName].BlueImage;
+            }
+
+            else
+            {
+                button.ForeColor = Color.FromArgb(10, 126, 245);
+                button.BackColor = Color.FromName("Control");
+                button.Image = _buttonResourse[butnName].BlueImage;
+            }                  
             ChangeButtonPressed(butnName);
         }
 
-        private void ButtonColorChangingToWhite(Button button)
-        {
-            button.ForeColor = Color.FromArgb(10, 126, 245);
-            button.BackColor = Color.FromName("Control");
-        }
+    
         private void ButtonColorChangingToDeffault(Button button)
         {
             button.ForeColor = Color.FromName("Control");

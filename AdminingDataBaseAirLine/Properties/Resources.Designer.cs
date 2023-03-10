@@ -73,6 +73,16 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flight_dark {
+            get {
+                object obj = ResourceManager.GetObject("flight_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flight_white {
             get {
                 object obj = ResourceManager.GetObject("flight_white", resourceCulture);
@@ -83,9 +93,49 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lightmode {
+            get {
+                object obj = ResourceManager.GetObject("lightmode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap night_mode {
+            get {
+                object obj = ResourceManager.GetObject("night_mode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap order_dark {
+            get {
+                object obj = ResourceManager.GetObject("order_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap order_white {
             get {
                 object obj = ResourceManager.GetObject("order_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pass_dark {
+            get {
+                object obj = ResourceManager.GetObject("pass_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +173,16 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profile_dark {
+            get {
+                object obj = ResourceManager.GetObject("profile_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile_white {
             get {
                 object obj = ResourceManager.GetObject("profile_white", resourceCulture);
@@ -146,6 +206,16 @@ namespace AdminingDataBaseAirLine.Properties {
         internal static System.Drawing.Bitmap ticket_blue {
             get {
                 object obj = ResourceManager.GetObject("ticket_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ticket_dark {
+            get {
+                object obj = ResourceManager.GetObject("ticket_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
