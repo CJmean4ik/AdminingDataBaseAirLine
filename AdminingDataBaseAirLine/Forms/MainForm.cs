@@ -2,6 +2,7 @@
 using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Forms;
 using DataBaseModel.Entities.Accounts;
+using System.ComponentModel;
 using System.Data.Entity;
 
 namespace AdminingDataBaseAirLine
@@ -11,10 +12,12 @@ namespace AdminingDataBaseAirLine
         private Loginer _loginer;
         private string _connectString;
         private AirlineContext _airlineContext;
+       
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configurations.json";
         public MainForm()
         {
             InitializeComponent();
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -55,11 +58,13 @@ namespace AdminingDataBaseAirLine
             }
             else
             {
-                LogInBtn.Text = "Успішно!";
-                LogInBtn.ForeColor = Color.White;
-                this.Hide();
-                CashierForm cashierForm = new CashierForm();
-                cashierForm.Show();
+                if (!resultChecked.isAdmin)
+                {
+                    this.Hide();
+                    CashierForm cashierForm = new CashierForm();
+                    cashierForm.Show();
+                }   
+                //Инициализация формы AdminForm..
             }
         }
 

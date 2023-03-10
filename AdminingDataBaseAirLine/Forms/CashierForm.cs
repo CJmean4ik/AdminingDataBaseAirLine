@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminingDataBaseAirLine.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,22 +13,25 @@ namespace AdminingDataBaseAirLine.Forms
 {
     public partial class CashierForm : Form
     {
-        private Dictionary<string, ButtonProperty> _buttonsOpen;
+        private Dictionary<string, ButtonProperty> _buttonResourse;
+        private ComponentResourceManager _component;
 
         public CashierForm()
         {
             InitializeComponent();
+            _buttonResourse = new Dictionary<string, ButtonProperty>()
+            {
+                ["ticketButtonOpen"] = new ButtonProperty(false, TicketButton,Resources.ticket_white,Resources.ticket_blue),
+                ["flightButtonOpen"] = new ButtonProperty(false, FlightButton,Resources.flight_white,Resources.flight_blue),
+                ["passengerButtonOpen"] = new ButtonProperty(false, PassengerButton,Resources.pass_white,Resources.passenger_blue),
+                ["ordersButtonOpen"] = new ButtonProperty(false, OrdersButton,Resources.order_white,Resources.receipt_blue),
+                ["accountButtonOpen"] = new ButtonProperty(false, AccountButton,Resources.profile_white,Resources.receipt_blue)
+            };
+            _component = new ComponentResourceManager(typeof(CashierForm));
         }
         private void CashierForm_Load(object sender, EventArgs e)
         {
-            _buttonsOpen = new Dictionary<string, ButtonProperty>()
-            {
-                ["ticketButtonOpen"] = new ButtonProperty(false, TicketButton),
-                ["flightButtonOpen"] = new ButtonProperty(false,FlightButton),
-                ["passengerButtonOpen"] = new ButtonProperty(false,PassengerButton),
-                ["ordersButtonOpen"] = new ButtonProperty(false, OrdersButton),
-                ["accountButtonOpen"] = new ButtonProperty(false,AccountButton)
-            };
+            
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -36,59 +40,74 @@ namespace AdminingDataBaseAirLine.Forms
 
         private void TicketButton_Click(object sender, EventArgs e)
         {
-            _buttonsOpen["ticketButtonOpen"].IsOpen = true;
+            string butnName = "ticketButtonOpen";
+            _buttonResourse[butnName].IsOpen = true;
             ButtonColorChangingOpen(TicketButton);
-            ChekingButtonOpen();
+            TicketButton.Image = _buttonResourse[butnName].BlueImage;
+            ChekingButtonOpen(butnName);
         }
       
         private void FlightButton_Click(object sender, EventArgs e)
         {
-            _buttonsOpen["flightButtonOpen"].IsOpen = true;
-            ButtonColorChangingOpen(TicketButton);
-            ChekingButtonOpen();
+            string butnName = "flightButtonOpen";
+            _buttonResourse[butnName].IsOpen = true;
+            ButtonColorChangingOpen(FlightButton);
+            TicketButton.Image = _buttonResourse[butnName].BlueImage;
+            ChekingButtonOpen(butnName);
         }
 
         private void PassengerButton_Click(object sender, EventArgs e)
         {
-            _buttonsOpen["passengerButtonOpen"].IsOpen = true;
-            ButtonColorChangingOpen(TicketButton);
-            ChekingButtonOpen();
+            string butnName = "passengerButtonOpen";
+            _buttonResourse[butnName].IsOpen = true;
+            ButtonColorChangingOpen(PassengerButton);
+            TicketButton.Image = _buttonResourse[butnName].BlueImage;
+            ChekingButtonOpen(butnName);
         }
 
         private void OrdersButton_Click(object sender, EventArgs e)
         {
-            _buttonsOpen["ordersButtonOpen"].IsOpen = true;
-            ButtonColorChangingOpen(TicketButton);
-            ChekingButtonOpen();
+            string butnName = "ordersButtonOpen";
+            _buttonResourse[butnName].IsOpen = true;
+            ButtonColorChangingOpen(OrdersButton);
+            TicketButton.Image = _buttonResourse[butnName].BlueImage;
+            ChekingButtonOpen(butnName);
         }
 
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            _buttonsOpen["accountButtonOpen"].IsOpen = true;
-            ButtonColorChangingOpen(TicketButton);
-            ChekingButtonOpen();
+            string butnName = "accountButtonOpen";
+            _buttonResourse[butnName].IsOpen = true;
+            ButtonColorChangingOpen(AccountButton);
+            TicketButton.Image = _buttonResourse[butnName].BlueImage;
+            ChekingButtonOpen(butnName);
         }
 
         private void ButtonColorChangingOpen(Button button)
         {
             button.ForeColor = Color.FromArgb(10, 126, 245);
-            button.BackColor = Color.FromArgb(255, 255, 255);
+            button.BackColor = Color.FromName("Control");
         }
         private void ButtonColorChangingDeffault(Button button)
         {           
-            button.ForeColor = Color.FromArgb(255, 255, 255);
+            button.ForeColor = Color.FromName("Control");
             button.BackColor = Color.FromArgb(10, 126, 245);
         }
-        private void ChekingButtonOpen()
+        private void ChekingButtonOpen(string scipName)
         {
-            foreach (var item in _buttonsOpen)
+            foreach (var item in _buttonResourse)
             {
+                if (item.Key == scipName) continue;
+
                 if (!item.Value.IsOpen) continue;
-                
-                    _buttonsOpen[item.Key].IsOpen = false;
-                    ButtonColorChangingDeffault(item.Value.Button);             
+
+                    _buttonResourse[item.Key].IsOpen = false;
+                    ButtonColorChangingDeffault(item.Value.Button);
+                     item.Value.Button.Image = _buttonResourse[item.Key].WhiteImage;
+
             }
         }
        
+
     }
 }
