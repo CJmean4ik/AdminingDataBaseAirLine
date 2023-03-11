@@ -60,7 +60,7 @@ namespace AdminingDataBaseAirLine
                 if (!resultChecked.isAdmin)
                 {
                     this.Hide();
-                    CashierForm cashierForm = new CashierForm();
+                    CashierForm cashierForm = new CashierForm(_airlineContext);
                     cashierForm.ClosingFrom = CloseForm;
                     cashierForm.Show();
                 }

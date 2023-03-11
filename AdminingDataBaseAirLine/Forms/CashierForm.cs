@@ -1,5 +1,8 @@
-﻿using AdminingDataBaseAirLine.Forms.ButtonSettings;
+﻿using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Forms.ButtonSettings;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
+using DataBaseModel.Entities.Accounts;
 using System.ComponentModel;
 
 namespace AdminingDataBaseAirLine.Forms
@@ -10,14 +13,15 @@ namespace AdminingDataBaseAirLine.Forms
         private ButtonChanges _buttonChanges;
         private bool _ligthMode = true;
         private  Action _closingFrom;
-
+        private AirlineContext _airlineContext;
         public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
 
-        public CashierForm()
+        public CashierForm(AirlineContext airlineContext)
         {
             InitializeComponent();
             _buttonResourse = GetButtonProperties();
             _buttonChanges = new ButtonChanges(_buttonResourse);
+            _airlineContext = airlineContext;
         }
       
 
@@ -28,7 +32,11 @@ namespace AdminingDataBaseAirLine.Forms
         private void TicketButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("ticketButtonOpen", _ligthMode);
-
+            for (int i = 0; i < 7; i++)
+            {
+                flowTicketPanel.Controls.Add(new Ticket());
+            }
+            flowTicketPanel.Visible = true;
         }
 
         private void FlightButton_Click(object sender, EventArgs e)

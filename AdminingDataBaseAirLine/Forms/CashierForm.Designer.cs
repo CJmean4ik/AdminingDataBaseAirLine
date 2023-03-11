@@ -43,6 +43,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.collapseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.ThemeButton = new System.Windows.Forms.Button();
+            this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,7 +62,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(244, 671);
+            this.BackPanel.Size = new System.Drawing.Size(238, 671);
             this.BackPanel.TabIndex = 0;
             // 
             // AccountButton
@@ -168,59 +169,76 @@ namespace AdminingDataBaseAirLine.Forms
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.ThemeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(244, 0);
+            this.panel1.Location = new System.Drawing.Point(238, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 39);
+            this.panel1.Size = new System.Drawing.Size(628, 39);
             this.panel1.TabIndex = 1;
             // 
             // collapseButton
             // 
+            this.collapseButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.collapseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.collapseButton.FlatAppearance.BorderSize = 0;
             this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
-            this.collapseButton.Location = new System.Drawing.Point(748, 0);
+            this.collapseButton.Location = new System.Drawing.Point(555, 0);
             this.collapseButton.Name = "collapseButton";
-            this.collapseButton.Size = new System.Drawing.Size(37, 39);
+            this.collapseButton.Size = new System.Drawing.Size(33, 39);
             this.collapseButton.TabIndex = 3;
             this.collapseButton.UseVisualStyleBackColor = false;
             this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
             // 
             // closeButton
             // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(782, 0);
+            this.closeButton.Location = new System.Drawing.Point(589, 0);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(43, 39);
+            this.closeButton.Size = new System.Drawing.Size(39, 39);
             this.closeButton.TabIndex = 2;
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // ThemeButton
             // 
+            this.ThemeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ThemeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.ThemeButton.FlatAppearance.BorderSize = 0;
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(635, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(442, 0);
             this.ThemeButton.Name = "ThemeButton";
-            this.ThemeButton.Size = new System.Drawing.Size(43, 39);
+            this.ThemeButton.Size = new System.Drawing.Size(39, 39);
             this.ThemeButton.TabIndex = 0;
             this.ThemeButton.UseVisualStyleBackColor = false;
             this.ThemeButton.Click += new System.EventHandler(this.ChangeTheme);
+            // 
+            // flowTicketPanel
+            // 
+            this.flowTicketPanel.AutoScroll = true;
+            this.flowTicketPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.flowTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowTicketPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowTicketPanel.Location = new System.Drawing.Point(270, 67);
+            this.flowTicketPanel.Name = "flowTicketPanel";
+            this.flowTicketPanel.Size = new System.Drawing.Size(584, 595);
+            this.flowTicketPanel.TabIndex = 2;
+            this.flowTicketPanel.Visible = false;
+            this.flowTicketPanel.WrapContents = false;
             // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1069, 671);
+            this.ClientSize = new System.Drawing.Size(866, 671);
+            this.Controls.Add(this.flowTicketPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -299,6 +317,7 @@ namespace AdminingDataBaseAirLine.Forms
         private Button ThemeButton;
         private Button collapseButton;
         private Button closeButton;
+        private FlowLayoutPanel flowTicketPanel;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }
