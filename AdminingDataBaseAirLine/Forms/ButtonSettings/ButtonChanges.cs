@@ -20,7 +20,13 @@ namespace AdminingDataBaseAirLine.Forms
                 button.BackColor = Color.FromName("Control");
                 button.Image = _buttonResourse[butnName].BlueImage;
             }
-            else button.BackColor = Color.FromArgb(20, 21, 23);
+            else
+            {
+                button.BackColor = Color.FromArgb(20, 21, 23);
+                button.ForeColor = Color.FromName("Control");
+                button.Image = _buttonResourse[butnName].WhiteImage;
+            }
+
 
             ChangeButtonPressed(butnName, _IsLight);
         }
@@ -30,6 +36,7 @@ namespace AdminingDataBaseAirLine.Forms
         {
             if (!_IsLight)
             {
+                button.ForeColor = Color.FromArgb(80, 81, 249);
                 button.BackColor = Color.FromArgb(30, 31, 36);
                 button.Image = _buttonResourse[scipName].DarkImage;
             }

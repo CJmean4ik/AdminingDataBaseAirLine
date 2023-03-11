@@ -15,8 +15,10 @@ namespace AdminingDataBaseAirLine.Authentication
                   .Where(w => w.Name == name)
                   .Select(s => new {password = s.Password, isAdmin = s.IsAdmin })
                   .FirstOrDefault();
-            if (account.password != password)           
-                return (false,account.isAdmin);
+
+            if (account == null) return (false, false);
+                      
+            if (account.password != password) return (false,account.isAdmin);
 
             return (true, account.isAdmin);                                            
         }

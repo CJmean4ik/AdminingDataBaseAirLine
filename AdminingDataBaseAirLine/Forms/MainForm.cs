@@ -3,7 +3,6 @@ using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Forms;
 using DataBaseModel.Entities.Accounts;
-using System.ComponentModel;
 using System.Data.Entity;
 
 namespace AdminingDataBaseAirLine
@@ -14,8 +13,12 @@ namespace AdminingDataBaseAirLine
         private string _connectString;
         private AirlineContext _airlineContext;
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
+        public MainForm()
+        {
+            InitializeComponent();
+            
+        }
 
-        public MainForm() => InitializeComponent();
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -26,10 +29,9 @@ namespace AdminingDataBaseAirLine
         {
 
             _connectString = await JsonConfiguration.GetConnectionString(path);
-
             _airlineContext = new AirlineContext(_connectString);
             _loginer = new Loginer(_airlineContext);
-         
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -59,26 +61,25 @@ namespace AdminingDataBaseAirLine
                 {
                     this.Hide();
                     CashierForm cashierForm = new CashierForm();
+                    cashierForm.ClosingFrom = CloseForm;
                     cashierForm.Show();
-                }   
+                }
                 //Инициализация формы AdminForm..
             }
         }
-
-        private async Task<List<Account>> LoadDataForLoginerAsync(string connection)
-        {
-            AirlineContext context = new AirlineContext(connection);
-            await context.Accounts
-                .AsNoTracking()
-                .LoadAsync();
-
-            return context.Accounts.Local.ToList();
-        }
-
-
         private void UserNameBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            CloseForm();
+        }
+        public void CloseForm()
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }

@@ -45,6 +45,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.LogInBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.closeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,11 +229,26 @@
             this.linkLabel1.Text = "Забули пароль?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.SystemColors.Control;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.Location = new System.Drawing.Point(793, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(43, 37);
+            this.closeButton.TabIndex = 9;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 552);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.LogInBtn);
             this.Controls.Add(this.panel5);
@@ -275,5 +291,6 @@
         private Panel panel5;
         private Button LogInBtn;
         private LinkLabel linkLabel1;
+        private Button closeButton;
     }
 }

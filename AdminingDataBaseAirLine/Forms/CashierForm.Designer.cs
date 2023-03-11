@@ -40,6 +40,8 @@ namespace AdminingDataBaseAirLine.Forms
             this.TicketButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.collapseButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             this.ThemeButton = new System.Windows.Forms.Button();
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,7 +61,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(240, 633);
+            this.BackPanel.Size = new System.Drawing.Size(244, 671);
             this.BackPanel.TabIndex = 0;
             // 
             // AccountButton
@@ -71,10 +73,10 @@ namespace AdminingDataBaseAirLine.Forms
             this.AccountButton.ForeColor = System.Drawing.SystemColors.Control;
             this.AccountButton.Image = ((System.Drawing.Image)(resources.GetObject("AccountButton.Image")));
             this.AccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AccountButton.Location = new System.Drawing.Point(0, 554);
+            this.AccountButton.Location = new System.Drawing.Point(1, 592);
             this.AccountButton.Name = "AccountButton";
             this.AccountButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AccountButton.Size = new System.Drawing.Size(240, 79);
+            this.AccountButton.Size = new System.Drawing.Size(243, 79);
             this.AccountButton.TabIndex = 5;
             this.AccountButton.Text = "   Особистий Кабінет";
             this.AccountButton.UseVisualStyleBackColor = false;
@@ -161,13 +163,43 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel1.Controls.Add(this.collapseButton);
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.ThemeButton);
-            this.panel1.Location = new System.Drawing.Point(236, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(244, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(785, 49);
+            this.panel1.Size = new System.Drawing.Size(825, 39);
             this.panel1.TabIndex = 1;
+            // 
+            // collapseButton
+            // 
+            this.collapseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.collapseButton.FlatAppearance.BorderSize = 0;
+            this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
+            this.collapseButton.Location = new System.Drawing.Point(748, 0);
+            this.collapseButton.Name = "collapseButton";
+            this.collapseButton.Size = new System.Drawing.Size(37, 39);
+            this.collapseButton.TabIndex = 3;
+            this.collapseButton.UseVisualStyleBackColor = false;
+            this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.Location = new System.Drawing.Point(782, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(43, 39);
+            this.closeButton.TabIndex = 2;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // ThemeButton
             // 
@@ -176,9 +208,9 @@ namespace AdminingDataBaseAirLine.Forms
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(580, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(635, 0);
             this.ThemeButton.Name = "ThemeButton";
-            this.ThemeButton.Size = new System.Drawing.Size(55, 49);
+            this.ThemeButton.Size = new System.Drawing.Size(43, 39);
             this.ThemeButton.TabIndex = 0;
             this.ThemeButton.UseVisualStyleBackColor = false;
             this.ThemeButton.Click += new System.EventHandler(this.ChangeTheme);
@@ -188,7 +220,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1021, 633);
+            this.ClientSize = new System.Drawing.Size(1069, 671);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -265,6 +297,8 @@ namespace AdminingDataBaseAirLine.Forms
         private Button OrdersButton;
         private Button PassengerButton;
         private Button ThemeButton;
+        private Button collapseButton;
+        private Button closeButton;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }
@@ -274,6 +308,8 @@ namespace AdminingDataBaseAirLine.Forms
         public Button OrdersButton1_P { get => OrdersButton; set => OrdersButton = value; }
         public Button PassengerButton_P { get => PassengerButton; set => PassengerButton = value; }
         public Button ThemeButton_P { get => ThemeButton; set => ThemeButton = value; }
+        public Button CollapseButton { get => collapseButton; set => collapseButton = value; }
+        public Button CloseButton { get => closeButton; set => closeButton = value; }
     }
 }
 

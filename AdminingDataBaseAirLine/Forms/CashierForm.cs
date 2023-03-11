@@ -2,8 +2,6 @@
 using AdminingDataBaseAirLine.Properties;
 using System.ComponentModel;
 
-
-
 namespace AdminingDataBaseAirLine.Forms
 {
     public partial class CashierForm : Form
@@ -11,6 +9,9 @@ namespace AdminingDataBaseAirLine.Forms
         private Dictionary<string, ButtonProperty> _buttonResourse;
         private ButtonChanges _buttonChanges;
         private bool _ligthMode = true;
+        private  Action _closingFrom;
+
+        public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
 
         public CashierForm()
         {
@@ -18,6 +19,8 @@ namespace AdminingDataBaseAirLine.Forms
             _buttonResourse = GetButtonProperties();
             _buttonChanges = new ButtonChanges(_buttonResourse);
         }
+      
+
         private void CashierForm_Load(object sender, EventArgs e)
         {
 
@@ -39,24 +42,35 @@ namespace AdminingDataBaseAirLine.Forms
             _buttonChanges.ChangeButtonProperties("passengerButtonOpen", _ligthMode);
 
         }
-
         private void OrdersButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("ordersButtonOpen", _ligthMode);
 
         }
-
         private void AccountButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("accountButtonOpen",_ligthMode);
         }
-
         private void ChangeTheme(object sender, EventArgs e)
         {
             CashierFormTheme.ChangeCashierFormTheme(ref _ligthMode,this,_buttonResourse);
            
         }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            
+            if (_closingFrom != null)
+            {
+                _closingFrom.Invoke();
+                this.Dispose();
+            }
+        }
 
-
+        private void collapseButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
