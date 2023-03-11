@@ -29,8 +29,9 @@ namespace AdminingDataBaseAirLine
         {
 
             _connectString = await JsonConfiguration.GetConnectionString(path);
+            string Path = await JsonConfiguration.GetPathToJsonAccount(path);
             _airlineContext = new AirlineContext(_connectString);
-            _loginer = new Loginer(_airlineContext);
+            _loginer = new Loginer(_airlineContext, Path);
             
         }
 

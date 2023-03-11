@@ -5,19 +5,20 @@ namespace AdminingDataBaseAirLine.Authentication
     public class Loginer
     {
         private readonly AirlineContext _db;
-        private const string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\bin\Debug\net6.0-windows10.0.22621.0\Accounts.json";
-        private JsonAccountCache jsonCache;
-        public Loginer(AirlineContext db)
+        private string _path;
+        private JsonAccountCache _jsonCache;
+        public Loginer(AirlineContext db,string path)
         {
             _db = db;
-            jsonCache = new JsonAccountCache(path);
+            _path = path;
+            _jsonCache = new JsonAccountCache(_path);
         }
 
         public (bool complete, bool isAdmin) CheckingAccount(string name, string password)
         {
-            if (!File.Exists(path))
+            if (!File.Exists(_path))
             {
-                File.Create(path).Close();
+                File.Create(_path).Close();
 
                 var account = _db.Accounts
                  .AsNoTracking()
@@ -27,11 +28,11 @@ namespace AdminingDataBaseAirLine.Authentication
 
                 if (account == null) return (false, false);
 
-                jsonCache.CreateAccountInJson(name,account.password,account.isAdmin);
+                _jsonCache.CreateAccountInJson(name,account.password,account.isAdmin);
                 return (true, account.isAdmin);
             }
 
-            var JsonAccount = jsonCache.GetAccountFromJson(name);
+            var JsonAccount = _jsonCache.GetAccountFromJson(name);
 
             if (JsonAccount.password != password) return (false, JsonAccount.isAdmin);
 

@@ -18,5 +18,13 @@ namespace AdminingDataBaseAirLine.Configs
             }
 
         }
+        public static async Task<string> GetPathToJsonAccount(string path)
+        {
+            using (JsonDocument jsonDocument = await JsonDocument.ParseAsync(File.OpenRead(path)))
+            {
+                return jsonDocument.RootElement.GetProperty("Paths").GetProperty("JsonAccount").GetString()!;
+            }
+
+        }
     }
 }
