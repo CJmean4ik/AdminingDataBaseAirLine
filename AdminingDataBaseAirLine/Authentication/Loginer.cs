@@ -1,26 +1,41 @@
-﻿using System.Data.Entity;
+﻿using System.Text.Json;
 
 namespace AdminingDataBaseAirLine.Authentication
 {
     public class Loginer
     {
         private readonly AirlineContext _db;
-
-        public Loginer(AirlineContext db) => _db = db;
-
-        public (bool complete,bool isAdmin) CheckingAccount(string name, string password)
+        private const string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\bin\Debug\net6.0-windows10.0.22621.0\Accounts.json";
+        private JsonAccountCache jsonCache;
+        public Loginer(AirlineContext db)
         {
-            var account = _db.Accounts
-                  .AsNoTracking()
-                  .Where(w => w.Name == name)
-                  .Select(s => new {password = s.Password, isAdmin = s.IsAdmin })
-                  .FirstOrDefault();
+            _db = db;
+            jsonCache = new JsonAccountCache(path);
+        }
 
-            if (account == null) return (false, false);
-                      
-            if (account.password != password) return (false,account.isAdmin);
+        public (bool complete, bool isAdmin) CheckingAccount(string name, string password)
+        {
+            if (!File.Exists(path))
+            {
+                File.Create(path).Close();
 
-            return (true, account.isAdmin);                                            
+                var account = _db.Accounts
+                 .AsNoTracking()
+                 .Where(w => w.Name == name)
+                 .Select(s => new {password = s.Password, isAdmin = s.IsAdmin })
+                 .FirstOrDefault();
+
+                if (account == null) return (false, false);
+
+                jsonCache.CreateAccountInJson(name,account.password,account.isAdmin);
+                return (true, account.isAdmin);
+            }
+
+            var JsonAccount = jsonCache.GetAccountFromJson(name);
+
+            if (JsonAccount.password != password) return (false, JsonAccount.isAdmin);
+
+            return (true, JsonAccount.isAdmin);
         }
     }
 }
