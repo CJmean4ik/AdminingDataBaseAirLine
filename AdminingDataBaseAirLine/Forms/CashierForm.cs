@@ -8,12 +8,18 @@ namespace AdminingDataBaseAirLine.Forms
 {
     public partial class CashierForm : Form
     {
+        #region Fields       
         private Dictionary<string, ButtonProperty> _buttonResourse;
         private ButtonChanges _buttonChanges;
-        private bool _ligthMode = true;
-        private  Action _closingFrom;
+        private bool _ligthMode = true;       
         private AirlineContext _airlineContext;
         private bool _isAdedItem;
+        private CashierFormTheme _formTheme;
+        private ControlsTheme _controlsTheme;
+        #endregion
+
+
+        private Action _closingFrom;
         public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
 
         public CashierForm(AirlineContext airlineContext)
@@ -22,6 +28,8 @@ namespace AdminingDataBaseAirLine.Forms
             _buttonResourse = GetButtonProperties();
             _buttonChanges = new ButtonChanges(_buttonResourse);
             _airlineContext = airlineContext;
+            _formTheme = new CashierFormTheme(this,_buttonResourse);
+            _controlsTheme = new ControlsTheme(GetConfiguration());
         }
       
 
@@ -38,10 +46,12 @@ namespace AdminingDataBaseAirLine.Forms
             {
                 for (int i = 0; i < 7; i++)
                 {
-                    flowTicketPanel.Controls.Add(new Ticket());
+                    flowTicketPanel.Controls.Add(new Ticket(_ligthMode,config));
                 }
+                ticketPanel.Visible = true;
                 flowTicketPanel.Visible = true;
                 _isAdedItem = true;
+              
             }
 
         }
@@ -51,7 +61,6 @@ namespace AdminingDataBaseAirLine.Forms
             _buttonChanges.ChangeButtonProperties("flightButtonOpen", _ligthMode);
 
         }
-
         private void PassengerButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("passengerButtonOpen", _ligthMode);
@@ -65,12 +74,7 @@ namespace AdminingDataBaseAirLine.Forms
         private void AccountButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("accountButtonOpen",_ligthMode);
-        }
-        private void ChangeTheme(object sender, EventArgs e)
-        {
-            CashierFormTheme.ChangeCashierFormTheme(ref _ligthMode,this,_buttonResourse);
-           
-        }
+        }       
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -82,10 +86,22 @@ namespace AdminingDataBaseAirLine.Forms
                 this.Dispose();
             }
         }
-
         private void collapseButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        private void ChangeTheme(object sender, EventArgs e)
+        {
+            if (_ligthMode)
+            {
+                _formTheme.ChangeToDarkTheme(ref _ligthMode);
+                _controlsTheme.ChangeThemeControlInFlowPanel(ref _ligthMode,FlowTicketPanel);
+                return;
+            }
+            _formTheme.ChangeToLightTheme(ref _ligthMode);
+            _controlsTheme.ChangeThemeControlInFlowPanel(ref _ligthMode, FlowTicketPanel);
         }
         public ControlConfiguration GetConfiguration()
         {
@@ -93,11 +109,11 @@ namespace AdminingDataBaseAirLine.Forms
                 .SetPanelColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
                 .SetControlColor(Color.FromArgb(41, 41, 51), Color.FromName("Control"))
                 .SetLabelFColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
-                .SetLabelSColor(Color.Black,Color.FromArgb(95, 99, 136))
+                .SetLabelSColor(Color.FromArgb(95, 99, 136), Color.Black)
                 .Build();
         }
 
-        private void BackPanel_Paint(object sender, PaintEventArgs e)
+        private void flowTicketPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

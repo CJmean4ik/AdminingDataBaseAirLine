@@ -44,11 +44,11 @@ namespace AdminingDataBaseAirLine.Forms
             this.closeButton = new System.Windows.Forms.Button();
             this.ThemeButton = new System.Windows.Forms.Button();
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.ticket1 = new AdminingDataBaseAirLine.UserControls.Ticket();
+            this.ticketPanel = new System.Windows.Forms.Panel();
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.flowTicketPanel.SuspendLayout();
+            this.ticketPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
@@ -66,7 +66,6 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(101, 651);
             this.BackPanel.TabIndex = 0;
-            this.BackPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BackPanel_Paint);
             // 
             // AccountButton
             // 
@@ -180,7 +179,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.panel1.Controls.Add(this.ThemeButton);
             this.panel1.Location = new System.Drawing.Point(94, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 39);
+            this.panel1.Size = new System.Drawing.Size(1091, 39);
             this.panel1.TabIndex = 1;
             // 
             // collapseButton
@@ -192,7 +191,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
-            this.collapseButton.Location = new System.Drawing.Point(890, 0);
+            this.collapseButton.Location = new System.Drawing.Point(1018, 0);
             this.collapseButton.Name = "collapseButton";
             this.collapseButton.Size = new System.Drawing.Size(33, 39);
             this.collapseButton.TabIndex = 3;
@@ -208,7 +207,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(924, 0);
+            this.closeButton.Location = new System.Drawing.Point(1052, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(39, 39);
             this.closeButton.TabIndex = 2;
@@ -224,7 +223,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(777, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(905, 0);
             this.ThemeButton.Name = "ThemeButton";
             this.ThemeButton.Size = new System.Drawing.Size(39, 39);
             this.ThemeButton.TabIndex = 0;
@@ -235,30 +234,32 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             this.flowTicketPanel.AutoScroll = true;
             this.flowTicketPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.flowTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowTicketPanel.Controls.Add(this.ticket1);
             this.flowTicketPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowTicketPanel.Location = new System.Drawing.Point(116, 45);
+            this.flowTicketPanel.Location = new System.Drawing.Point(15, 8);
             this.flowTicketPanel.Name = "flowTicketPanel";
-            this.flowTicketPanel.Size = new System.Drawing.Size(730, 606);
+            this.flowTicketPanel.Size = new System.Drawing.Size(767, 597);
             this.flowTicketPanel.TabIndex = 2;
             this.flowTicketPanel.Visible = false;
             this.flowTicketPanel.WrapContents = false;
+            this.flowTicketPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowTicketPanel_Paint);
             // 
-            // ticket1
+            // ticketPanel
             // 
-            this.ticket1.Location = new System.Drawing.Point(3, 3);
-            this.ticket1.Name = "ticket1";
-            this.ticket1.Size = new System.Drawing.Size(696, 323);
-            this.ticket1.TabIndex = 0;
+            this.ticketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ticketPanel.Controls.Add(this.flowTicketPanel);
+            this.ticketPanel.Location = new System.Drawing.Point(132, 45);
+            this.ticketPanel.Name = "ticketPanel";
+            this.ticketPanel.Size = new System.Drawing.Size(783, 606);
+            this.ticketPanel.TabIndex = 3;
+            this.ticketPanel.Visible = false;
             // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1057, 651);
-            this.Controls.Add(this.flowTicketPanel);
+            this.ClientSize = new System.Drawing.Size(1185, 651);
+            this.Controls.Add(this.ticketPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -270,7 +271,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.flowTicketPanel.ResumeLayout(false);
+            this.ticketPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,7 +339,7 @@ namespace AdminingDataBaseAirLine.Forms
         private Button collapseButton;
         private Button closeButton;
         private FlowLayoutPanel flowTicketPanel;
-        private UserControls.Ticket ticket1;
+        private Panel ticketPanel;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }
@@ -351,6 +352,7 @@ namespace AdminingDataBaseAirLine.Forms
         public Button CollapseButton { get => collapseButton; set => collapseButton = value; }
         public Button CloseButton { get => closeButton; set => closeButton = value; }
         public FlowLayoutPanel FlowTicketPanel { get => flowTicketPanel; set => flowTicketPanel = value; }
+        public Panel TicketPanel { get => ticketPanel; set => ticketPanel = value; }
     }
 }
 

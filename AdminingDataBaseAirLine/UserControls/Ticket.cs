@@ -14,10 +14,16 @@ namespace AdminingDataBaseAirLine.UserControls
     {
 
         private bool IsLight = true;
+        private ControlConfiguration config;
+        private ControlsTheme theme;
+        internal ControlsTheme Theme { get => theme; set => theme = value; }
 
-        public Ticket()
+        public Ticket(bool isLight, ControlConfiguration configuration)
         {
             InitializeComponent();
+            IsLight = isLight;
+            config = configuration;
+            theme = new ControlsTheme(config);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -29,10 +35,8 @@ namespace AdminingDataBaseAirLine.UserControls
         {
             if (!IsLight)
             {
-
+                theme.ChangeToDarkTheme(ref IsLight, this);
             }
-
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

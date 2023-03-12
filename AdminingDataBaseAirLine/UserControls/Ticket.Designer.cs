@@ -284,7 +284,7 @@
             // BarCodeBox
             // 
             this.BarCodeBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCodeBox.Image")));
-            this.BarCodeBox.Location = new System.Drawing.Point(566, 39);
+            this.BarCodeBox.Location = new System.Drawing.Point(558, 39);
             this.BarCodeBox.Name = "BarCodeBox";
             this.BarCodeBox.Size = new System.Drawing.Size(127, 273);
             this.BarCodeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -350,6 +350,8 @@
 
         #endregion
 
+        #region Fields
+      
         private Panel panel1;
         private Label label2;
         private Label FlightLabel;
@@ -373,5 +375,33 @@
         private PictureBox BarCodeBox;
         private Panel panel2;
         private PictureBox pictureBox2;
+        #endregion
+
+        #region Properties
+
+        public Panel Panel1 { get => panel1; set => panel1 = value; }
+        public Label Label2 { get => label2; set => label2 = value; }
+        public Label FlightLabel1 { get => FlightLabel; set => FlightLabel = value; }
+        public Label FlightField { get => flightField; set => flightField = value; }
+        public Label PriceLabel { get => priceLabel; set => priceLabel = value; }
+        public Label PriceField { get => priceField; set => priceField = value; }
+        public Label DeparField { get => deparField; set => deparField = value; }
+        public Label DeparLabel { get => deparLabel; set => deparLabel = value; }
+        public Label ArrivalField { get => arrivalField; set => arrivalField = value; }
+        public Label ArrivalLabel { get => arrivalLabel; set => arrivalLabel = value; }
+        public Label WhereField { get => whereField; set => whereField = value; }
+        public Label WhereLabel { get => whereLabel; set => whereLabel = value; }
+        public Label FromWField { get => fromWField; set => fromWField = value; }
+        public Label FromWLabele { get => fromWLabele; set => fromWLabele = value; }
+        public Label ModelAirPlaneField { get => modelAirPlaneField; set => modelAirPlaneField = value; }
+        public Label ModelAirPlaneLabel { get => modelAirPlaneLabel; set => modelAirPlaneLabel = value; }
+        public Label SenderField { get => senderField; set => senderField = value; }
+        public Label SenderLabel { get => senderLabel; set => senderLabel = value; }
+        public Panel Panel3 { get => panel3; set => panel3 = value; }
+        public Panel Panel4 { get => panel4; set => panel4 = value; }
+        public PictureBox BarCodeBox1 { get => BarCodeBox; set => BarCodeBox = value; }
+        public Panel Panel2 { get => panel2; set => panel2 = value; }
+        public PictureBox PictureBox2 { get => pictureBox2; set => pictureBox2 = value; }
+        #endregion
     }
 }
