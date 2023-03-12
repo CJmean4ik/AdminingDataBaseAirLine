@@ -12,6 +12,9 @@ namespace AdminingDataBaseAirLine.UserControls
 {
     public partial class Ticket : UserControl
     {
+
+        private bool IsLight = true;
+
         public Ticket()
         {
             InitializeComponent();
@@ -23,6 +26,16 @@ namespace AdminingDataBaseAirLine.UserControls
         }
 
         private void Ticket_Load(object sender, EventArgs e)
+        {
+            if (!IsLight)
+            {
+
+            }
+
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

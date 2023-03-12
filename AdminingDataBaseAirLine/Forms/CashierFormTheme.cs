@@ -1,5 +1,6 @@
 ﻿using AdminingDataBaseAirLine.Forms.ButtonSettings;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace AdminingDataBaseAirLine.Forms
             Image darkImage = Resources.night_mode;
             Image whiteImage = Resources.lightmode;
 
+            ControlConfiguration configuration = cashierForm.GetConfiguration();
+
             if (_ligthMode)
             {
                 cashierForm.BackColor = darkColorFirstView;
@@ -31,6 +34,7 @@ namespace AdminingDataBaseAirLine.Forms
                 cashierForm.ThemeButton_P.BackColor = darkColorSecondView;
                 cashierForm.ThemeButton_P.Image = darkImage;
                 cashierForm.CloseButton.BackColor = darkColorSecondView;
+                cashierForm.CollapseButton.BackColor = darkColorSecondView;
 
                 foreach (var item in _buttonResourse)
                 {
@@ -45,8 +49,7 @@ namespace AdminingDataBaseAirLine.Forms
                     item.Value.Button.BackColor = darkColorSecondView;
                     item.Value.Button.ForeColor = purpleColor;
                     item.Value.Button.Image = item.Value.DarkImage;               
-                }
-
+                }             
                 _ligthMode = false;
                 return;
             }
@@ -58,6 +61,7 @@ namespace AdminingDataBaseAirLine.Forms
                 cashierForm.ThemeButton_P.BackColor = blueColor;
                 cashierForm.ThemeButton_P.Image = whiteImage;
                 cashierForm.CloseButton.BackColor = blueColor;
+                cashierForm.CollapseButton.BackColor = blueColor;
 
                 foreach (var item in _buttonResourse)
                 {

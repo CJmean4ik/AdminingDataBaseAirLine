@@ -13,12 +13,12 @@ namespace AdminingDataBaseAirLine
         private string _connectString;
         private AirlineContext _airlineContext;
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
+       
         public MainForm()
         {
             InitializeComponent();
             
         }
-
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -1,9 +1,8 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Forms.ButtonSettings;
-using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
-using DataBaseModel.Entities.Accounts;
-using System.ComponentModel;
+using AdminingDataBaseAirLine.UserControls.ControlConfigs;
+
 
 namespace AdminingDataBaseAirLine.Forms
 {
@@ -14,6 +13,7 @@ namespace AdminingDataBaseAirLine.Forms
         private bool _ligthMode = true;
         private  Action _closingFrom;
         private AirlineContext _airlineContext;
+        private bool _isAdedItem;
         public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
 
         public CashierForm(AirlineContext airlineContext)
@@ -32,11 +32,18 @@ namespace AdminingDataBaseAirLine.Forms
         private void TicketButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("ticketButtonOpen", _ligthMode);
-            for (int i = 0; i < 7; i++)
+
+            var config = GetConfiguration();
+            if (!_isAdedItem)
             {
-                flowTicketPanel.Controls.Add(new Ticket());
+                for (int i = 0; i < 7; i++)
+                {
+                    flowTicketPanel.Controls.Add(new Ticket());
+                }
+                flowTicketPanel.Visible = true;
+                _isAdedItem = true;
             }
-            flowTicketPanel.Visible = true;
+
         }
 
         private void FlightButton_Click(object sender, EventArgs e)
@@ -79,6 +86,20 @@ namespace AdminingDataBaseAirLine.Forms
         private void collapseButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        public ControlConfiguration GetConfiguration()
+        {
+            return new ControlConfigurationBuilder()
+                .SetPanelColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
+                .SetControlColor(Color.FromArgb(41, 41, 51), Color.FromName("Control"))
+                .SetLabelFColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
+                .SetLabelSColor(Color.Black,Color.FromArgb(95, 99, 136))
+                .Build();
+        }
+
+        private void BackPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
