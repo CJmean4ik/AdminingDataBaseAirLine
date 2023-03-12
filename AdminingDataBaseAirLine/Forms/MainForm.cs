@@ -2,6 +2,7 @@
 using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Forms;
+using AdminingDataBaseAirLine.Properties;
 using DataBaseModel.Entities.Accounts;
 using System.Data.Entity;
 
@@ -81,6 +82,19 @@ namespace AdminingDataBaseAirLine
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void ShowPasswordBtn_Click(object sender, EventArgs e)
+        {
+            if (PasswordBox.UseSystemPasswordChar)
+            {
+                PasswordBox.UseSystemPasswordChar = false;
+                ShowPasswordBtn.Image = Resources.eye_show;
+                return;
+            }
+            PasswordBox.UseSystemPasswordChar = true;
+            ShowPasswordBtn.Image = Resources.eye_crossed;
+
         }
     }
 }

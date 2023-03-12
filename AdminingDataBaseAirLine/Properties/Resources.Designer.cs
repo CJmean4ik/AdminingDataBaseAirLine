@@ -63,6 +63,26 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_crossed {
+            get {
+                object obj = ResourceManager.GetObject("eye_crossed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_show {
+            get {
+                object obj = ResourceManager.GetObject("eye_show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flight_blue {
             get {
                 object obj = ResourceManager.GetObject("flight_blue", resourceCulture);
