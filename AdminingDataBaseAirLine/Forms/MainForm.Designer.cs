@@ -65,11 +65,11 @@
             // 
             this.UserNameBox.BackColor = System.Drawing.SystemColors.Control;
             this.UserNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserNameBox.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserNameBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.UserNameBox.Location = new System.Drawing.Point(52, 238);
+            this.UserNameBox.Location = new System.Drawing.Point(49, 240);
             this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(275, 28);
+            this.UserNameBox.Size = new System.Drawing.Size(278, 25);
             this.UserNameBox.TabIndex = 1;
             this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
             // 
@@ -86,7 +86,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(54, 218);
+            this.label6.Location = new System.Drawing.Point(38, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 17);
             this.label6.TabIndex = 4;
@@ -96,11 +96,11 @@
             // 
             this.PasswordBox.BackColor = System.Drawing.SystemColors.Control;
             this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PasswordBox.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PasswordBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.PasswordBox.Location = new System.Drawing.Point(52, 340);
+            this.PasswordBox.Location = new System.Drawing.Point(49, 343);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(278, 28);
+            this.PasswordBox.Size = new System.Drawing.Size(275, 25);
             this.PasswordBox.TabIndex = 2;
             this.PasswordBox.UseSystemPasswordChar = true;
             // 
@@ -117,7 +117,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(54, 320);
+            this.label7.Location = new System.Drawing.Point(38, 320);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 4;
@@ -164,7 +164,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.Silver;
-            this.linkLabel1.Location = new System.Drawing.Point(195, 452);
+            this.linkLabel1.Location = new System.Drawing.Point(210, 452);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(120, 17);
             this.linkLabel1.TabIndex = 8;

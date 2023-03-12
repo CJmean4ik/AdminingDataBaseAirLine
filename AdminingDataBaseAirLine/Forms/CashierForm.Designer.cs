@@ -64,7 +64,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.BackPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(101, 651);
+            this.BackPanel.Size = new System.Drawing.Size(101, 686);
             this.BackPanel.TabIndex = 0;
             // 
             // AccountButton
@@ -76,7 +76,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.AccountButton.ForeColor = System.Drawing.SystemColors.Control;
             this.AccountButton.Image = ((System.Drawing.Image)(resources.GetObject("AccountButton.Image")));
             this.AccountButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AccountButton.Location = new System.Drawing.Point(0, 576);
+            this.AccountButton.Location = new System.Drawing.Point(0, 607);
             this.AccountButton.Name = "AccountButton";
             this.AccountButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.AccountButton.Size = new System.Drawing.Size(101, 79);
@@ -235,9 +235,9 @@ namespace AdminingDataBaseAirLine.Forms
             this.flowTicketPanel.AutoScroll = true;
             this.flowTicketPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flowTicketPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowTicketPanel.Location = new System.Drawing.Point(15, 8);
+            this.flowTicketPanel.Location = new System.Drawing.Point(15, -1);
             this.flowTicketPanel.Name = "flowTicketPanel";
-            this.flowTicketPanel.Size = new System.Drawing.Size(767, 597);
+            this.flowTicketPanel.Size = new System.Drawing.Size(767, 606);
             this.flowTicketPanel.TabIndex = 2;
             this.flowTicketPanel.Visible = false;
             this.flowTicketPanel.WrapContents = false;
@@ -247,9 +247,9 @@ namespace AdminingDataBaseAirLine.Forms
             // 
             this.ticketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ticketPanel.Controls.Add(this.flowTicketPanel);
-            this.ticketPanel.Location = new System.Drawing.Point(132, 45);
+            this.ticketPanel.Location = new System.Drawing.Point(154, 67);
             this.ticketPanel.Name = "ticketPanel";
-            this.ticketPanel.Size = new System.Drawing.Size(783, 606);
+            this.ticketPanel.Size = new System.Drawing.Size(783, 607);
             this.ticketPanel.TabIndex = 3;
             this.ticketPanel.Visible = false;
             // 
@@ -258,7 +258,7 @@ namespace AdminingDataBaseAirLine.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1185, 651);
+            this.ClientSize = new System.Drawing.Size(1185, 686);
             this.Controls.Add(this.ticketPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);

@@ -87,8 +87,8 @@ namespace AdminingDataBaseAirLine
         private void ShowPasswordBtn_Click(object sender, EventArgs e)
         {
             if (PasswordBox.UseSystemPasswordChar)
-            {
-                PasswordBox.UseSystemPasswordChar = false;
+            {               
+                PasswordBox.UseSystemPasswordChar = false;           
                 ShowPasswordBtn.Image = Resources.eye_show;
                 return;
             }
