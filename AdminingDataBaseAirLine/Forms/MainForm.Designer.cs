@@ -67,9 +67,9 @@
             this.UserNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserNameBox.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.UserNameBox.Location = new System.Drawing.Point(41, 238);
+            this.UserNameBox.Location = new System.Drawing.Point(52, 238);
             this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(289, 28);
+            this.UserNameBox.Size = new System.Drawing.Size(275, 28);
             this.UserNameBox.TabIndex = 1;
             this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
             // 
@@ -98,9 +98,9 @@
             this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PasswordBox.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.PasswordBox.Location = new System.Drawing.Point(41, 340);
+            this.PasswordBox.Location = new System.Drawing.Point(52, 340);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(289, 28);
+            this.PasswordBox.Size = new System.Drawing.Size(278, 28);
             this.PasswordBox.TabIndex = 2;
             this.PasswordBox.UseSystemPasswordChar = true;
             // 
