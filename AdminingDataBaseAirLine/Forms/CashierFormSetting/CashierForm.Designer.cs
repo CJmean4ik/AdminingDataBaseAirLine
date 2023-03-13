@@ -1,7 +1,10 @@
-﻿using AdminingDataBaseAirLine.Forms.ButtonSettings;
+﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls.ControlConfigs;
+using AdminingDataBaseAirLine.UserControls;
 
-namespace AdminingDataBaseAirLine.Forms
+namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
     partial class CashierForm
     {
@@ -323,7 +326,24 @@ namespace AdminingDataBaseAirLine.Forms
              };
 
     }
-    
+        public ControlConfiguration GetConfiguration()
+        {
+            return new ControlConfigurationBuilder()
+                .SetPanelColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
+                .SetControlColor(Color.FromArgb(41, 41, 51), Color.FromName("Control"))
+                .SetLabelFColor(Color.FromArgb(80, 81, 249), Color.FromArgb(10, 126, 245))
+                .SetLabelSColor(Color.FromArgb(95, 99, 136), Color.Black)
+                .Build();
+        }
+        public CashierFormConfiguration GetFormConfiguration()
+        {
+            return new CashierFormConfigurationBuilder()
+                .SetDarkColor(Color.FromArgb(20, 21, 23), Color.FromArgb(30, 31, 36))
+                .SetWhiteColor(Color.FromName("Control"))
+                .SetBlueColor(Color.FromArgb(10, 126, 245))
+                .SetPurpleColor(Color.FromArgb(80, 81, 249))
+                .Build();
+        }
 
         #endregion
 

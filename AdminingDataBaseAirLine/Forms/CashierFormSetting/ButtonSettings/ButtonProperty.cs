@@ -1,4 +1,4 @@
-﻿namespace AdminingDataBaseAirLine.Forms.ButtonSettings
+﻿namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings
 {
     public class ButtonProperty
     {
@@ -7,7 +7,7 @@
         public Image WhiteImage { get; set; }
         public Image BlueImage { get; set; }
         public Image DarkImage { get; set; }
-               
+
     }
 
 

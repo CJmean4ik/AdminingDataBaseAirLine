@@ -1,6 +1,4 @@
-﻿using AdminingDataBaseAirLine.Forms.ButtonSettings;
-
-namespace AdminingDataBaseAirLine.Forms
+﻿namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings
 {
     internal class ButtonChanges
     {
@@ -32,7 +30,7 @@ namespace AdminingDataBaseAirLine.Forms
         }
 
 
-        private void ButtonColorChangingToDeffault(Button button, bool _IsLight,string scipName)
+        private void ButtonColorChangingToDeffault(Button button, bool _IsLight, string scipName)
         {
             if (!_IsLight)
             {
@@ -58,7 +56,7 @@ namespace AdminingDataBaseAirLine.Forms
 
                 if (!item.Value.IsOpen) continue;
                 _buttonResourse[item.Key].IsOpen = false;
-                ButtonColorChangingToDeffault(item.Value.Button, _IsLight,item.Key);             
+                ButtonColorChangingToDeffault(item.Value.Button, _IsLight, item.Key);
             }
         }
 

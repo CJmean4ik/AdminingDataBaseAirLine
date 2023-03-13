@@ -1,10 +1,7 @@
-
 using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
-using AdminingDataBaseAirLine.Forms;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
-using DataBaseModel.Entities.Accounts;
-using System.Data.Entity;
 
 namespace AdminingDataBaseAirLine
 {

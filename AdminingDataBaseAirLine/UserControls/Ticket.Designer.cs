@@ -304,7 +304,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(180, 87);
+            this.pictureBox2.Location = new System.Drawing.Point(184, 87);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(143, 110);
             this.pictureBox2.TabIndex = 22;
@@ -314,7 +314,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.BarCodeBox);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -336,6 +335,7 @@
             this.Controls.Add(this.FlightLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "Ticket";
             this.Size = new System.Drawing.Size(696, 323);
             this.Load += new System.EventHandler(this.Ticket_Load);

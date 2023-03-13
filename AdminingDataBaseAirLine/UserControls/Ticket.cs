@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdminingDataBaseAirLine.Forms;
+using AdminingDataBaseAirLine.Themes;
 
 namespace AdminingDataBaseAirLine.UserControls
 {
@@ -15,6 +17,7 @@ namespace AdminingDataBaseAirLine.UserControls
 
         private bool IsLight = true;
         private ControlConfiguration config;
+
         private ControlsTheme theme;
         internal ControlsTheme Theme { get => theme; set => theme = value; }
 
@@ -23,7 +26,7 @@ namespace AdminingDataBaseAirLine.UserControls
             InitializeComponent();
             IsLight = isLight;
             config = configuration;
-            theme = new ControlsTheme(config);
+            theme = new ControlsTheme(config,this);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace AdminingDataBaseAirLine.UserControls
         {
             if (!IsLight)
             {
-                theme.ChangeToDarkTheme(ref IsLight, this);
+                theme.ChangeToDarkTheme(ref IsLight);
             }
         }
 

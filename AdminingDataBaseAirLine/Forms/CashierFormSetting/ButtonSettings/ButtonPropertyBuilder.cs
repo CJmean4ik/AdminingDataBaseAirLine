@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdminingDataBaseAirLine.Forms.ButtonSettings
+﻿namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings
 {
     internal class ButtonPropertyBuilder
     {
@@ -21,10 +15,10 @@ namespace AdminingDataBaseAirLine.Forms.ButtonSettings
         }
 
 
-        public ButtonPropertyBuilder SetButton(Button button) 
-        {            
-            _buttonProperty.Button = button; 
-            return this; 
+        public ButtonPropertyBuilder SetButton(Button button)
+        {
+            _buttonProperty.Button = button;
+            return this;
         }
 
         public ButtonPropertyBuilder SetWhiteImage(Image whiteImage)
