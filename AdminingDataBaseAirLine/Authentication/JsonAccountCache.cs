@@ -42,7 +42,7 @@ namespace AdminingDataBaseAirLine.Authentication
                     return (password, isAdmin)!;
                 }
             }
-            return (" ", false);
+            return ("none", false);
         }
     }
 }

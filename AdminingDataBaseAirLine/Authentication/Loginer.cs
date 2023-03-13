@@ -14,7 +14,7 @@ namespace AdminingDataBaseAirLine.Authentication
             _jsonCache = new JsonAccountCache(_path);
         }
 
-        public (bool complete, bool isAdmin) CheckingAccount(string name, string password)
+        public (bool complete, bool isAdmin) CheckingAccount(string name, string password,ref string nameMistake)
         {
             if (!File.Exists(_path))
             {
@@ -34,7 +34,18 @@ namespace AdminingDataBaseAirLine.Authentication
 
             var JsonAccount = _jsonCache.GetAccountFromJson(name);
 
-            if (JsonAccount.password != password) return (false, JsonAccount.isAdmin);
+            if (JsonAccount.password == "none")
+            {
+                nameMistake = "account";
+                return (false, JsonAccount.isAdmin);
+            }
+
+                      
+            if (JsonAccount.password != password)
+            {
+                nameMistake = "password";
+                return (false, JsonAccount.isAdmin);
+            }
 
             return (true, JsonAccount.isAdmin);
         }

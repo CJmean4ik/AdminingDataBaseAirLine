@@ -31,18 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label4 = new System.Windows.Forms.Label();
             this.UserNameBox = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelName = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.PasswordBox = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelPass = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelName2 = new System.Windows.Forms.Panel();
+            this.panelPass2 = new System.Windows.Forms.Panel();
             this.LogInBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.closeButton = new System.Windows.Forms.Button();
             this.ShowPasswordBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.passwordMistake = new System.Windows.Forms.Label();
+            this.nameMistake = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,28 +67,28 @@
             // 
             this.UserNameBox.BackColor = System.Drawing.SystemColors.Control;
             this.UserNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserNameBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserNameBox.Font = new System.Drawing.Font("JetBrains Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.UserNameBox.Location = new System.Drawing.Point(49, 240);
+            this.UserNameBox.Location = new System.Drawing.Point(50, 235);
             this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(278, 25);
+            this.UserNameBox.Size = new System.Drawing.Size(278, 28);
             this.UserNameBox.TabIndex = 1;
             this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
             // 
-            // panel2
+            // panelName
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel2.Location = new System.Drawing.Point(38, 238);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 28);
-            this.panel2.TabIndex = 3;
+            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panelName.Location = new System.Drawing.Point(38, 230);
+            this.panelName.Name = "panelName";
+            this.panelName.Size = new System.Drawing.Size(10, 40);
+            this.panelName.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(38, 218);
+            this.label6.Location = new System.Drawing.Point(49, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 17);
             this.label6.TabIndex = 4;
@@ -96,48 +98,49 @@
             // 
             this.PasswordBox.BackColor = System.Drawing.SystemColors.Control;
             this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PasswordBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PasswordBox.Font = new System.Drawing.Font("JetBrains Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.PasswordBox.Location = new System.Drawing.Point(49, 343);
+            this.PasswordBox.Location = new System.Drawing.Point(51, 351);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(275, 25);
+            this.PasswordBox.Size = new System.Drawing.Size(275, 28);
             this.PasswordBox.TabIndex = 2;
             this.PasswordBox.UseSystemPasswordChar = true;
+            this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
-            // panel3
+            // panelPass
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel3.Location = new System.Drawing.Point(38, 340);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 28);
-            this.panel3.TabIndex = 3;
+            this.panelPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panelPass.Location = new System.Drawing.Point(39, 343);
+            this.panelPass.Name = "panelPass";
+            this.panelPass.Size = new System.Drawing.Size(10, 40);
+            this.panelPass.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(38, 320);
+            this.label7.Location = new System.Drawing.Point(50, 323);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 4;
             this.label7.Text = "Ваш пароль";
             // 
-            // panel4
+            // panelName2
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel4.Location = new System.Drawing.Point(38, 265);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(292, 5);
-            this.panel4.TabIndex = 5;
+            this.panelName2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panelName2.Location = new System.Drawing.Point(38, 265);
+            this.panelName2.Name = "panelName2";
+            this.panelName2.Size = new System.Drawing.Size(292, 5);
+            this.panelName2.TabIndex = 5;
             // 
-            // panel5
+            // panelPass2
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel5.Location = new System.Drawing.Point(38, 368);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(292, 5);
-            this.panel5.TabIndex = 6;
+            this.panelPass2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panelPass2.Location = new System.Drawing.Point(39, 381);
+            this.panelPass2.Name = "panelPass2";
+            this.panelPass2.Size = new System.Drawing.Size(292, 5);
+            this.panelPass2.TabIndex = 6;
             // 
             // LogInBtn
             // 
@@ -195,9 +198,9 @@
             this.ShowPasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowPasswordBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.ShowPasswordBtn.Image = global::AdminingDataBaseAirLine.Properties.Resources.eye_crossed;
-            this.ShowPasswordBtn.Location = new System.Drawing.Point(301, 340);
+            this.ShowPasswordBtn.Location = new System.Drawing.Point(296, 343);
             this.ShowPasswordBtn.Name = "ShowPasswordBtn";
-            this.ShowPasswordBtn.Size = new System.Drawing.Size(29, 28);
+            this.ShowPasswordBtn.Size = new System.Drawing.Size(35, 38);
             this.ShowPasswordBtn.TabIndex = 10;
             this.ShowPasswordBtn.UseVisualStyleBackColor = false;
             this.ShowPasswordBtn.Click += new System.EventHandler(this.ShowPasswordBtn_Click);
@@ -205,23 +208,49 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.passwordMistake);
+            this.panel1.Controls.Add(this.nameMistake);
             this.panel1.Controls.Add(this.ShowPasswordBtn);
             this.panel1.Controls.Add(this.PasswordBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.UserNameBox);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelName);
             this.panel1.Controls.Add(this.closeButton);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panelPass);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panelName2);
             this.panel1.Controls.Add(this.LogInBtn);
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panelPass2);
             this.panel1.Location = new System.Drawing.Point(466, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 554);
             this.panel1.TabIndex = 16;
+            // 
+            // passwordMistake
+            // 
+            this.passwordMistake.AutoSize = true;
+            this.passwordMistake.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordMistake.ForeColor = System.Drawing.Color.Silver;
+            this.passwordMistake.Location = new System.Drawing.Point(50, 389);
+            this.passwordMistake.Name = "passwordMistake";
+            this.passwordMistake.Size = new System.Drawing.Size(128, 17);
+            this.passwordMistake.TabIndex = 12;
+            this.passwordMistake.Text = "Невірний пароль";
+            this.passwordMistake.Visible = false;
+            // 
+            // nameMistake
+            // 
+            this.nameMistake.AutoSize = true;
+            this.nameMistake.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameMistake.ForeColor = System.Drawing.Color.Silver;
+            this.nameMistake.Location = new System.Drawing.Point(38, 273);
+            this.nameMistake.Name = "nameMistake";
+            this.nameMistake.Size = new System.Drawing.Size(224, 34);
+            this.nameMistake.TabIndex = 11;
+            this.nameMistake.Text = "Невірне ім\'я або \r\nтакого користувача не існує";
+            this.nameMistake.Visible = false;
             // 
             // label5
             // 
@@ -298,13 +327,13 @@
         #endregion
         private Label label4;
         private TextBox UserNameBox;
-        private Panel panel2;
+        private Panel panelName;
         private Label label6;
         private TextBox PasswordBox;
-        private Panel panel3;
+        private Panel panelPass;
         private Label label7;
-        private Panel panel4;
-        private Panel panel5;
+        private Panel panelName2;
+        private Panel panelPass2;
         private Button LogInBtn;
         private LinkLabel linkLabel1;
         private Button closeButton;
@@ -314,5 +343,7 @@
         private Label label2;
         private Label label1;
         private Label label3;
+        private Label passwordMistake;
+        private Label nameMistake;
     }
 }

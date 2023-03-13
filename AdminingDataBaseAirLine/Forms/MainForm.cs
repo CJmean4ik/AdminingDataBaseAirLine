@@ -1,3 +1,4 @@
+
 using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting;
@@ -32,55 +33,75 @@ namespace AdminingDataBaseAirLine
             _loginer = new Loginer(_airlineContext, Path);
             
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             WarningMessageForm warningMessage = new WarningMessageForm(this);
             warningMessage.Show();
             this.Enabled = false;
         }
-
         private async void LogInBtn_Click(object sender, EventArgs e)
         {
             string name = UserNameBox.Text;
             string password = PasswordBox.Text;
+            string nameMistake = string.Empty;
 
-            LogInBtn.Text = "Обробка...";
-            LogInBtn.ForeColor = Color.Orange;
             LogInBtn.Enabled = false;
-            var resultChecked = await Task.Run(() => _loginer.CheckingAccount(name, password));
-            if (!resultChecked.complete)
-            {
-                LogInBtn.Text = "Помилка!";
-                LogInBtn.ForeColor = Color.Red;
-            }
-            else
-            {
+            var resultChecked = await Task.Run(() => _loginer.CheckingAccount(name, password,ref nameMistake));
+            if (resultChecked.complete)
+            {                                           
                 if (!resultChecked.isAdmin)
                 {
                     this.Hide();
                     CashierForm cashierForm = new CashierForm(_airlineContext);
                     cashierForm.ClosingFrom = CloseForm;
                     cashierForm.Show();
+                    return;
                 }
                 //Инициализация формы AdminForm..
             }
+            else
+            {
+                LogInBtn.Enabled = true;
+                Color backRed = Color.FromArgb(226, 76, 75);
+                if (nameMistake == "account")
+                {
+                    panelName.BackColor = backRed;
+                    panelName2.BackColor = backRed;
+                    this.nameMistake.ForeColor = backRed;
+                    this.nameMistake.Visible = true;
+                    UserNameBox.ForeColor = backRed;
+                    return;
+                }
+                if (nameMistake == "password")
+                {
+                    panelPass.BackColor = backRed;
+                    panelPass2.BackColor = backRed;
+                    passwordMistake.ForeColor = backRed;
+                    passwordMistake.Visible = true;
+                    PasswordBox.ForeColor = backRed;
+                    return;
+                }                           
+            }
+
+        }
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
+        {
+            if (panelPass.BackColor == Color.FromArgb(10, 126, 245)) return;
+
+            panelPass.BackColor = Color.FromArgb(10, 126, 245);
+            panelPass2.BackColor = Color.FromArgb(10, 126, 245);
+            this.passwordMistake.Visible = false;
+            PasswordBox.ForeColor = Color.FromArgb(10, 126, 245);
         }
         private void UserNameBox_TextChanged(object sender, EventArgs e)
         {
+            if (panelName.BackColor == Color.FromArgb(10, 126, 245)) return;
 
+            panelName.BackColor = Color.FromArgb(10, 126, 245);
+            panelName2.BackColor = Color.FromArgb(10, 126, 245);
+            UserNameBox.ForeColor = Color.FromArgb(10, 126, 245);
+            this.nameMistake.Visible = false;
         }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            CloseForm();
-        }
-        public void CloseForm()
-        {
-            this.Close();
-            this.Dispose();
-        }
-
         private void ShowPasswordBtn_Click(object sender, EventArgs e)
         {
             if (PasswordBox.UseSystemPasswordChar)
@@ -93,5 +114,17 @@ namespace AdminingDataBaseAirLine
             ShowPasswordBtn.Image = Resources.eye_crossed;
 
         }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            CloseForm();
+        }
+
+
+        public void CloseForm()
+        {
+            this.Close();
+            this.Dispose();
+        }
+
     }
 }
