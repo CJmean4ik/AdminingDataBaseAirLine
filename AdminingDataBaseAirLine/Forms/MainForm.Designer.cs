@@ -326,15 +326,17 @@
 
         #endregion
         private Label label4;
+        private Label label6;
+        private Label label7;
         private TextBox UserNameBox;
         private Panel panelName;
-        private Label label6;
         private TextBox PasswordBox;
         private Panel panelPass;
-        private Label label7;
         private Panel panelName2;
         private Panel panelPass2;
         private Button LogInBtn;
+        private Label nameMistake;
+        private Label passwordMistake;
         private LinkLabel linkLabel1;
         private Button closeButton;
         private Button ShowPasswordBtn;
@@ -343,7 +345,15 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private Label passwordMistake;
-        private Label nameMistake;
+
+        public TextBox UserNameBox1 { get => UserNameBox; set => UserNameBox = value; }
+        public Panel PanelName { get => panelName; set => panelName = value; }
+        public TextBox PasswordBox1 { get => PasswordBox; set => PasswordBox = value; }
+        public Panel PanelPass { get => panelPass; set => panelPass = value; }
+        public Panel PanelName2 { get => panelName2; set => panelName2 = value; }
+        public Panel PanelPass2 { get => panelPass2; set => panelPass2 = value; }
+        public Button LogInBtn1 { get => LogInBtn; set => LogInBtn = value; }
+        public Label NameMistake { get => nameMistake; set => nameMistake = value; }
+        public Label PasswordMistake { get => passwordMistake; set => passwordMistake = value; }
     }
 }

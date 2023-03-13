@@ -12,7 +12,7 @@ namespace AdminingDataBaseAirLine
         private string _connectString;
         private AirlineContext _airlineContext;
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
-       
+        private bool _haveEror;
         public MainForm()
         {
             InitializeComponent();
@@ -41,12 +41,27 @@ namespace AdminingDataBaseAirLine
         }
         private async void LogInBtn_Click(object sender, EventArgs e)
         {
-            string name = UserNameBox.Text;
-            string password = PasswordBox.Text;
+
+            string name = string.Empty;
+            string password = string.Empty;
             string nameMistake = string.Empty;
 
+
+            if (!ValidationUserAccount.IsNotEmptyBoxField(UserNameBox, ref name))            
+                ValidationUserAccount.EmptyFieldErorHandling(this.nameMistake);
+            
+
+            if (!ValidationUserAccount.IsNotEmptyBoxField(PasswordBox, ref password))
+                ValidationUserAccount.EmptyFieldErorHandling(this.passwordMistake);
+
+            _haveEror = name == "" || password == "" ? true : false;
+            if (_haveEror) return;          
+
+                      
             LogInBtn.Enabled = false;
+
             var resultChecked = await Task.Run(() => _loginer.CheckingAccount(name, password,ref nameMistake));
+
             if (resultChecked.complete)
             {                                           
                 if (!resultChecked.isAdmin)
@@ -61,47 +76,34 @@ namespace AdminingDataBaseAirLine
             }
             else
             {
-                LogInBtn.Enabled = true;
-                Color backRed = Color.FromArgb(226, 76, 75);
-                if (nameMistake == "account")
-                {
-                    panelName.BackColor = backRed;
-                    panelName2.BackColor = backRed;
-                    this.nameMistake.ForeColor = backRed;
-                    this.nameMistake.Visible = true;
-                    UserNameBox.ForeColor = backRed;
-                    return;
-                }
-                if (nameMistake == "password")
-                {
-                    panelPass.BackColor = backRed;
-                    panelPass2.BackColor = backRed;
-                    passwordMistake.ForeColor = backRed;
-                    passwordMistake.Visible = true;
-                    PasswordBox.ForeColor = backRed;
-                    return;
-                }                           
+                ValidationUserAccount.ErrorHandling(nameMistake,this);
+                _haveEror = true;
             }
 
         }
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
-            if (panelPass.BackColor == Color.FromArgb(10, 126, 245)) return;
+            if (!_haveEror) return;
 
             panelPass.BackColor = Color.FromArgb(10, 126, 245);
             panelPass2.BackColor = Color.FromArgb(10, 126, 245);
-            this.passwordMistake.Visible = false;
             PasswordBox.ForeColor = Color.FromArgb(10, 126, 245);
+            this.passwordMistake.Visible = false;
         }
+
         private void UserNameBox_TextChanged(object sender, EventArgs e)
         {
-            if (panelName.BackColor == Color.FromArgb(10, 126, 245)) return;
 
-            panelName.BackColor = Color.FromArgb(10, 126, 245);
-            panelName2.BackColor = Color.FromArgb(10, 126, 245);
-            UserNameBox.ForeColor = Color.FromArgb(10, 126, 245);
-            this.nameMistake.Visible = false;
+            if (!_haveEror) return;
+            
+                panelName.BackColor = Color.FromArgb(10, 126, 245);
+                panelName2.BackColor = Color.FromArgb(10, 126, 245);
+                UserNameBox.ForeColor = Color.FromArgb(10, 126, 245);
+                this.nameMistake.Visible = false;
+            
+
         }
+
         private void ShowPasswordBtn_Click(object sender, EventArgs e)
         {
             if (PasswordBox.UseSystemPasswordChar)
