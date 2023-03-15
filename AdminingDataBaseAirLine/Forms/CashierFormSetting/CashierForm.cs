@@ -3,10 +3,13 @@ using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Themes;
 using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.ControlConfigs;
-
+using DataBaseModel.Entities.RouteAndFlight;
+using System.Windows.Forms;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
+
+  
     public partial class CashierForm : Form
     {
         #region Fields  
@@ -19,11 +22,15 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private CashierFormTheme _cashierFormTheme;
         private ControlsTheme _ticketControlsTheme;
 
+        private object obj = new object();
+
         #endregion
 
 
         private Action _closingFrom;
         public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
+
+
 
         public CashierForm(AirlineContext airlineContext)
         {
@@ -42,24 +49,31 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         #region MethodsRelatedToTheForm
 
 
-        private void TicketButton_Click(object sender, EventArgs e)
+        private async void TicketButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("ticketButtonOpen", _ligthMode);
+            ticketDataLoad.Visible = true;
+            var config =  GetConfiguration();
 
-            var config = GetConfiguration();
 
             if (!_isAdedItem)
             {
-                for (int i = 0; i < 7; i++)
+                _isAdedItem = true;
+                var data = await Task.Run(() => GetDataTicketControl());
+                
+                ticketDataLoad.Visible = false;
+                for (int i = 0; i < data.Count; i++)
                 {
-                    flowTicketPanel.Controls.Add(new Ticket(_ligthMode,config));
+                    Ticket ticket = new Ticket(_ligthMode, config, data[i]);
+                    ticket.Binder += BindDataForBoxFormTicket;
+                    flowTicketPanel.Controls.Add(ticket);
                 }
                 ticketPanel.Visible = true;
                 flowTicketPanel.Visible = true;
-                _isAdedItem = true;
+                
               
             }
-
+            ticketPanel.Visible = true;
         }
         private void FlightButton_Click(object sender, EventArgs e)
         {
@@ -109,12 +123,46 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             _cashierFormTheme.ChangeToLightTheme(ref _ligthMode);
             _ticketControlsTheme.ChangeThemeControlInFlowPanel(ref _ligthMode, FlowTicketPanel);
         }
-       
+            
+      
 
-
-        private void flowTicketPanel_Paint(object sender, PaintEventArgs e)
+        public void BindDataForBoxFormTicket(DataTicketControl dataTicket)
+        {
+            numberTicketBox.Text = dataTicket.NumberTicket.ToString();
+            priceTicketBox.Text = dataTicket.PriceTicket.ToString();
+        }
+        private List<DataTicketControl> GetDataTicketControl()
         {
 
+            var Flights = _airlineContext.Tickets.Select(s => new
+            {
+               numberTicket = s.NumberTicket,
+               price = s.Price,
+               fromWhere = s.Flight.Route.FromWhere,
+               where = s.Flight.Route.Where,
+               departure = s.Flight.Route.Departure,
+               arrival = s.Flight.Route.Incoming,
+               modelAirplane = s.Flight.AirlinePlane.Airplane.Model,
+               sender = s.Flight.AirlinePlane.SendingAirline
+
+            })
+            .AsEnumerable()
+            .Select(s => new DataTicketControl 
+            {
+                NumberTicket = s.numberTicket,
+                PriceTicket = s.price,
+                FromWhereTicket = s.fromWhere,
+                WhereTicket = s.where,
+                DepartmentTicket = s.departure,
+                ArrivalTicket = s.arrival,
+                ModelAirplane = s.modelAirplane,
+                SenderTicket = s.sender
+            })
+            .ToList();
+
+            return Flights;
         }
+
+        
     }
 }

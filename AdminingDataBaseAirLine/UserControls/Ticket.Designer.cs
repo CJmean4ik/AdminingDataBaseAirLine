@@ -65,7 +65,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 39);
+            this.panel1.Size = new System.Drawing.Size(747, 39);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -266,7 +266,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel3.Location = new System.Drawing.Point(691, 39);
+            this.panel3.Location = new System.Drawing.Point(742, 39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 273);
             this.panel3.TabIndex = 19;
@@ -284,7 +284,7 @@
             // BarCodeBox
             // 
             this.BarCodeBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCodeBox.Image")));
-            this.BarCodeBox.Location = new System.Drawing.Point(558, 39);
+            this.BarCodeBox.Location = new System.Drawing.Point(609, 39);
             this.BarCodeBox.Name = "BarCodeBox";
             this.BarCodeBox.Size = new System.Drawing.Size(127, 273);
             this.BarCodeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -298,13 +298,13 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.Control;
             this.panel2.Location = new System.Drawing.Point(0, 312);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(696, 11);
+            this.panel2.Size = new System.Drawing.Size(747, 11);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(184, 87);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 185);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(143, 110);
             this.pictureBox2.TabIndex = 22;
@@ -337,8 +337,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Ticket";
-            this.Size = new System.Drawing.Size(696, 323);
+            this.Size = new System.Drawing.Size(747, 323);
             this.Load += new System.EventHandler(this.Ticket_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Ticket_MouseClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarCodeBox)).EndInit();

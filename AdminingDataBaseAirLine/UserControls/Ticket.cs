@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AdminingDataBaseAirLine.Forms;
-using AdminingDataBaseAirLine.Themes;
+﻿using AdminingDataBaseAirLine.Themes;
 
 namespace AdminingDataBaseAirLine.UserControls
 {
@@ -16,17 +6,20 @@ namespace AdminingDataBaseAirLine.UserControls
     {
 
         private bool IsLight = true;
-        private ControlConfiguration config;
-
+        private readonly ControlConfiguration config;
         private ControlsTheme theme;
+        private Action<DataTicketControl> _binder;
+        private DataTicketControl _dataTicket;
         internal ControlsTheme Theme { get => theme; set => theme = value; }
+        public Action<DataTicketControl> Binder { get => _binder; set => _binder += value; }
 
-        public Ticket(bool isLight, ControlConfiguration configuration)
+        public Ticket(bool isLight, ControlConfiguration configuration, DataTicketControl control)
         {
             InitializeComponent();
             IsLight = isLight;
             config = configuration;
             theme = new ControlsTheme(config,this);
+            _dataTicket = control;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -40,11 +33,39 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 theme.ChangeToDarkTheme(ref IsLight);
             }
+
+            flightField.Text = _dataTicket.NumberTicket.ToString();
+            priceField.Text = _dataTicket.PriceTicket.ToString();
+            fromWField.Text = _dataTicket.FromWhereTicket;
+            whereField.Text = _dataTicket.WhereTicket;
+            deparField.Text = _dataTicket.DepartmentTicket.ToString();
+            arrivalField.Text = _dataTicket.ArrivalTicket.ToString();
+            modelAirPlaneField.Text = _dataTicket.ModelAirplane;
+            senderField.Text = _dataTicket.SenderTicket;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+       
+
+        private void Ticket_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            DataTicketControl dataTicket = new DataTicketControl();
+            dataTicket.NumberTicket = int.Parse(flightField.Text);
+            dataTicket.PriceTicket = 15;
+            /*
+            dataTicket.FromWhereTicket = fromWField.Text;
+            dataTicket.WhereTicket = whereField.Text;
+            dataTicket.DepartmentTicket = Convert.ToDateTime(deparField.Text);
+            dataTicket.ArrivalTicket = Convert.ToDateTime(arrivalField.Text);
+            dataTicket.ModelAirplane = modelAirPlaneField.Text;
+            dataTicket.SenderTicket = senderField.Text;
+            */
+            _binder.Invoke(dataTicket);
         }
     }
 }

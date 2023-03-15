@@ -48,6 +48,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton = new System.Windows.Forms.Button();
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ticketPanel = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.FlightLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.priceTicketBox = new System.Windows.Forms.TextBox();
+            this.numberTicketBox = new System.Windows.Forms.TextBox();
+            this.ticketDataLoad = new System.Windows.Forms.Label();
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -182,7 +189,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel1.Controls.Add(this.ThemeButton);
             this.panel1.Location = new System.Drawing.Point(94, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1091, 39);
+            this.panel1.Size = new System.Drawing.Size(1112, 39);
             this.panel1.TabIndex = 1;
             // 
             // collapseButton
@@ -194,7 +201,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
-            this.collapseButton.Location = new System.Drawing.Point(1018, 0);
+            this.collapseButton.Location = new System.Drawing.Point(1039, 0);
             this.collapseButton.Name = "collapseButton";
             this.collapseButton.Size = new System.Drawing.Size(33, 39);
             this.collapseButton.TabIndex = 3;
@@ -210,7 +217,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(1052, 0);
+            this.closeButton.Location = new System.Drawing.Point(1073, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(39, 39);
             this.closeButton.TabIndex = 2;
@@ -226,7 +233,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(905, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(926, 0);
             this.ThemeButton.Name = "ThemeButton";
             this.ThemeButton.Size = new System.Drawing.Size(39, 39);
             this.ThemeButton.TabIndex = 0;
@@ -238,30 +245,103 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.flowTicketPanel.AutoScroll = true;
             this.flowTicketPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.flowTicketPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowTicketPanel.Location = new System.Drawing.Point(15, -1);
+            this.flowTicketPanel.Location = new System.Drawing.Point(3, -1);
             this.flowTicketPanel.Name = "flowTicketPanel";
-            this.flowTicketPanel.Size = new System.Drawing.Size(767, 606);
+            this.flowTicketPanel.Size = new System.Drawing.Size(770, 606);
             this.flowTicketPanel.TabIndex = 2;
             this.flowTicketPanel.Visible = false;
             this.flowTicketPanel.WrapContents = false;
-            this.flowTicketPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowTicketPanel_Paint);
             // 
             // ticketPanel
             // 
             this.ticketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ticketPanel.Controls.Add(this.textBox2);
+            this.ticketPanel.Controls.Add(this.textBox3);
+            this.ticketPanel.Controls.Add(this.FlightLabel);
+            this.ticketPanel.Controls.Add(this.priceLabel);
+            this.ticketPanel.Controls.Add(this.priceTicketBox);
+            this.ticketPanel.Controls.Add(this.numberTicketBox);
             this.ticketPanel.Controls.Add(this.flowTicketPanel);
-            this.ticketPanel.Location = new System.Drawing.Point(154, 67);
+            this.ticketPanel.Location = new System.Drawing.Point(118, 67);
             this.ticketPanel.Name = "ticketPanel";
-            this.ticketPanel.Size = new System.Drawing.Size(783, 607);
+            this.ticketPanel.Size = new System.Drawing.Size(1062, 607);
             this.ticketPanel.TabIndex = 3;
             this.ticketPanel.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(930, 137);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 33);
+            this.textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(779, 137);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 33);
+            this.textBox3.TabIndex = 8;
+            // 
+            // FlightLabel
+            // 
+            this.FlightLabel.AutoSize = true;
+            this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.FlightLabel.Location = new System.Drawing.Point(779, 23);
+            this.FlightLabel.Name = "FlightLabel";
+            this.FlightLabel.Size = new System.Drawing.Size(100, 25);
+            this.FlightLabel.TabIndex = 6;
+            this.FlightLabel.Text = "№ Рейсу:";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.priceLabel.Location = new System.Drawing.Point(930, 23);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.priceLabel.Size = new System.Drawing.Size(67, 25);
+            this.priceLabel.TabIndex = 7;
+            this.priceLabel.Text = "Ціна:";
+            // 
+            // priceTicketBox
+            // 
+            this.priceTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceTicketBox.Location = new System.Drawing.Point(930, 51);
+            this.priceTicketBox.Name = "priceTicketBox";
+            this.priceTicketBox.Size = new System.Drawing.Size(121, 33);
+            this.priceTicketBox.TabIndex = 4;
+            // 
+            // numberTicketBox
+            // 
+            this.numberTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numberTicketBox.Location = new System.Drawing.Point(779, 51);
+            this.numberTicketBox.Name = "numberTicketBox";
+            this.numberTicketBox.Size = new System.Drawing.Size(121, 33);
+            this.numberTicketBox.TabIndex = 3;
+            // 
+            // ticketDataLoad
+            // 
+            this.ticketDataLoad.AutoSize = true;
+            this.ticketDataLoad.Font = new System.Drawing.Font("JetBrains Mono", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ticketDataLoad.ForeColor = System.Drawing.Color.Silver;
+            this.ticketDataLoad.Location = new System.Drawing.Point(398, 307);
+            this.ticketDataLoad.Name = "ticketDataLoad";
+            this.ticketDataLoad.Size = new System.Drawing.Size(506, 49);
+            this.ticketDataLoad.TabIndex = 4;
+            this.ticketDataLoad.Text = "Завантаження даних... ";
+            this.ticketDataLoad.Visible = false;
             // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1185, 686);
+            this.ClientSize = new System.Drawing.Size(1206, 686);
+            this.Controls.Add(this.ticketDataLoad);
             this.Controls.Add(this.ticketPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
@@ -275,7 +355,9 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ticketPanel.ResumeLayout(false);
+            this.ticketPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -360,6 +442,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private Button closeButton;
         private FlowLayoutPanel flowTicketPanel;
         private Panel ticketPanel;
+        private TextBox numberTicketBox;
+        private TextBox priceTicketBox;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label FlightLabel;
+        private Label priceLabel;
+        private Label ticketDataLoad;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }

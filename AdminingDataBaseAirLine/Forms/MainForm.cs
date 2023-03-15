@@ -62,6 +62,7 @@ namespace AdminingDataBaseAirLine
 
             var resultChecked = await Task.Run(() => _loginer.CheckingAccount(name, password,ref nameMistake));
 
+
             if (resultChecked.complete)
             {                                           
                 if (!resultChecked.isAdmin)
@@ -74,12 +75,11 @@ namespace AdminingDataBaseAirLine
                 }
                 //Инициализация формы AdminForm..
             }
-            else
-            {
+  
+            
                 ValidationUserAccount.ErrorHandling(nameMistake,this);
                 _haveEror = true;
-            }
-
+           
         }
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
@@ -103,7 +103,6 @@ namespace AdminingDataBaseAirLine
             
 
         }
-
         private void ShowPasswordBtn_Click(object sender, EventArgs e)
         {
             if (PasswordBox.UseSystemPasswordChar)

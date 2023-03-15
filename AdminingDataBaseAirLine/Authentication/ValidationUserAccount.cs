@@ -20,7 +20,11 @@ namespace AdminingDataBaseAirLine.Authentication
             }
             return false;
         }
-
+        /// <summary>
+        /// Проверяет на наличие ошибок при аунтентификации 
+        /// </summary>
+        /// <param name="systemEror"></param>
+        /// <param name="mainForm"></param>
         public static void ErrorHandling(string systemEror,MainForm mainForm)
         {
             mainForm.LogInBtn1.Enabled = true;
