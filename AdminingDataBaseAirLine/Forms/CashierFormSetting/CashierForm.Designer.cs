@@ -1,8 +1,8 @@
-﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
+﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls.ControlConfigs;
 using AdminingDataBaseAirLine.UserControls;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting.FormConfiguration;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {

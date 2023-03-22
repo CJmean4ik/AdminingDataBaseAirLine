@@ -1,5 +1,6 @@
 ﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting.FormConfiguration;
 using AdminingDataBaseAirLine.Properties;
 
 namespace AdminingDataBaseAirLine.Themes

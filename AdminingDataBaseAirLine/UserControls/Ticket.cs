@@ -33,15 +33,7 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 theme.ChangeToDarkTheme(ref IsLight);
             }
-
-            flightField.Text = _dataTicket.NumberTicket.ToString();
-            priceField.Text = _dataTicket.PriceTicket.ToString();
-            fromWField.Text = _dataTicket.FromWhereTicket;
-            whereField.Text = _dataTicket.WhereTicket;
-            deparField.Text = _dataTicket.DepartmentTicket.ToString();
-            arrivalField.Text = _dataTicket.ArrivalTicket.ToString();
-            modelAirPlaneField.Text = _dataTicket.ModelAirplane;
-            senderField.Text = _dataTicket.SenderTicket;
+            DataTicketBinder.BindTicketData(this,_dataTicket);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -56,15 +48,13 @@ namespace AdminingDataBaseAirLine.UserControls
 
             DataTicketControl dataTicket = new DataTicketControl();
             dataTicket.NumberTicket = int.Parse(flightField.Text);
-            dataTicket.PriceTicket = 15;
-            /*
+            dataTicket.PriceTicket = decimal.Parse(priceField.Text);         
             dataTicket.FromWhereTicket = fromWField.Text;
             dataTicket.WhereTicket = whereField.Text;
             dataTicket.DepartmentTicket = Convert.ToDateTime(deparField.Text);
             dataTicket.ArrivalTicket = Convert.ToDateTime(arrivalField.Text);
             dataTicket.ModelAirplane = modelAirPlaneField.Text;
-            dataTicket.SenderTicket = senderField.Text;
-            */
+            dataTicket.SenderTicket = senderField.Text;          
             _binder.Invoke(dataTicket);
         }
     }

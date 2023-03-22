@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
+namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.FormConfiguration
 {
     internal class CashierFormConfigurationBuilder
     {
