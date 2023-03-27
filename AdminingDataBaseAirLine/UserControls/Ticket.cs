@@ -1,4 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Themes;
+using AdminingDataBaseAirLine.UserControls.Config;
+using AdminingDataBaseAirLine.UserControls.Data;
+
 
 namespace AdminingDataBaseAirLine.UserControls
 {
@@ -22,10 +25,7 @@ namespace AdminingDataBaseAirLine.UserControls
             _dataTicket = control;
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Ticket_Load(object sender, EventArgs e)
         {
@@ -36,25 +36,13 @@ namespace AdminingDataBaseAirLine.UserControls
             DataTicketBinder.BindTicketData(this,_dataTicket);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
        
 
         private void Ticket_MouseClick(object sender, MouseEventArgs e)
         {
-
-            DataTicketControl dataTicket = new DataTicketControl();
-            dataTicket.NumberTicket = int.Parse(flightField.Text);
-            dataTicket.PriceTicket = decimal.Parse(priceField.Text);         
-            dataTicket.FromWhereTicket = fromWField.Text;
-            dataTicket.WhereTicket = whereField.Text;
-            dataTicket.DepartmentTicket = Convert.ToDateTime(deparField.Text);
-            dataTicket.ArrivalTicket = Convert.ToDateTime(arrivalField.Text);
-            dataTicket.ModelAirplane = modelAirPlaneField.Text;
-            dataTicket.SenderTicket = senderField.Text;          
+            DataTicketControl dataTicket = DataTicketBinder.GetDataTicket(this);   
             _binder.Invoke(dataTicket);
         }
     }

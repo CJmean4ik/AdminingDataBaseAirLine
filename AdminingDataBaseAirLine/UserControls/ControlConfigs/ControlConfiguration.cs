@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.UserControls
+namespace AdminingDataBaseAirLine.UserControls.Config
 {
     public class ControlConfiguration
     {

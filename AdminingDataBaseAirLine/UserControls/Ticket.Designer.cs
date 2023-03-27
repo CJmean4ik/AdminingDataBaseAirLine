@@ -66,8 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 39);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.TabIndex = 2;;
             // 
             // label2
             // 
@@ -157,7 +156,6 @@
             this.arrivalField.Size = new System.Drawing.Size(45, 25);
             this.arrivalField.TabIndex = 9;
             this.arrivalField.Text = "___";
-            this.arrivalField.Click += new System.EventHandler(this.label4_Click);
             // 
             // arrivalLabel
             // 

@@ -1,6 +1,5 @@
-﻿using AdminingDataBaseAirLine.Forms;
-using AdminingDataBaseAirLine.UserControls;
-using System.Windows.Forms;
+﻿using AdminingDataBaseAirLine.UserControls;
+using AdminingDataBaseAirLine.UserControls.Config;
 
 namespace AdminingDataBaseAirLine.Themes
 {

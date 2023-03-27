@@ -311,6 +311,17 @@
         KxL5ApxHD7JplY/lAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="AddButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnAxsJOTu3c3TFAAABA0lEQVR4Xu3ZTQ6CMBCGYe4HhJL4
+        dxOD3kX3Lih3UrmGdsgsTOnCVavt+ySz6Zgw/RJJqxUAAAAAAEAs7difG2tmrUGXy1CP/cFt+vVZrTU7
+        beevtubqByBr2s5fM3U3PwBZ03b+CIAACIAACIAACIAAsglAzvbL8VY29k1Zc18FIGuhzwZKn7XXx6dV
+        T90psJlYlf4W6YaQ62xouBg16xjpyBDeUDHroWOk44YYvKGilfv6HXWMtOTHjJgvwWbsL+7Fu9XH/59l
+        E34Abk3b+SMAAiAAAiAAAiAAAig2gNBfY3K81Xb+5O6wCmDqNtoug9u03CKfUj9zqwMAAAAAAAWoqjcb
+        kOIaYi3IjAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIADvMwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv

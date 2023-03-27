@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.UserControls.ControlConfigs
+namespace AdminingDataBaseAirLine.UserControls.Config
 {
     internal class ControlConfigurationBuilder
     {
@@ -14,7 +14,7 @@ namespace AdminingDataBaseAirLine.UserControls.ControlConfigs
         {
             configuration = new ControlConfiguration();
         }
-        public ControlConfigurationBuilder SetPanelColor(Color dark,Color light)
+        public ControlConfigurationBuilder SetPanelColor(Color dark, Color light)
         {
             configuration.ColorPanelWithLightTheme = light;
             configuration.ColorPanelWithDarkTheme = dark;
