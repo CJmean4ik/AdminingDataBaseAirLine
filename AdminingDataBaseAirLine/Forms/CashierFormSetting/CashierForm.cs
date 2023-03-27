@@ -19,10 +19,10 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
         private Dictionary<string, ButtonProperty> _buttonResourse;
 
-        private ButtonChanges _buttonChanges;
+        private readonly ButtonChanges _buttonChanges;
         private AirlineContext _airlineContext;
-        private CashierFormTheme _cashierFormTheme;
-        private ControlsTheme _ticketControlsTheme;
+        private readonly CashierFormTheme _cashierFormTheme;
+        private readonly ControlsTheme _ticketControlsTheme;
 
         private bool _ligthMode = true;
         private bool _isAdedItem;

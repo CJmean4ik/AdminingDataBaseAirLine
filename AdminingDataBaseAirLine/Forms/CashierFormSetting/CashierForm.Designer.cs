@@ -41,7 +41,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.PassengerButton = new System.Windows.Forms.Button();
             this.FlightButton = new System.Windows.Forms.Button();
             this.TicketButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.collapseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -77,7 +76,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel2 = new System.Windows.Forms.Panel();
             this.ticketDataLoad = new System.Windows.Forms.Label();
             this.BackPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.ticketPanel.SuspendLayout();
             this.SuspendLayout();
@@ -90,12 +88,11 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.BackPanel.Controls.Add(this.PassengerButton);
             this.BackPanel.Controls.Add(this.FlightButton);
             this.BackPanel.Controls.Add(this.TicketButton);
-            this.BackPanel.Controls.Add(this.pictureBox1);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.BackPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(101, 643);
+            this.BackPanel.Size = new System.Drawing.Size(85, 643);
             this.BackPanel.TabIndex = 0;
             // 
             // AccountButton
@@ -103,16 +100,15 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.AccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.AccountButton.FlatAppearance.BorderSize = 0;
             this.AccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AccountButton.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AccountButton.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AccountButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AccountButton.Image = ((System.Drawing.Image)(resources.GetObject("AccountButton.Image")));
+            this.AccountButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.settings_white;
             this.AccountButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AccountButton.Location = new System.Drawing.Point(0, 569);
+            this.AccountButton.Location = new System.Drawing.Point(0, 604);
             this.AccountButton.Name = "AccountButton";
             this.AccountButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AccountButton.Size = new System.Drawing.Size(101, 74);
+            this.AccountButton.Size = new System.Drawing.Size(85, 39);
             this.AccountButton.TabIndex = 5;
-            this.AccountButton.Text = "Особистий Кабінет";
             this.AccountButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AccountButton.UseVisualStyleBackColor = false;
             this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
@@ -122,13 +118,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.OrdersButton.FlatAppearance.BorderSize = 0;
             this.OrdersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrdersButton.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OrdersButton.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OrdersButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.OrdersButton.Image = ((System.Drawing.Image)(resources.GetObject("OrdersButton.Image")));
+            this.OrdersButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.orders_white;
             this.OrdersButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.OrdersButton.Location = new System.Drawing.Point(0, 437);
+            this.OrdersButton.Location = new System.Drawing.Point(-3, 298);
             this.OrdersButton.Name = "OrdersButton";
-            this.OrdersButton.Size = new System.Drawing.Size(101, 98);
+            this.OrdersButton.Size = new System.Drawing.Size(88, 65);
             this.OrdersButton.TabIndex = 4;
             this.OrdersButton.Text = "Замовлення";
             this.OrdersButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -140,13 +136,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.PassengerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.PassengerButton.FlatAppearance.BorderSize = 0;
             this.PassengerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PassengerButton.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PassengerButton.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PassengerButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.PassengerButton.Image = ((System.Drawing.Image)(resources.GetObject("PassengerButton.Image")));
+            this.PassengerButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.pass_white;
             this.PassengerButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PassengerButton.Location = new System.Drawing.Point(0, 339);
+            this.PassengerButton.Location = new System.Drawing.Point(0, 234);
             this.PassengerButton.Name = "PassengerButton";
-            this.PassengerButton.Size = new System.Drawing.Size(101, 92);
+            this.PassengerButton.Size = new System.Drawing.Size(85, 65);
             this.PassengerButton.TabIndex = 3;
             this.PassengerButton.Text = "Пасажири";
             this.PassengerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -158,13 +154,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.FlightButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.FlightButton.FlatAppearance.BorderSize = 0;
             this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FlightButton.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlightButton.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlightButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.FlightButton.Image = ((System.Drawing.Image)(resources.GetObject("FlightButton.Image")));
+            this.FlightButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.route_white;
             this.FlightButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.FlightButton.Location = new System.Drawing.Point(0, 245);
+            this.FlightButton.Location = new System.Drawing.Point(0, 170);
             this.FlightButton.Name = "FlightButton";
-            this.FlightButton.Size = new System.Drawing.Size(101, 89);
+            this.FlightButton.Size = new System.Drawing.Size(85, 65);
             this.FlightButton.TabIndex = 2;
             this.FlightButton.Text = "Рейси";
             this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -176,41 +172,29 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.TicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.TicketButton.FlatAppearance.BorderSize = 0;
             this.TicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketButton.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TicketButton.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TicketButton.ForeColor = System.Drawing.SystemColors.Control;
             this.TicketButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.ticket_white;
             this.TicketButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.TicketButton.Location = new System.Drawing.Point(0, 148);
+            this.TicketButton.Location = new System.Drawing.Point(0, 106);
             this.TicketButton.Name = "TicketButton";
-            this.TicketButton.Size = new System.Drawing.Size(101, 91);
+            this.TicketButton.Size = new System.Drawing.Size(85, 65);
             this.TicketButton.TabIndex = 1;
             this.TicketButton.Text = "Білети";
             this.TicketButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TicketButton.UseVisualStyleBackColor = false;
             this.TicketButton.Click += new System.EventHandler(this.TicketButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel1.Controls.Add(this.collapseButton);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.ThemeButton);
-            this.panel1.Location = new System.Drawing.Point(100, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(85, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 37);
+            this.panel1.Size = new System.Drawing.Size(1153, 37);
             this.panel1.TabIndex = 1;
             // 
             // collapseButton
@@ -222,7 +206,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
-            this.collapseButton.Location = new System.Drawing.Point(1065, 0);
+            this.collapseButton.Location = new System.Drawing.Point(1080, 0);
             this.collapseButton.Name = "collapseButton";
             this.collapseButton.Size = new System.Drawing.Size(33, 37);
             this.collapseButton.TabIndex = 3;
@@ -238,7 +222,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(1099, 0);
+            this.closeButton.Location = new System.Drawing.Point(1114, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(39, 37);
             this.closeButton.TabIndex = 2;
@@ -254,7 +238,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(952, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(967, 0);
             this.ThemeButton.Name = "ThemeButton";
             this.ThemeButton.Size = new System.Drawing.Size(39, 37);
             this.ThemeButton.TabIndex = 0;
@@ -646,7 +630,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.Text = "CashierForm";
             this.Load += new System.EventHandler(this.CashierForm_Load);
             this.BackPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ticketPanel.ResumeLayout(false);
             this.ticketPanel.PerformLayout();
@@ -672,9 +655,9 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                 ["flightButtonOpen"] = new ButtonPropertyBuilder()
                 .SetIsOpen(false)
                 .SetButton(FlightButton)
-                .SetWhiteImage(Resources.flight_white)
-                .SetBlueImage(Resources.flight_blue)
-                .SetDarkImage(Resources.flight_dark)
+                .SetWhiteImage(Resources.route_white)
+                .SetBlueImage(Resources.route_blue)
+                .SetDarkImage(Resources.route_dark)
                 .Build(),
 
 
@@ -682,24 +665,24 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                 .SetIsOpen(false)
                 .SetButton(PassengerButton)
                 .SetWhiteImage(Resources.pass_white)
-                .SetBlueImage(Resources.passenger_blue)
+                .SetBlueImage(Resources.pass_blue)
                 .SetDarkImage(Resources.pass_dark)
                 .Build(),
 
                 ["ordersButtonOpen"] = new ButtonPropertyBuilder()
                 .SetIsOpen(false)
                 .SetButton(OrdersButton)
-                .SetWhiteImage(Resources.order_white)
-                .SetBlueImage(Resources.receipt_blue)
-                .SetDarkImage(Resources.order_dark)
+                .SetWhiteImage(Resources.orders_white)
+                .SetBlueImage(Resources.orders_blue)
+                .SetDarkImage(Resources.orders_dark)
                 .Build(),
 
                 ["accountButtonOpen"] = new ButtonPropertyBuilder()
                 .SetIsOpen(false)
                 .SetButton(AccountButton)
-                .SetWhiteImage(Resources.profile_white)
-                .SetBlueImage(Resources.profile_blue)
-                .SetDarkImage(Resources.profile_dark)
+                .SetWhiteImage(Resources.settings_white)
+                .SetBlueImage(Resources.settings_blue)
+                .SetDarkImage(Resources.settings_dark)
                 .Build()
             };
 
@@ -722,8 +705,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                 .SetPurpleColor(Color.FromArgb(80, 81, 249))
                 .Build();
         }
-
-        private PictureBox pictureBox1;
         private Panel BackPanel;
         private Panel panel1;
         private Button TicketButton;

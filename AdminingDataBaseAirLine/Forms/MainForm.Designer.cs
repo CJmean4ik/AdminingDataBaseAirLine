@@ -193,7 +193,9 @@
             // ShowPasswordBtn
             // 
             this.ShowPasswordBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShowPasswordBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ShowPasswordBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.ShowPasswordBtn.CausesValidation = false;
             this.ShowPasswordBtn.FlatAppearance.BorderSize = 0;
             this.ShowPasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowPasswordBtn.ForeColor = System.Drawing.SystemColors.Control;
@@ -202,6 +204,7 @@
             this.ShowPasswordBtn.Name = "ShowPasswordBtn";
             this.ShowPasswordBtn.Size = new System.Drawing.Size(35, 36);
             this.ShowPasswordBtn.TabIndex = 10;
+            this.ShowPasswordBtn.TabStop = false;
             this.ShowPasswordBtn.UseVisualStyleBackColor = false;
             this.ShowPasswordBtn.Click += new System.EventHandler(this.ShowPasswordBtn_Click);
             // 
