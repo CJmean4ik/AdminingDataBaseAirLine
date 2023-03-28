@@ -1,12 +1,10 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
-using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD;
 using AdminingDataBaseAirLine.Themes;
 using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.Data;
-using DataBaseModel.Entities.RouteAndFlight;
 using System.Data.Entity;
-using Ticket = DataBaseModel.Entities.TicketAndOrders.Ticket;
 using TicketControl = AdminingDataBaseAirLine.UserControls.Ticket;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
@@ -19,16 +17,17 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
         private Dictionary<string, ButtonProperty> _buttonResourse;
 
-        private readonly ButtonChanges _buttonChanges;
+        private ButtonChanges _buttonChanges;
         private AirlineContext _airlineContext;
-        private readonly CashierFormTheme _cashierFormTheme;
-        private readonly ControlsTheme _ticketControlsTheme;
+        private CashierFormTheme _cashierFormTheme;
+        private ControlsTheme _ticketControlsTheme;
+        private ControlConfiguration _controlConfig;
+        private AddingTicket _addTicket;
 
         private bool _ligthMode = true;
         private bool _isAdedItem;
         private bool _isNowAdded;
         private bool _isLocal;
-        private readonly ControlConfiguration _controlConfig;
         #endregion
 
 
@@ -39,18 +38,25 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
         public CashierForm(AirlineContext airlineContext)
         {
-            InitializeComponent();
-            _buttonResourse = GetButtonProperties();
-            _buttonChanges = new ButtonChanges(_buttonResourse);
             _airlineContext = airlineContext;
-            _cashierFormTheme = new CashierFormTheme(this, _buttonResourse, GetFormConfiguration());
-            _ticketControlsTheme = new ControlsTheme(GetConfiguration());
-            _controlConfig = GetConfiguration();
+            InitializeComponent();
+            InitializeRelatedClass();
         }
         private void CashierForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void InitializeRelatedClass()
+        {
+            _buttonResourse = GetButtonProperties();
+            _buttonChanges = new ButtonChanges(_buttonResourse);        
+            _cashierFormTheme = new CashierFormTheme(this, _buttonResourse, GetFormConfiguration());
+            _ticketControlsTheme = new ControlsTheme(GetConfiguration());
+            _controlConfig = GetConfiguration();
+            _addTicket = new AddingTicket(this,_airlineContext);
+        }
+
 
         #region MethodsRelatedToTheForm
 
@@ -74,11 +80,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                     arivalTicketBox.Items.Add(route.Incoming);
                     departTicketBox.Items.Add(route.Departure);
                     fromWhereTicketBox.Items.Add(route.FromWhere);
+                    fromWhereTicketBox.Items.Add(route.Where);
                     whereTicketBox.Items.Add(route.Where);
+                    whereTicketBox.Items.Add(route.FromWhere);
                 }
-               
 
-                
+
+
                 for (int i = 0; i < data.Count; i++)
                 {
                     TicketControl ticket = new TicketControl(_ligthMode, _controlConfig, data[i]);
@@ -108,7 +116,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         }
         private void AirlineButton_Click(object sender, EventArgs e)
         {
-            _buttonChanges.ChangeButtonProperties("airlineButtonOpen",_ligthMode);
+            _buttonChanges.ChangeButtonProperties("airlineButtonOpen", _ligthMode);
         }
         private void AirplaneButton_Click(object sender, EventArgs e)
         {
@@ -198,96 +206,25 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
             if (!_isNowAdded)
             {
-                numberTicketBox.Text = "";
-                priceTicketBox.Text = "";
-                fromWhereTicketBox.Text = "";
-                whereTicketBox.Text = "";
-                departTicketBox.Text = "";
-                arivalTicketBox.Text = "";
-                airplaneTicketBox.Text = "";
-                senderTicketBox.Text = "";
-
-                numberTicketBox.Enabled = false;
-                AddButton.Image = Resources.checkmark__1_;
-                AddButton.Text = "Додати!";
+                _addTicket.PreperingForAddingTicket();
                 _isNowAdded = true;
-
                 return;
             }
 
-            #region Load data to Local Cash
-            if (!_isLocal)
-            {
-
-                await _airlineContext.Routes.LoadAsync();
-                await _airlineContext.AirlinePlanes.LoadAsync();
-                _isLocal = true;
-            }
-
-            #endregion
+            if (!_isLocal) _isLocal = await _addTicket.LoadDataToLocalCash();
 
 
             //Валидация
             //Сделать валидацию для TextBox,которые принимают значаение для добалвния нового билета 
 
+            DataTicketControl dataTicket = _addTicket.GetDataTicketControl();
 
+            //Проверка на существование маршрута 
 
+            //Проверка на существование рейса с введённой авиакомпании 
 
-            DataTicketControl dataTicket = new DataTicketControl();
-            dataTicket.PriceTicket = decimal.Parse(priceTicketBox.Text);
+            //Проверка на сущетсвование билета с таким рейсом 
 
-            dataTicket.FromWhereTicket = fromWhereTicketBox.Text;
-            dataTicket.WhereTicket = whereTicketBox.Text;
-            dataTicket.DepartmentTicket = DateTime.Parse(departTicketBox.Text);
-            dataTicket.ArrivalTicket = DateTime.Parse(arivalTicketBox.Text);
-
-            dataTicket.ModelAirplane = airplaneTicketBox.Text;
-            dataTicket.SenderTicket = senderTicketBox.Text;
-
-
-
-            Ticket ticketEntity = new Ticket();
-            ticketEntity.Price = dataTicket.PriceTicket;
-            ticketEntity.DataSales = DateTime.Now;
-
-            int? idRoute = _airlineContext.Routes.Local
-                 .Where(wr =>
-                 wr.FromWhere == dataTicket.FromWhereTicket &&
-                 wr.Where == dataTicket.WhereTicket &&
-                 wr.Departure == dataTicket.DepartmentTicket &&
-                 wr.Incoming == dataTicket.ArrivalTicket
-                 )
-                 .Select(s => s.ID)
-                 .FirstOrDefault();
-
-            if (idRoute != null)
-            {
-                warningExistLabel.Visible = true;
-                return;
-            }
-
-            Route route = new Route();
-            route.FromWhere = dataTicket.FromWhereTicket;
-            route.Where = dataTicket.WhereTicket;
-            route.Incoming = dataTicket.ArrivalTicket;
-            route.Departure = dataTicket.DepartmentTicket;
-
-            var routeAdded = _airlineContext.Routes.Add(route);
-
-            Flight flight = new Flight();
-
-            flight.AirlinePlaneId = _airlineContext.AirlinePlanes
-                .Where(s => s.AirLine.Name == dataTicket.SenderTicket && s.Airplane.Model == dataTicket.ModelAirplane)
-                .Select(s => s.AirplaneId)
-                .FirstOrDefault();
-            flight.RouteId = routeAdded.ID;
-
-            var flightAdded = _airlineContext.Flights.Add(flight);
-
-            ticketEntity.FlightId = flightAdded.NumberFlight;
-
-
-            _airlineContext.SaveChanges();
 
 
             TicketControl ticket = new TicketControl(_ligthMode, _controlConfig, dataTicket);
@@ -307,6 +244,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             arivalTicketBox.Text = DateTime.Now.ToString();
         }
 
-        
+
     }
 }

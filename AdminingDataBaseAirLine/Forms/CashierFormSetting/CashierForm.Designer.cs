@@ -3,11 +3,16 @@ using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting.FormConfiguration;
 using AdminingDataBaseAirLine.UserControls.Data;
+using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Themes;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
     partial class CashierForm
     {
+
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -36,6 +41,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AirplaneButton = new System.Windows.Forms.Button();
             this.AirlineButton = new System.Windows.Forms.Button();
             this.AccountButton = new System.Windows.Forms.Button();
@@ -49,7 +55,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton = new System.Windows.Forms.Button();
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ticketPanel = new System.Windows.Forms.Panel();
-            this.warningExistLabel = new System.Windows.Forms.Label();
             this.underliningPanel7 = new System.Windows.Forms.Panel();
             this.AddButton = new System.Windows.Forms.Button();
             this.underliningPanel8 = new System.Windows.Forms.Panel();
@@ -78,6 +83,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel2 = new System.Windows.Forms.Panel();
             this.ticketDataLoad = new System.Windows.Forms.Label();
             this.BackPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.ticketPanel.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +91,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // BackPanel
             // 
             this.BackPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.BackPanel.Controls.Add(this.pictureBox1);
             this.BackPanel.Controls.Add(this.AirplaneButton);
             this.BackPanel.Controls.Add(this.AirlineButton);
             this.BackPanel.Controls.Add(this.AccountButton);
@@ -98,6 +105,16 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(85, 643);
             this.BackPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // AirplaneButton
             // 
@@ -299,7 +316,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // ticketPanel
             // 
             this.ticketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ticketPanel.Controls.Add(this.warningExistLabel);
             this.ticketPanel.Controls.Add(this.underliningPanel7);
             this.ticketPanel.Controls.Add(this.AddButton);
             this.ticketPanel.Controls.Add(this.underliningPanel8);
@@ -331,18 +347,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ticketPanel.Size = new System.Drawing.Size(1108, 575);
             this.ticketPanel.TabIndex = 3;
             this.ticketPanel.Visible = false;
-            // 
-            // warningExistLabel
-            // 
-            this.warningExistLabel.AutoSize = true;
-            this.warningExistLabel.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.warningExistLabel.ForeColor = System.Drawing.Color.Red;
-            this.warningExistLabel.Location = new System.Drawing.Point(812, 352);
-            this.warningExistLabel.Name = "warningExistLabel";
-            this.warningExistLabel.Size = new System.Drawing.Size(240, 21);
-            this.warningExistLabel.TabIndex = 24;
-            this.warningExistLabel.Text = "Такий квиток вже існує!";
-            this.warningExistLabel.Visible = false;
             // 
             // underliningPanel7
             // 
@@ -679,6 +683,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.Text = "CashierForm";
             this.Load += new System.EventHandler(this.CashierForm_Load);
             this.BackPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ticketPanel.ResumeLayout(false);
             this.ticketPanel.PerformLayout();
@@ -689,6 +694,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
 
         #endregion
+    
         public Dictionary<string, ButtonProperty> GetButtonProperties()
         {
             return new Dictionary<string, ButtonProperty>()
@@ -771,6 +777,14 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                 .SetPurpleColor(Color.FromArgb(80, 81, 249))
                 .Build();
         }
+
+      
+
+       
+
+
+
+
         private Panel BackPanel;
         private Panel panel1;
         private Button TicketButton;
@@ -783,8 +797,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private Button closeButton;
         private FlowLayoutPanel flowTicketPanel;
         private Panel ticketPanel;
-        private TextBox numberTicketBox;
-        private TextBox priceTicketBox;
         private Label FlightLabel;
         private Label priceLabel;
         private Label ticketDataLoad;
@@ -803,17 +815,19 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private Panel underliningPanel1;
         private Button AddButton;
         private MenuStrip menuStrip1;
-        private ComboBox airplaneTicketBox;
+        private Button AirlineButton;
         private Panel panel2;
         private Panel underliningPanel7;
+        private TextBox numberTicketBox;
+        private TextBox priceTicketBox;
+        private ComboBox airplaneTicketBox;
         private ComboBox senderTicketBox;
-        private Label warningExistLabel;
-        private Button AirlineButton;
         private ComboBox departTicketBox;
         private ComboBox arivalTicketBox;
         private ComboBox fromWhereTicketBox;
         private ComboBox whereTicketBox;
         private Button AirplaneButton;
+        private PictureBox pictureBox1;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }
@@ -827,6 +841,15 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         public Button CloseButton { get => closeButton; set => closeButton = value; }
         public FlowLayoutPanel FlowTicketPanel { get => flowTicketPanel; set => flowTicketPanel = value; }
         public Panel TicketPanel { get => ticketPanel; set => ticketPanel = value; }
+        public ComboBox AirplaneTicketBox { get => airplaneTicketBox; set => airplaneTicketBox = value; }
+        public ComboBox SenderTicketBox { get => senderTicketBox; set => senderTicketBox = value; }
+        public ComboBox DepartTicketBox { get => departTicketBox; set => departTicketBox = value; }
+        public ComboBox ArivalTicketBox { get => arivalTicketBox; set => arivalTicketBox = value; }
+        public ComboBox FromWhereTicketBox { get => fromWhereTicketBox; set => fromWhereTicketBox = value; }
+        public ComboBox WhereTicketBox { get => whereTicketBox; set => whereTicketBox = value; }
+        public TextBox NumberTicketBox { get => numberTicketBox; set => numberTicketBox = value; }
+        public TextBox PriceTicketBox { get => priceTicketBox; set => priceTicketBox = value; }
+        public Button AddButton1 { get => AddButton; set => AddButton = value; }
     }
 }
 

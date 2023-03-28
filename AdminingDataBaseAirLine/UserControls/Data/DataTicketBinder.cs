@@ -1,4 +1,6 @@
-﻿namespace AdminingDataBaseAirLine.UserControls.Data
+﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting;
+
+namespace AdminingDataBaseAirLine.UserControls.Data
 {
     internal class DataTicketBinder
     {
@@ -20,6 +22,8 @@
             ticket.ModelAirPlaneField.Text = dataTicket.ModelAirplane;
             ticket.SenderField.Text = dataTicket.SenderTicket;
         }
+     
+
         /// <summary>
         /// Возвращает данные из Ticket в  виде обьекта DataTicketControl
         /// </summary>
