@@ -62,15 +62,23 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
             if (!_isAdedItem)
             {
-
-
                 _isAdedItem = true;
 
                 var data = await Task.Run(() => GetDataTicketControl());
+                await _airlineContext.Routes.LoadAsync();
                 airplaneTicketBox.Items.AddRange(_airlineContext.Airplanes.Select(s => s.Model).ToArray());
                 senderTicketBox.Items.AddRange(_airlineContext.AirlinePlanes.Select(s => s.SendingAirline).ToArray());
 
-                ticketDataLoad.Visible = false;
+                foreach (var route in _airlineContext.Routes.Local)
+                {
+                    arivalTicketBox.Items.Add(route.Incoming);
+                    departTicketBox.Items.Add(route.Departure);
+                    fromWhereTicketBox.Items.Add(route.FromWhere);
+                    whereTicketBox.Items.Add(route.Where);
+                }
+               
+
+                
                 for (int i = 0; i < data.Count; i++)
                 {
                     TicketControl ticket = new TicketControl(_ligthMode, _controlConfig, data[i]);
@@ -78,11 +86,8 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                     flowTicketPanel.Controls.Add(ticket);
                 }
                 ticketPanel.Visible = true;
-                flowTicketPanel.Visible = true;
-
-
+                ticketDataLoad.Visible = false;
             }
-            ticketPanel.Visible = true;
         }
         private void FlightButton_Click(object sender, EventArgs e)
         {
@@ -100,6 +105,14 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private void AccountButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("accountButtonOpen", _ligthMode);
+        }
+        private void AirlineButton_Click(object sender, EventArgs e)
+        {
+            _buttonChanges.ChangeButtonProperties("airlineButtonOpen",_ligthMode);
+        }
+        private void AirplaneButton_Click(object sender, EventArgs e)
+        {
+            _buttonChanges.ChangeButtonProperties("airplaneButtonOpen", _ligthMode);
         }
 
 
@@ -294,6 +307,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             arivalTicketBox.Text = DateTime.Now.ToString();
         }
 
-
+        
     }
 }

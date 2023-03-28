@@ -58,6 +58,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AirplaneButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnAxwIKTNvf7woAAACw0lEQVRYR+2Xv2tTURzFQ1tR0cHW
+        H6AOTg6iIlrspEUo6OSk/RNaBF0saNvFWhRxKtStCg51soo6KQ7WpYogKIIO2h8OEYkxaX606STEzwmH
+        Z9KkNYkvTj1wuPee789337vvJZF6kU6nL8HvmUzmG+Nly/8HFDxL4TnGdsajjDOw2+bGg6J3KdjnpRrq
+        k+Zl40HBCdjrpda90rxsPNYaWGtgrQHO/MPlDUjzsnGIxWKbKDQCU7DDshrqsDYiH8vhIpVKneBKv8Cn
+        zPdYDpBIJHbRwCP4FZ6y/O+gYCscg0kYbPtKwKcb/oATCwsL2y3XByeLO9k2y38FO7SFmKqbLkMymdzN
+        Nj6Gc/Ck5ZpBI5008Bk+q3TbypDP55vUMUUZ0mPxeHyzTXUjGo1uJNdNcmYZ+6nRbFMp5ufnD+LwBscP
+        MHjCwwI7cIj8b8n9jvGI5cJVb0C4jkEYYN1iUxmwt8Fz8AUxXZb1rHRJs63NchmUG/sA1BZfU20Fv2Y9
+        mc1m99qvBG5Qv4CewCXmzxk/Mi5/EUmTbUm+iikUqADVwmcSnykF52GrbQUQ2MQtOYY+Cn/CT7A/l8vt
+        lJ35iq9ikm/1eooiDOlxtv80OUvuPbqOd76kAY7aPpyvsp4lOMqoBg4XIoqAVtW3oCjfDPn04zXIxxg0
+        8AvjEHwP9Tq9Q1CndqGQpQKIqeljpFzKqdyuoVpDqq3gYXgfnsFxvWNWhf2rbqAYqqFazjFsuTaoGKyr
+        gVDA9j2gYI+XaqAHrfGfY4FC52GKU7Lfkl5iB6TBC5bCB/euhSsdpYhOx583maE3KTZ9im/ju85yeKDo
+        PfhqcXFxh6UyyCYfOG4pPJB0FrZrzhU2c6yOs74hai7Nfu3y1TxUkHSa7b3CqJ1IMNef01ui5wnZ7DPt
+        sPBA0oskfwkHdb8tB/AzMCgffIM/rqsjEvkN2uiIu0+eoawAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="collapseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
