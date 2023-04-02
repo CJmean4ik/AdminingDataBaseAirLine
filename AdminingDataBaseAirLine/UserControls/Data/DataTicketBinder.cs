@@ -42,5 +42,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
             dataTicket.SenderTicket = ticket.SenderField.Text;
             return dataTicket;
         }
+        
+
     }
 }

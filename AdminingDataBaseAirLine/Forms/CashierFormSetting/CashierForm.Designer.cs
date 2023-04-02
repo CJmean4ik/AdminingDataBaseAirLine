@@ -39,6 +39,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             this.BackPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,19 +56,22 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton = new System.Windows.Forms.Button();
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ticketPanel = new System.Windows.Forms.Panel();
-            this.underliningPanel7 = new System.Windows.Forms.Panel();
+            this.slidePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.SortingButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.FilterButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.underliningPanel1 = new System.Windows.Forms.Panel();
+            this.erorLabel = new System.Windows.Forms.Label();
+            this.underliningPanel7 = new System.Windows.Forms.Panel();
             this.underliningPanel8 = new System.Windows.Forms.Panel();
-            this.underliningPanel6 = new System.Windows.Forms.Panel();
-            this.underliningPanel5 = new System.Windows.Forms.Panel();
             this.underliningPanel4 = new System.Windows.Forms.Panel();
             this.underliningPanel3 = new System.Windows.Forms.Panel();
             this.underliningPanel2 = new System.Windows.Forms.Panel();
-            this.underliningPanel1 = new System.Windows.Forms.Panel();
             this.airPlaneLabel = new System.Windows.Forms.Label();
             this.senderLabel = new System.Windows.Forms.Label();
-            this.deparLabel = new System.Windows.Forms.Label();
-            this.arivalLabel = new System.Windows.Forms.Label();
             this.fromWhereLabel = new System.Windows.Forms.Label();
             this.whereLabel = new System.Windows.Forms.Label();
             this.FlightLabel = new System.Windows.Forms.Label();
@@ -76,16 +80,16 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.numberTicketBox = new System.Windows.Forms.TextBox();
             this.airplaneTicketBox = new System.Windows.Forms.ComboBox();
             this.senderTicketBox = new System.Windows.Forms.ComboBox();
-            this.departTicketBox = new System.Windows.Forms.ComboBox();
-            this.arivalTicketBox = new System.Windows.Forms.ComboBox();
             this.fromWhereTicketBox = new System.Windows.Forms.ComboBox();
             this.whereTicketBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ticketDataLoad = new System.Windows.Forms.Label();
+            this.SlideTicketTimer = new System.Windows.Forms.Timer(this.components);
             this.BackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.ticketPanel.SuspendLayout();
+            this.slidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
@@ -251,7 +255,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(85, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1153, 37);
+            this.panel1.Size = new System.Drawing.Size(1107, 37);
             this.panel1.TabIndex = 1;
             // 
             // collapseButton
@@ -263,7 +267,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.collapseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collapseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.collapseButton.Image = ((System.Drawing.Image)(resources.GetObject("collapseButton.Image")));
-            this.collapseButton.Location = new System.Drawing.Point(1080, 0);
+            this.collapseButton.Location = new System.Drawing.Point(1034, 0);
             this.collapseButton.Name = "collapseButton";
             this.collapseButton.Size = new System.Drawing.Size(33, 37);
             this.collapseButton.TabIndex = 3;
@@ -279,7 +283,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(1114, 0);
+            this.closeButton.Location = new System.Drawing.Point(1068, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(39, 37);
             this.closeButton.TabIndex = 2;
@@ -295,7 +299,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ThemeButton.Image = ((System.Drawing.Image)(resources.GetObject("ThemeButton.Image")));
-            this.ThemeButton.Location = new System.Drawing.Point(967, 0);
+            this.ThemeButton.Location = new System.Drawing.Point(921, 0);
             this.ThemeButton.Name = "ThemeButton";
             this.ThemeButton.Size = new System.Drawing.Size(39, 37);
             this.ThemeButton.TabIndex = 0;
@@ -306,29 +310,28 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             this.flowTicketPanel.AutoScroll = true;
             this.flowTicketPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.flowTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowTicketPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowTicketPanel.Location = new System.Drawing.Point(3, -1);
+            this.flowTicketPanel.Location = new System.Drawing.Point(3, 3);
             this.flowTicketPanel.Name = "flowTicketPanel";
-            this.flowTicketPanel.Size = new System.Drawing.Size(770, 575);
+            this.flowTicketPanel.Size = new System.Drawing.Size(773, 535);
             this.flowTicketPanel.TabIndex = 2;
             this.flowTicketPanel.WrapContents = false;
+            this.flowTicketPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowTicketPanel_Paint);
             // 
             // ticketPanel
             // 
             this.ticketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ticketPanel.Controls.Add(this.slidePanel);
+            this.ticketPanel.Controls.Add(this.underliningPanel1);
+            this.ticketPanel.Controls.Add(this.erorLabel);
             this.ticketPanel.Controls.Add(this.underliningPanel7);
-            this.ticketPanel.Controls.Add(this.AddButton);
             this.ticketPanel.Controls.Add(this.underliningPanel8);
-            this.ticketPanel.Controls.Add(this.underliningPanel6);
-            this.ticketPanel.Controls.Add(this.underliningPanel5);
             this.ticketPanel.Controls.Add(this.underliningPanel4);
             this.ticketPanel.Controls.Add(this.underliningPanel3);
             this.ticketPanel.Controls.Add(this.underliningPanel2);
-            this.ticketPanel.Controls.Add(this.underliningPanel1);
             this.ticketPanel.Controls.Add(this.airPlaneLabel);
             this.ticketPanel.Controls.Add(this.senderLabel);
-            this.ticketPanel.Controls.Add(this.deparLabel);
-            this.ticketPanel.Controls.Add(this.arivalLabel);
             this.ticketPanel.Controls.Add(this.fromWhereLabel);
             this.ticketPanel.Controls.Add(this.whereLabel);
             this.ticketPanel.Controls.Add(this.FlightLabel);
@@ -338,114 +341,212 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ticketPanel.Controls.Add(this.flowTicketPanel);
             this.ticketPanel.Controls.Add(this.airplaneTicketBox);
             this.ticketPanel.Controls.Add(this.senderTicketBox);
-            this.ticketPanel.Controls.Add(this.departTicketBox);
-            this.ticketPanel.Controls.Add(this.arivalTicketBox);
             this.ticketPanel.Controls.Add(this.fromWhereTicketBox);
             this.ticketPanel.Controls.Add(this.whereTicketBox);
-            this.ticketPanel.Location = new System.Drawing.Point(118, 57);
+            this.ticketPanel.Location = new System.Drawing.Point(103, 60);
             this.ticketPanel.Name = "ticketPanel";
-            this.ticketPanel.Size = new System.Drawing.Size(1108, 575);
+            this.ticketPanel.Size = new System.Drawing.Size(1078, 574);
             this.ticketPanel.TabIndex = 3;
             this.ticketPanel.Visible = false;
+            this.ticketPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ticketPanel_Paint);
             // 
-            // underliningPanel7
+            // slidePanel
             // 
-            this.underliningPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.underliningPanel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel7.Location = new System.Drawing.Point(779, 340);
-            this.underliningPanel7.Name = "underliningPanel7";
-            this.underliningPanel7.Size = new System.Drawing.Size(121, 6);
-            this.underliningPanel7.TabIndex = 20;
+            this.slidePanel.Controls.Add(this.button1);
+            this.slidePanel.Controls.Add(this.RemoveButton);
+            this.slidePanel.Controls.Add(this.SortingButton);
+            this.slidePanel.Controls.Add(this.AddButton);
+            this.slidePanel.Controls.Add(this.FilterButton);
+            this.slidePanel.Controls.Add(this.UpdateButton);
+            this.slidePanel.Location = new System.Drawing.Point(777, 3);
+            this.slidePanel.MaximumSize = new System.Drawing.Size(348, 95);
+            this.slidePanel.MinimumSize = new System.Drawing.Size(300, 15);
+            this.slidePanel.Name = "slidePanel";
+            this.slidePanel.Size = new System.Drawing.Size(300, 15);
+            this.slidePanel.TabIndex = 34;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::AdminingDataBaseAirLine.Properties.Resources.angle_small_down;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(300, 15);
+            this.button1.TabIndex = 35;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.RemoveButton.BackColor = System.Drawing.SystemColors.Control;
+            this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.RemoveButton.FlatAppearance.BorderSize = 2;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RemoveButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.RemoveButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveButton.Image")));
+            this.RemoveButton.Location = new System.Drawing.Point(121, -46);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(53, 42);
+            this.RemoveButton.TabIndex = 31;
+            this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // SortingButton
+            // 
+            this.SortingButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SortingButton.BackColor = System.Drawing.SystemColors.Control;
+            this.SortingButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.SortingButton.FlatAppearance.BorderSize = 2;
+            this.SortingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortingButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SortingButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.SortingButton.Image = ((System.Drawing.Image)(resources.GetObject("SortingButton.Image")));
+            this.SortingButton.Location = new System.Drawing.Point(239, -45);
+            this.SortingButton.Name = "SortingButton";
+            this.SortingButton.Size = new System.Drawing.Size(53, 42);
+            this.SortingButton.TabIndex = 33;
+            this.SortingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SortingButton.UseVisualStyleBackColor = false;
             // 
             // AddButton
             // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AddButton.BackColor = System.Drawing.SystemColors.Control;
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.AddButton.FlatAppearance.BorderSize = 2;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
-            this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AddButton.Location = new System.Drawing.Point(812, 511);
+            this.AddButton.Image = global::AdminingDataBaseAirLine.Properties.Resources.add;
+            this.AddButton.Location = new System.Drawing.Point(3, -46);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(260, 62);
+            this.AddButton.Size = new System.Drawing.Size(53, 42);
             this.AddButton.TabIndex = 20;
-            this.AddButton.Text = "додати новий білет";
             this.AddButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // FilterButton
+            // 
+            this.FilterButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.FilterButton.BackColor = System.Drawing.SystemColors.Control;
+            this.FilterButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.FilterButton.FlatAppearance.BorderSize = 2;
+            this.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FilterButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FilterButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.FilterButton.Image = ((System.Drawing.Image)(resources.GetObject("FilterButton.Image")));
+            this.FilterButton.Location = new System.Drawing.Point(180, -46);
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.Size = new System.Drawing.Size(53, 42);
+            this.FilterButton.TabIndex = 32;
+            this.FilterButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FilterButton.UseVisualStyleBackColor = false;
+            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.UpdateButton.BackColor = System.Drawing.SystemColors.Control;
+            this.UpdateButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.UpdateButton.FlatAppearance.BorderSize = 2;
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UpdateButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.UpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateButton.Image")));
+            this.UpdateButton.Location = new System.Drawing.Point(62, -46);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(53, 42);
+            this.UpdateButton.TabIndex = 30;
+            this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // underliningPanel1
+            // 
+            this.underliningPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.underliningPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.underliningPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.underliningPanel1.Location = new System.Drawing.Point(782, 329);
+            this.underliningPanel1.Name = "underliningPanel1";
+            this.underliningPanel1.Size = new System.Drawing.Size(121, 8);
+            this.underliningPanel1.TabIndex = 19;
+            // 
+            // erorLabel
+            // 
+            this.erorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.erorLabel.AutoSize = true;
+            this.erorLabel.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.erorLabel.ForeColor = System.Drawing.Color.Red;
+            this.erorLabel.Location = new System.Drawing.Point(782, 521);
+            this.erorLabel.Name = "erorLabel";
+            this.erorLabel.Size = new System.Drawing.Size(40, 17);
+            this.erorLabel.TabIndex = 29;
+            this.erorLabel.Text = "EROR";
+            this.erorLabel.Visible = false;
+            // 
+            // underliningPanel7
+            // 
+            this.underliningPanel7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.underliningPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.underliningPanel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.underliningPanel7.Location = new System.Drawing.Point(782, 506);
+            this.underliningPanel7.Name = "underliningPanel7";
+            this.underliningPanel7.Size = new System.Drawing.Size(121, 8);
+            this.underliningPanel7.TabIndex = 20;
+            // 
             // underliningPanel8
             // 
+            this.underliningPanel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.underliningPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.underliningPanel8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel8.Location = new System.Drawing.Point(972, 340);
+            this.underliningPanel8.Location = new System.Drawing.Point(937, 509);
             this.underliningPanel8.Name = "underliningPanel8";
-            this.underliningPanel8.Size = new System.Drawing.Size(121, 6);
+            this.underliningPanel8.Size = new System.Drawing.Size(121, 8);
             this.underliningPanel8.TabIndex = 19;
-            // 
-            // underliningPanel6
-            // 
-            this.underliningPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.underliningPanel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel6.Location = new System.Drawing.Point(972, 238);
-            this.underliningPanel6.Name = "underliningPanel6";
-            this.underliningPanel6.Size = new System.Drawing.Size(121, 6);
-            this.underliningPanel6.TabIndex = 19;
-            // 
-            // underliningPanel5
-            // 
-            this.underliningPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.underliningPanel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel5.Location = new System.Drawing.Point(779, 238);
-            this.underliningPanel5.Name = "underliningPanel5";
-            this.underliningPanel5.Size = new System.Drawing.Size(121, 6);
-            this.underliningPanel5.TabIndex = 19;
             // 
             // underliningPanel4
             // 
+            this.underliningPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.underliningPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.underliningPanel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel4.Location = new System.Drawing.Point(972, 152);
+            this.underliningPanel4.Location = new System.Drawing.Point(937, 410);
             this.underliningPanel4.Name = "underliningPanel4";
-            this.underliningPanel4.Size = new System.Drawing.Size(121, 6);
+            this.underliningPanel4.Size = new System.Drawing.Size(121, 8);
             this.underliningPanel4.TabIndex = 19;
             // 
             // underliningPanel3
             // 
+            this.underliningPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.underliningPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.underliningPanel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel3.Location = new System.Drawing.Point(779, 152);
+            this.underliningPanel3.Location = new System.Drawing.Point(782, 407);
             this.underliningPanel3.Name = "underliningPanel3";
-            this.underliningPanel3.Size = new System.Drawing.Size(121, 6);
+            this.underliningPanel3.Size = new System.Drawing.Size(121, 8);
             this.underliningPanel3.TabIndex = 19;
             // 
             // underliningPanel2
             // 
+            this.underliningPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.underliningPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.underliningPanel2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel2.Location = new System.Drawing.Point(972, 74);
+            this.underliningPanel2.Location = new System.Drawing.Point(937, 332);
             this.underliningPanel2.Name = "underliningPanel2";
-            this.underliningPanel2.Size = new System.Drawing.Size(121, 6);
+            this.underliningPanel2.Size = new System.Drawing.Size(121, 8);
             this.underliningPanel2.TabIndex = 19;
-            // 
-            // underliningPanel1
-            // 
-            this.underliningPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.underliningPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.underliningPanel1.Location = new System.Drawing.Point(779, 74);
-            this.underliningPanel1.Name = "underliningPanel1";
-            this.underliningPanel1.Size = new System.Drawing.Size(121, 6);
-            this.underliningPanel1.TabIndex = 19;
             // 
             // airPlaneLabel
             // 
+            this.airPlaneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.airPlaneLabel.AutoSize = true;
             this.airPlaneLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.airPlaneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.airPlaneLabel.Location = new System.Drawing.Point(779, 265);
+            this.airPlaneLabel.Location = new System.Drawing.Point(782, 431);
             this.airPlaneLabel.Name = "airPlaneLabel";
             this.airPlaneLabel.Size = new System.Drawing.Size(89, 50);
             this.airPlaneLabel.TabIndex = 14;
@@ -453,47 +554,24 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // senderLabel
             // 
+            this.senderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.senderLabel.AutoSize = true;
             this.senderLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.senderLabel.Location = new System.Drawing.Point(972, 261);
+            this.senderLabel.Location = new System.Drawing.Point(937, 430);
             this.senderLabel.Name = "senderLabel";
             this.senderLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.senderLabel.Size = new System.Drawing.Size(133, 50);
             this.senderLabel.TabIndex = 15;
             this.senderLabel.Text = "Авіа-комп\r\nвідправник:";
             // 
-            // deparLabel
-            // 
-            this.deparLabel.AutoSize = true;
-            this.deparLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deparLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.deparLabel.Location = new System.Drawing.Point(779, 185);
-            this.deparLabel.Name = "deparLabel";
-            this.deparLabel.Size = new System.Drawing.Size(111, 25);
-            this.deparLabel.TabIndex = 10;
-            this.deparLabel.Text = "Відп-ння:";
-            // 
-            // arivalLabel
-            // 
-            this.arivalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.arivalLabel.AutoSize = true;
-            this.arivalLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.arivalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.arivalLabel.Location = new System.Drawing.Point(972, 185);
-            this.arivalLabel.Name = "arivalLabel";
-            this.arivalLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.arivalLabel.Size = new System.Drawing.Size(100, 25);
-            this.arivalLabel.TabIndex = 11;
-            this.arivalLabel.Text = "Прибутя:";
-            // 
             // fromWhereLabel
             // 
+            this.fromWhereLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fromWhereLabel.AutoSize = true;
             this.fromWhereLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWhereLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.fromWhereLabel.Location = new System.Drawing.Point(779, 98);
+            this.fromWhereLabel.Location = new System.Drawing.Point(782, 353);
             this.fromWhereLabel.Name = "fromWhereLabel";
             this.fromWhereLabel.Size = new System.Drawing.Size(89, 25);
             this.fromWhereLabel.TabIndex = 6;
@@ -501,12 +579,11 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // whereLabel
             // 
-            this.whereLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.whereLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.whereLabel.AutoSize = true;
             this.whereLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.whereLabel.Location = new System.Drawing.Point(972, 98);
+            this.whereLabel.Location = new System.Drawing.Point(937, 356);
             this.whereLabel.Name = "whereLabel";
             this.whereLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whereLabel.Size = new System.Drawing.Size(67, 25);
@@ -515,10 +592,11 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // FlightLabel
             // 
+            this.FlightLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlightLabel.AutoSize = true;
             this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.FlightLabel.Location = new System.Drawing.Point(779, 22);
+            this.FlightLabel.Location = new System.Drawing.Point(782, 277);
             this.FlightLabel.Name = "FlightLabel";
             this.FlightLabel.Size = new System.Drawing.Size(100, 25);
             this.FlightLabel.TabIndex = 6;
@@ -526,12 +604,11 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // priceLabel
             // 
-            this.priceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceLabel.Location = new System.Drawing.Point(972, 22);
+            this.priceLabel.Location = new System.Drawing.Point(937, 280);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.priceLabel.Size = new System.Drawing.Size(67, 25);
@@ -540,36 +617,35 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // priceTicketBox
             // 
-            this.priceTicketBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.priceTicketBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceTicketBox.Location = new System.Drawing.Point(972, 48);
+            this.priceTicketBox.Location = new System.Drawing.Point(937, 306);
             this.priceTicketBox.Name = "priceTicketBox";
             this.priceTicketBox.Size = new System.Drawing.Size(121, 26);
             this.priceTicketBox.TabIndex = 4;
             // 
             // numberTicketBox
             // 
-            this.numberTicketBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.numberTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numberTicketBox.BackColor = System.Drawing.SystemColors.Window;
             this.numberTicketBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numberTicketBox.Location = new System.Drawing.Point(779, 48);
+            this.numberTicketBox.Location = new System.Drawing.Point(782, 303);
             this.numberTicketBox.Name = "numberTicketBox";
             this.numberTicketBox.Size = new System.Drawing.Size(121, 26);
             this.numberTicketBox.TabIndex = 3;
             // 
             // airplaneTicketBox
             // 
+            this.airplaneTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.airplaneTicketBox.DropDownHeight = 100;
             this.airplaneTicketBox.DropDownWidth = 120;
             this.airplaneTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.airplaneTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.airplaneTicketBox.FormattingEnabled = true;
             this.airplaneTicketBox.IntegralHeight = false;
-            this.airplaneTicketBox.Location = new System.Drawing.Point(779, 314);
+            this.airplaneTicketBox.Location = new System.Drawing.Point(782, 480);
             this.airplaneTicketBox.Name = "airplaneTicketBox";
             this.airplaneTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.airplaneTicketBox.Size = new System.Drawing.Size(121, 33);
@@ -577,55 +653,29 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // senderTicketBox
             // 
+            this.senderTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.senderTicketBox.DropDownHeight = 100;
             this.senderTicketBox.DropDownWidth = 120;
             this.senderTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.senderTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderTicketBox.FormattingEnabled = true;
             this.senderTicketBox.IntegralHeight = false;
-            this.senderTicketBox.Location = new System.Drawing.Point(972, 313);
+            this.senderTicketBox.Location = new System.Drawing.Point(937, 482);
             this.senderTicketBox.Name = "senderTicketBox";
             this.senderTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.senderTicketBox.Size = new System.Drawing.Size(121, 33);
             this.senderTicketBox.TabIndex = 23;
             // 
-            // departTicketBox
-            // 
-            this.departTicketBox.DropDownHeight = 100;
-            this.departTicketBox.DropDownWidth = 120;
-            this.departTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.departTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.departTicketBox.FormattingEnabled = true;
-            this.departTicketBox.IntegralHeight = false;
-            this.departTicketBox.Location = new System.Drawing.Point(779, 211);
-            this.departTicketBox.Name = "departTicketBox";
-            this.departTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.departTicketBox.Size = new System.Drawing.Size(121, 33);
-            this.departTicketBox.TabIndex = 25;
-            // 
-            // arivalTicketBox
-            // 
-            this.arivalTicketBox.DropDownHeight = 100;
-            this.arivalTicketBox.DropDownWidth = 120;
-            this.arivalTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.arivalTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.arivalTicketBox.FormattingEnabled = true;
-            this.arivalTicketBox.IntegralHeight = false;
-            this.arivalTicketBox.Location = new System.Drawing.Point(972, 211);
-            this.arivalTicketBox.Name = "arivalTicketBox";
-            this.arivalTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.arivalTicketBox.Size = new System.Drawing.Size(121, 33);
-            this.arivalTicketBox.TabIndex = 28;
-            // 
             // fromWhereTicketBox
             // 
+            this.fromWhereTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fromWhereTicketBox.DropDownHeight = 100;
             this.fromWhereTicketBox.DropDownWidth = 120;
             this.fromWhereTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fromWhereTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWhereTicketBox.FormattingEnabled = true;
             this.fromWhereTicketBox.IntegralHeight = false;
-            this.fromWhereTicketBox.Location = new System.Drawing.Point(779, 125);
+            this.fromWhereTicketBox.Location = new System.Drawing.Point(782, 380);
             this.fromWhereTicketBox.Name = "fromWhereTicketBox";
             this.fromWhereTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fromWhereTicketBox.Size = new System.Drawing.Size(121, 33);
@@ -633,13 +683,14 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             // 
             // whereTicketBox
             // 
+            this.whereTicketBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.whereTicketBox.DropDownHeight = 100;
             this.whereTicketBox.DropDownWidth = 120;
             this.whereTicketBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.whereTicketBox.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereTicketBox.FormattingEnabled = true;
             this.whereTicketBox.IntegralHeight = false;
-            this.whereTicketBox.Location = new System.Drawing.Point(972, 125);
+            this.whereTicketBox.Location = new System.Drawing.Point(937, 383);
             this.whereTicketBox.Name = "whereTicketBox";
             this.whereTicketBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whereTicketBox.Size = new System.Drawing.Size(121, 33);
@@ -666,12 +717,17 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.ticketDataLoad.Text = "Завантаження даних... ";
             this.ticketDataLoad.Visible = false;
             // 
+            // SlideTicketTimer
+            // 
+            this.SlideTicketTimer.Interval = 10;
+            this.SlideTicketTimer.Tick += new System.EventHandler(this.SlideTicketTimer_Tick);
+            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1238, 643);
+            this.ClientSize = new System.Drawing.Size(1192, 643);
             this.Controls.Add(this.ticketPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackPanel);
@@ -687,6 +743,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel1.ResumeLayout(false);
             this.ticketPanel.ResumeLayout(false);
             this.ticketPanel.PerformLayout();
+            this.slidePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -802,13 +859,9 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private Label ticketDataLoad;
         private Label fromWhereLabel;
         private Label whereLabel;
-        private Label deparLabel;
-        private Label arivalLabel;
         private Label airPlaneLabel;
         private Label senderLabel;
         private Panel underliningPanel8;
-        private Panel underliningPanel6;
-        private Panel underliningPanel5;
         private Panel underliningPanel4;
         private Panel underliningPanel3;
         private Panel underliningPanel2;
@@ -822,12 +875,18 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private TextBox priceTicketBox;
         private ComboBox airplaneTicketBox;
         private ComboBox senderTicketBox;
-        private ComboBox departTicketBox;
-        private ComboBox arivalTicketBox;
         private ComboBox fromWhereTicketBox;
         private ComboBox whereTicketBox;
         private Button AirplaneButton;
         private PictureBox pictureBox1;
+        private Label erorLabel;
+        private Button UpdateButton;
+        private Button RemoveButton;
+        private Button FilterButton;
+        private Panel slidePanel;
+        private Button button1;
+        private Button SortingButton;
+        private System.Windows.Forms.Timer SlideTicketTimer;
 
         public Panel BackPanel_P { get => BackPanel; set => BackPanel = value; }
         public Panel Panel_P { get => panel1; set => panel1 = value; }
@@ -843,13 +902,14 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         public Panel TicketPanel { get => ticketPanel; set => ticketPanel = value; }
         public ComboBox AirplaneTicketBox { get => airplaneTicketBox; set => airplaneTicketBox = value; }
         public ComboBox SenderTicketBox { get => senderTicketBox; set => senderTicketBox = value; }
-        public ComboBox DepartTicketBox { get => departTicketBox; set => departTicketBox = value; }
-        public ComboBox ArivalTicketBox { get => arivalTicketBox; set => arivalTicketBox = value; }
         public ComboBox FromWhereTicketBox { get => fromWhereTicketBox; set => fromWhereTicketBox = value; }
         public ComboBox WhereTicketBox { get => whereTicketBox; set => whereTicketBox = value; }
         public TextBox NumberTicketBox { get => numberTicketBox; set => numberTicketBox = value; }
         public TextBox PriceTicketBox { get => priceTicketBox; set => priceTicketBox = value; }
         public Button AddButton1 { get => AddButton; set => AddButton = value; }
+        public Label ErorLabel { get => erorLabel; set => erorLabel = value; }
+        public Button UpdateButton1 { get => UpdateButton; set => UpdateButton = value; }
+        public Button RemoveButton1 { get => RemoveButton; set => RemoveButton = value; }
     }
 }
 
