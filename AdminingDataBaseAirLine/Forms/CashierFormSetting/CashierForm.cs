@@ -3,11 +3,13 @@ using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.Themes;
+using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.Data;
 using DataBaseModel.Entities.TicketAndOrders;
 using System.Data.Entity;
-using TicketControl = AdminingDataBaseAirLine.UserControls.Ticket;
+
+using TicketControl = AdminingDataBaseAirLine.UserControls.TicketControl;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
@@ -25,6 +27,9 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private ControlsTheme _ticketControlsTheme;
         private ControlConfiguration _controlConfig;
         private AddingTicket _addTicket;
+        private UpdatingTicket _updateTicket;
+        private RemovingTicket _removeTicket;
+
 
         private bool _ligthMode = true;
         private bool _isAdedItem;
@@ -53,11 +58,13 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private void InitializeRelatedClass()
         {
             _buttonResourse = GetButtonProperties();
-            _buttonChanges = new ButtonChanges(_buttonResourse);        
+            _buttonChanges = new ButtonChanges(_buttonResourse);
             _cashierFormTheme = new CashierFormTheme(this, _buttonResourse, GetFormConfiguration());
             _ticketControlsTheme = new ControlsTheme(GetConfiguration());
             _controlConfig = GetConfiguration();
-            _addTicket = new AddingTicket(this,_airlineContext);
+            _addTicket = new AddingTicket(this, _airlineContext);
+            _updateTicket = new UpdatingTicket(this, _airlineContext);
+            _removeTicket = new RemovingTicket(this,_airlineContext);
         }
 
 
@@ -80,7 +87,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
                 foreach (var route in _airlineContext.Routes.Local)
                 {
-                   
+
                     fromWhereTicketBox.Items.Add(route.FromWhere);
                     fromWhereTicketBox.Items.Add(route.Where);
                     whereTicketBox.Items.Add(route.Where);
@@ -94,7 +101,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                     TicketControl ticket = new TicketControl(_ligthMode, _controlConfig, dataTicket);
                     ticket.Binder += BindDataForBoxFormTicket;
                     flowTicketPanel.Controls.Add(ticket);
-                }           
+                }
                 ticketPanel.Visible = true;
                 ticketDataLoad.Visible = false;
             }
@@ -124,16 +131,100 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         {
             _buttonChanges.ChangeButtonProperties("airplaneButtonOpen", _ligthMode);
         }
-        private void ticketPanel_Paint(object sender, PaintEventArgs e)
+
+        private async void UpdateButton_Click(object sender, EventArgs e)
         {
 
-        }
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
+            if (_updateTicket.ErorIsActive)
+            {
+                erorLabel.Visible = false;
+                _updateTicket.ErorIsActive = false;
+                return;
+            }
 
+            if (!_updateTicket.IsNowUpdate)
+            {
+                _updateTicket.PreperingUpdateTicket();
+                _updateTicket.IsNowUpdate = true;
+                return;
+            }
+
+            if (!_updateTicket.ChekingOnNotEmptryPriceAndNumber(priceTicketBox.Text, numberTicketBox.Text)) return;
+
+
+            var priceTicket = _updateTicket.GetTicketPriceById(int.Parse(numberTicketBox.Text));
+
+            if (!_updateTicket.ChekingOnNotOldValuePrice(priceTicket)) return;
+
+
+
+            Ticket ticket = new Ticket()
+            {
+                NumberTicket = int.Parse(numberTicketBox.Text),
+            };
+
+
+
+            if (!_updateTicket.EntryTicket.ContainsKey(ticket.NumberTicket))
+            {
+                _updateTicket.EntryTicket.Add(ticket.NumberTicket, true);
+                _airlineContext.Tickets.Attach(ticket);
+            }
+            else
+            {
+                ticket = _airlineContext.Tickets
+                    .Where(w => w.NumberTicket == ticket.NumberTicket)
+                    .FirstOrDefault()!;
+            }
+            ticket.Price = decimal.Parse(priceTicketBox.Text);
+            _airlineContext.Entry(ticket).Property(p => p.Price).IsModified = true;
+
+            foreach (UserControls.TicketControl ticketControl in flowTicketPanel.Controls)
+            {
+                if (ticketControl.FlightField.Text == numberTicketBox.Text)
+                {
+                    ticketControl.PriceField.Text = priceTicketBox.Text;
+                    break;
+                }
+            }
+
+            await _airlineContext.SaveChangesAsync();
+            erorLabel.Visible = false;
+            _updateTicket.ReturnStateUpdateButton();
         }
-        private void RemoveButton_Click(object sender, EventArgs e)
+        private async void RemoveButton_Click(object sender, EventArgs e)
         {
+            if (_removeTicket.ErorIsActive)
+            {
+                erorLabel.Visible = false;
+                _removeTicket.ErorIsActive = false;
+                return;
+            }
+            if (!_removeTicket.IsNowRemove)
+            {
+                _removeTicket.PreperingDeleteTicket();
+                _removeTicket.IsNowRemove = true;
+                return;
+            }
+            if (!_removeTicket.ChekingOnNotEmptryIdTicket(numberTicketBox.Text)) return;
+
+            Ticket ticket = new Ticket();
+            if (!_removeTicket.ContainsEntityById(int.Parse(numberTicketBox.Text),ref ticket)) return;
+            
+             _airlineContext.Tickets.Remove(ticket);
+
+          await _airlineContext.SaveChangesAsync();
+
+            _removeTicket.ReturnStateUpdateButton();
+
+            foreach (UserControls.TicketControl ticketControl in flowTicketPanel.Controls)
+            {
+                if (ticketControl.FlightField.Text == numberTicketBox.Text)
+                {
+                    flowTicketPanel.Controls.Remove(ticketControl);
+                    break;
+                }
+            }
 
         }
         private void FilterButton_Click(object sender, EventArgs e)
@@ -213,11 +304,12 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         }
 
 
+
         private async void AddButton_Click(object sender, EventArgs e)
         {
+
+
             _addTicket.ErorHandling();
-
-
             if (!_isNowAdded)
             {
                 _addTicket.PreperingForAddingTicket();
@@ -239,10 +331,10 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             //Проверка на существование маршрута 
 
 
-           var route = _airlineContext.Routes.Local
-                .Where(w => w.FromWhere == dataTicket.FromWhereTicket && w.Where == dataTicket.WhereTicket)
-                .Select(S => new {id = S.ID, incom = S.Incoming, depar = S.Departure})
-                .FirstOrDefault();
+            var route = _airlineContext.Routes.Local
+                 .Where(w => w.FromWhere == dataTicket.FromWhereTicket && w.Where == dataTicket.WhereTicket)
+                 .Select(S => new { id = S.ID, incom = S.Incoming, depar = S.Departure })
+                 .FirstOrDefault();
 
             if (route == null)
             {
@@ -260,7 +352,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
 
             var airlineplane = _airlineContext.AirlinePlanes.Local
-                .Where(w => w.SendingAirline == dataTicket.SenderTicket  && w.Airplane.Model == dataTicket.ModelAirplane)
+                .Where(w => w.SendingAirline == dataTicket.SenderTicket && w.Airplane.Model == dataTicket.ModelAirplane)
                 .Select(s => s.ID)
                 .FirstOrDefault();
 
@@ -295,7 +387,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
             if (tickt != 0)
             {
-                erorLabel.Text = "Даниій квиток існує";
+                erorLabel.Text = "Даний квиток існує";
                 erorLabel.Visible = true;
                 _addTicket.ErorIsActive = true;
                 return;
@@ -308,13 +400,14 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
             _airlineContext.Tickets.Add(ticket);
 
-            await _airlineContext.SaveChangesAsync(); 
+            await _airlineContext.SaveChangesAsync();
 
             TicketControl ticketControl = new TicketControl(_ligthMode, _controlConfig, dataTicket);
             flowTicketPanel.Controls.Add(ticketControl);
-        }
+            numberTicketBox.Enabled = true;
 
-   
+            _addTicket.ReturnStateAddButton();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             SlideTicketTimer.Start();
@@ -324,7 +417,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         {
             if (_isExpand)
             {
-                slidePanel.Height += 5;
+                slidePanel.Height += 20;
                 if (slidePanel.Height == slidePanel.MaximumSize.Height)
                 {
                     SlideTicketTimer.Stop();
@@ -335,7 +428,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             }
             if (!_isExpand)
             {
-                slidePanel.Height -= 5;
+                slidePanel.Height -= 20;
                 if (slidePanel.Height == slidePanel.MinimumSize.Height)
                 {
                     SlideTicketTimer.Stop();
@@ -346,12 +439,17 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             }
         }
 
-        private void flowTicketPanel_Paint(object sender, PaintEventArgs e)
+        private void clearButton_Click(object sender, EventArgs e)
         {
-
+            numberTicketBox.Text = "";
+            priceTicketBox.Text = "";
+            fromWhereTicketBox.Text = "";
+            whereTicketBox.Text = "";
+            airplaneTicketBox.Text = "";
+            senderTicketBox.Text = "";
         }
 
-        private void slidePanel_Paint(object sender, PaintEventArgs e)
+        private void ticketPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

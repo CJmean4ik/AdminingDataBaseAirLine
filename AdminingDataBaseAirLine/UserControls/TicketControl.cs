@@ -5,7 +5,7 @@ using AdminingDataBaseAirLine.UserControls.Data;
 
 namespace AdminingDataBaseAirLine.UserControls
 {
-    public partial class Ticket : UserControl
+    public partial class TicketControl : UserControl
     {
 
         private bool IsLight = true;
@@ -16,7 +16,7 @@ namespace AdminingDataBaseAirLine.UserControls
         internal ControlsTheme Theme { get => theme; set => theme = value; }
         public Action<DataTicketControl> Binder { get => _binder; set => _binder += value; }
 
-        public Ticket(bool isLight, ControlConfiguration configuration, DataTicketControl control)
+        public TicketControl(bool isLight, ControlConfiguration configuration, DataTicketControl control)
         {
             InitializeComponent();
             IsLight = isLight;

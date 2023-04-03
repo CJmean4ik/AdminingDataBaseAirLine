@@ -11,7 +11,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="dataTicket"></param>
-        public static void BindTicketData(Ticket ticket, DataTicketControl dataTicket)
+        public static void BindTicketData(TicketControl ticket, DataTicketControl dataTicket)
         {
             ticket.FlightField.Text = dataTicket.NumberTicket.ToString();
             ticket.PriceField.Text = dataTicket.PriceTicket.ToString();
@@ -29,7 +29,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
         /// </summary>
         /// <param name="ticket"></param>
         /// <returns></returns>
-        public static DataTicketControl GetDataTicket(Ticket ticket)
+        public static DataTicketControl GetDataTicket(TicketControl ticket)
         {
             DataTicketControl dataTicket = new DataTicketControl();
             dataTicket.NumberTicket = int.Parse(ticket.FlightField.Text);

@@ -8,16 +8,10 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
 {
-    internal class AddingTicket
+    internal class AddingTicket : TicketOperation
     {
-        private CashierForm _cashierForm;
-        private AirlineContext _db;
-        public bool ErorIsActive { get; set; }
-
-        public AddingTicket(CashierForm cashierForm, AirlineContext db)
+        public AddingTicket(CashierForm cashierForm, AirlineContext db) : base(cashierForm, db)
         {
-            _cashierForm = cashierForm;
-            _db = db;
         }
 
         public void PreperingForAddingTicket()
@@ -28,51 +22,58 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
         }
         public async Task<bool> LoadDataToLocalCash()
         {
-            await _db.Routes.LoadAsync();
-            await _db.AirlinePlanes.LoadAsync();
-            await _db.Airplanes.LoadAsync();
-            await _db.Flights.LoadAsync();
-            await _db.Tickets.LoadAsync();
+            await db.Routes.LoadAsync();
+            await db.AirlinePlanes.LoadAsync();
+            await db.Airplanes.LoadAsync();
+            await db.Flights.LoadAsync();
+            await db.Tickets.LoadAsync();
             return true;
         }
 
         public DataTicketControl GetDataTicketControl()
         {
             DataTicketControl dataTicket = new DataTicketControl();
-            dataTicket.PriceTicket = decimal.Parse(_cashierForm.PriceTicketBox.Text);
-            dataTicket.FromWhereTicket = _cashierForm.FromWhereTicketBox.Text;
-            dataTicket.WhereTicket = _cashierForm.WhereTicketBox.Text;
-            dataTicket.ModelAirplane = _cashierForm.AirplaneTicketBox.Text;
-            dataTicket.SenderTicket = _cashierForm.SenderTicketBox.Text;
+            dataTicket.PriceTicket = decimal.Parse(cashierForm.PriceTicketBox.Text);
+            dataTicket.FromWhereTicket = cashierForm.FromWhereTicketBox.Text;
+            dataTicket.WhereTicket = cashierForm.WhereTicketBox.Text;
+            dataTicket.ModelAirplane = cashierForm.AirplaneTicketBox.Text;
+            dataTicket.SenderTicket = cashierForm.SenderTicketBox.Text;
             return dataTicket;
         }
 
         private void ClearRelatedTextInTicketPanel()
         {
-            _cashierForm.NumberTicketBox.Text = "";
-            _cashierForm.PriceTicketBox.Text = "";
-            _cashierForm. FromWhereTicketBox.Text = "";
-            _cashierForm.WhereTicketBox.Text = "";
-            _cashierForm.AirplaneTicketBox.Text = "";
-            _cashierForm.SenderTicketBox.Text = "";
+            cashierForm.NumberTicketBox.Text = "";
+            cashierForm.PriceTicketBox.Text = "";
+            cashierForm. FromWhereTicketBox.Text = "";
+            cashierForm.WhereTicketBox.Text = "";
+            cashierForm.AirplaneTicketBox.Text = "";
+            cashierForm.SenderTicketBox.Text = "";
         }
         private void ChangeStateAddButton()
         {
-            _cashierForm.NumberTicketBox.Enabled = false;
-            _cashierForm.AddButton1.Image = Resources.save;
-            _cashierForm.UpdateButton1.Enabled = false;
-            _cashierForm.RemoveButton1.Enabled = false;
+            cashierForm.NumberTicketBox.Enabled = false;
+            cashierForm.AddButton1.Image = Resources.save;
+            cashierForm.UpdateButton1.Enabled = false;
+            cashierForm.RemoveButton1.Enabled = false;
+        }
+
+        public void ReturnStateAddButton()
+        {
+            cashierForm.NumberTicketBox.Enabled = true;
+            cashierForm.AddButton1.Image = Resources.add;
+            cashierForm.UpdateButton1.Enabled = true;
+            cashierForm.RemoveButton1.Enabled = true;
         }
         public void ErorHandling()
         {
             if (ErorIsActive)
             {
                 ErorIsActive = false;
-                _cashierForm.ErorLabel.Visible = false;
+                cashierForm.ErorLabel.Visible = false;
                 return;
             }
         }
-
-        
+       
     }
 }

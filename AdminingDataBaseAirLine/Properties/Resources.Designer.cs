@@ -163,6 +163,36 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_mode {
+            get {
+                object obj = ResourceManager.GetObject("dark_mode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap done {
+            get {
+                object obj = ResourceManager.GetObject("done", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doneDelete {
+            get {
+                object obj = ResourceManager.GetObject("doneDelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_crossed {
             get {
                 object obj = ResourceManager.GetObject("eye_crossed", resourceCulture);
@@ -183,19 +213,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lightmode {
+        internal static System.Drawing.Bitmap light_mode {
             get {
-                object obj = ResourceManager.GetObject("lightmode", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap night_mode {
-            get {
-                object obj = ResourceManager.GetObject("night_mode", resourceCulture);
+                object obj = ResourceManager.GetObject("light_mode", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

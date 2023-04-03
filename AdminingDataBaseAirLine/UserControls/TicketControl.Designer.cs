@@ -1,6 +1,6 @@
 ﻿namespace AdminingDataBaseAirLine.UserControls
 {
-    partial class Ticket
+    partial class TicketControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ticket));
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketControl));
             this.label2 = new System.Windows.Forms.Label();
             this.FlightLabel = new System.Windows.Forms.Label();
             this.flightField = new System.Windows.Forms.Label();
@@ -52,21 +51,10 @@
             this.BarCodeBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.BarCodeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 39);
-            this.panel1.TabIndex = 2;;
             // 
             // label2
             // 
@@ -84,7 +72,7 @@
             this.FlightLabel.AutoSize = true;
             this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.FlightLabel.Location = new System.Drawing.Point(3, 62);
+            this.FlightLabel.Location = new System.Drawing.Point(3, 58);
             this.FlightLabel.Name = "FlightLabel";
             this.FlightLabel.Size = new System.Drawing.Size(100, 25);
             this.FlightLabel.TabIndex = 4;
@@ -95,7 +83,7 @@
             this.flightField.AutoSize = true;
             this.flightField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.flightField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.flightField.Location = new System.Drawing.Point(3, 87);
+            this.flightField.Location = new System.Drawing.Point(3, 82);
             this.flightField.Name = "flightField";
             this.flightField.Size = new System.Drawing.Size(45, 25);
             this.flightField.TabIndex = 4;
@@ -106,7 +94,7 @@
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceLabel.Location = new System.Drawing.Point(386, 62);
+            this.priceLabel.Location = new System.Drawing.Point(386, 58);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.priceLabel.Size = new System.Drawing.Size(67, 25);
@@ -118,7 +106,7 @@
             this.priceField.AutoSize = true;
             this.priceField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceField.Location = new System.Drawing.Point(386, 87);
+            this.priceField.Location = new System.Drawing.Point(386, 82);
             this.priceField.Name = "priceField";
             this.priceField.Size = new System.Drawing.Size(45, 25);
             this.priceField.TabIndex = 6;
@@ -129,7 +117,7 @@
             this.deparField.AutoSize = true;
             this.deparField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparField.ForeColor = System.Drawing.Color.Black;
-            this.deparField.Location = new System.Drawing.Point(6, 208);
+            this.deparField.Location = new System.Drawing.Point(6, 195);
             this.deparField.Name = "deparField";
             this.deparField.Size = new System.Drawing.Size(45, 25);
             this.deparField.TabIndex = 7;
@@ -140,7 +128,7 @@
             this.deparLabel.AutoSize = true;
             this.deparLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparLabel.ForeColor = System.Drawing.Color.Black;
-            this.deparLabel.Location = new System.Drawing.Point(6, 183);
+            this.deparLabel.Location = new System.Drawing.Point(6, 172);
             this.deparLabel.Name = "deparLabel";
             this.deparLabel.Size = new System.Drawing.Size(155, 25);
             this.deparLabel.TabIndex = 8;
@@ -151,7 +139,7 @@
             this.arrivalField.AutoSize = true;
             this.arrivalField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalField.ForeColor = System.Drawing.Color.Black;
-            this.arrivalField.Location = new System.Drawing.Point(386, 208);
+            this.arrivalField.Location = new System.Drawing.Point(386, 195);
             this.arrivalField.Name = "arrivalField";
             this.arrivalField.Size = new System.Drawing.Size(45, 25);
             this.arrivalField.TabIndex = 9;
@@ -162,7 +150,7 @@
             this.arrivalLabel.AutoSize = true;
             this.arrivalLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalLabel.ForeColor = System.Drawing.Color.Black;
-            this.arrivalLabel.Location = new System.Drawing.Point(386, 183);
+            this.arrivalLabel.Location = new System.Drawing.Point(386, 172);
             this.arrivalLabel.Name = "arrivalLabel";
             this.arrivalLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.arrivalLabel.Size = new System.Drawing.Size(166, 25);
@@ -174,7 +162,7 @@
             this.whereField.AutoSize = true;
             this.whereField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereField.ForeColor = System.Drawing.Color.Black;
-            this.whereField.Location = new System.Drawing.Point(386, 151);
+            this.whereField.Location = new System.Drawing.Point(386, 142);
             this.whereField.Name = "whereField";
             this.whereField.Size = new System.Drawing.Size(45, 25);
             this.whereField.TabIndex = 13;
@@ -185,7 +173,7 @@
             this.whereLabel.AutoSize = true;
             this.whereLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereLabel.ForeColor = System.Drawing.Color.Black;
-            this.whereLabel.Location = new System.Drawing.Point(386, 126);
+            this.whereLabel.Location = new System.Drawing.Point(386, 118);
             this.whereLabel.Name = "whereLabel";
             this.whereLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whereLabel.Size = new System.Drawing.Size(67, 25);
@@ -197,7 +185,7 @@
             this.fromWField.AutoSize = true;
             this.fromWField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWField.ForeColor = System.Drawing.Color.Black;
-            this.fromWField.Location = new System.Drawing.Point(6, 151);
+            this.fromWField.Location = new System.Drawing.Point(6, 142);
             this.fromWField.Name = "fromWField";
             this.fromWField.Size = new System.Drawing.Size(45, 25);
             this.fromWField.TabIndex = 11;
@@ -208,7 +196,7 @@
             this.fromWLabele.AutoSize = true;
             this.fromWLabele.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWLabele.ForeColor = System.Drawing.Color.Black;
-            this.fromWLabele.Location = new System.Drawing.Point(6, 126);
+            this.fromWLabele.Location = new System.Drawing.Point(6, 118);
             this.fromWLabele.Name = "fromWLabele";
             this.fromWLabele.Size = new System.Drawing.Size(89, 25);
             this.fromWLabele.TabIndex = 12;
@@ -219,7 +207,7 @@
             this.modelAirPlaneField.AutoSize = true;
             this.modelAirPlaneField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.modelAirPlaneField.Location = new System.Drawing.Point(6, 270);
+            this.modelAirPlaneField.Location = new System.Drawing.Point(6, 253);
             this.modelAirPlaneField.Name = "modelAirPlaneField";
             this.modelAirPlaneField.Size = new System.Drawing.Size(45, 25);
             this.modelAirPlaneField.TabIndex = 15;
@@ -230,7 +218,7 @@
             this.modelAirPlaneLabel.AutoSize = true;
             this.modelAirPlaneLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.modelAirPlaneLabel.Location = new System.Drawing.Point(6, 245);
+            this.modelAirPlaneLabel.Location = new System.Drawing.Point(6, 230);
             this.modelAirPlaneLabel.Name = "modelAirPlaneLabel";
             this.modelAirPlaneLabel.Size = new System.Drawing.Size(166, 25);
             this.modelAirPlaneLabel.TabIndex = 16;
@@ -241,7 +229,7 @@
             this.senderField.AutoSize = true;
             this.senderField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.senderField.Location = new System.Drawing.Point(386, 270);
+            this.senderField.Location = new System.Drawing.Point(386, 253);
             this.senderField.Name = "senderField";
             this.senderField.Size = new System.Drawing.Size(45, 25);
             this.senderField.TabIndex = 17;
@@ -252,7 +240,7 @@
             this.senderLabel.AutoSize = true;
             this.senderLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.senderLabel.Location = new System.Drawing.Point(386, 245);
+            this.senderLabel.Location = new System.Drawing.Point(386, 230);
             this.senderLabel.Name = "senderLabel";
             this.senderLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.senderLabel.Size = new System.Drawing.Size(133, 25);
@@ -264,9 +252,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel3.Location = new System.Drawing.Point(742, 39);
+            this.panel3.Location = new System.Drawing.Point(742, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 273);
+            this.panel3.Size = new System.Drawing.Size(5, 293);
             this.panel3.TabIndex = 19;
             // 
             // panel4
@@ -274,17 +262,17 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel4.Location = new System.Drawing.Point(0, 39);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 273);
+            this.panel4.Size = new System.Drawing.Size(5, 293);
             this.panel4.TabIndex = 20;
             // 
             // BarCodeBox
             // 
             this.BarCodeBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCodeBox.Image")));
-            this.BarCodeBox.Location = new System.Drawing.Point(609, 39);
+            this.BarCodeBox.Location = new System.Drawing.Point(609, 37);
             this.BarCodeBox.Name = "BarCodeBox";
-            this.BarCodeBox.Size = new System.Drawing.Size(127, 273);
+            this.BarCodeBox.Size = new System.Drawing.Size(127, 256);
             this.BarCodeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BarCodeBox.TabIndex = 21;
             this.BarCodeBox.TabStop = false;
@@ -294,24 +282,35 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(0, 312);
+            this.panel2.Location = new System.Drawing.Point(0, 293);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(747, 11);
+            this.panel2.Size = new System.Drawing.Size(747, 10);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(237, 185);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 173);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(143, 110);
+            this.pictureBox2.Size = new System.Drawing.Size(143, 103);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(5, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(737, 10);
+            this.panel1.TabIndex = 23;
+            // 
             // Ticket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BarCodeBox);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -332,14 +331,11 @@
             this.Controls.Add(this.flightField);
             this.Controls.Add(this.FlightLabel);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Ticket";
-            this.Size = new System.Drawing.Size(747, 323);
+            this.Size = new System.Drawing.Size(747, 303);
             this.Load += new System.EventHandler(this.Ticket_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Ticket_MouseClick);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarCodeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -350,8 +346,6 @@
         #endregion
 
         #region Fields
-      
-        private Panel panel1;
         private Label label2;
         private Label FlightLabel;
         private Label flightField;
@@ -374,6 +368,7 @@
         private PictureBox BarCodeBox;
         private Panel panel2;
         private PictureBox pictureBox2;
+        private Panel panel1;
         #endregion
 
         #region Properties

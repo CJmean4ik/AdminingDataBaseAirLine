@@ -148,17 +148,23 @@
   <data name="checkmark__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dark_mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="done" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doneDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doneDelete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye_crossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-crossed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye_show" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_show.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lightmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lightmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="night_mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\night-mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="light_mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\light_mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="orders_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orders_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -7,13 +7,13 @@ namespace AdminingDataBaseAirLine.Themes
     {
         private ControlConfiguration _config;
 
-        private Ticket _ticket;
-        public Ticket Ticket { get => _ticket; set => _ticket = value; }
+        private TicketControl _ticket;
+        public TicketControl Ticket { get => _ticket; set => _ticket = value; }
         public ControlsTheme(ControlConfiguration config)
         {
             _config = config;
         }
-        public ControlsTheme(ControlConfiguration config, Ticket ticket) : this(config)
+        public ControlsTheme(ControlConfiguration config, TicketControl ticket) : this(config)
         {
             _ticket = ticket;
         }
@@ -59,14 +59,14 @@ namespace AdminingDataBaseAirLine.Themes
         {
             if (!IsLight)
             {
-                foreach (Ticket ticket in tickets.Controls)
+                foreach (TicketControl ticket in tickets.Controls)
                 {
                     _ticket = ticket;
                     ChangeToDarkTheme(ref IsLight);
                 }
                 return;
             }
-            foreach (Ticket ticket in tickets.Controls)
+            foreach (TicketControl ticket in tickets.Controls)
             {
                 _ticket = ticket;
                 ChangeToLightTheme(ref IsLight);
