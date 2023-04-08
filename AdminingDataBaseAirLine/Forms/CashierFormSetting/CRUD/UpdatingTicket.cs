@@ -1,5 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
 using DataBaseModel.Entities.TicketAndOrders;
 using System;
 using System.Collections.Generic;
@@ -13,36 +15,28 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
     {
         public bool IsNowUpdate { get; set; }
         public Dictionary<int, bool> EntryTicket;
-        public UpdatingTicket(CashierForm cashierForm, AirlineContext db) : base(cashierForm, db)
+
+        public UpdatingTicket(TicketPanelControl ticketPanel, AirlineContext db) : base(ticketPanel, db)
         {
             EntryTicket = new Dictionary<int, bool>();
         }
 
+        
         public void PreperingUpdateTicket()
         {          
-            ChangeStateUpdateButton();
+            ChangeStateButton();           
+            TicketPanel.UpdateButton.Image = Resources.done;
+            TicketPanel.AddButton.Enabled = false;
+            TicketPanel.RemoveButton.Enabled = false;
         }
-        private void ChangeStateUpdateButton()
-        {
-            cashierForm.NumberTicketBox.Enabled = false;
-          
-            cashierForm.FromWhereTicketBox.Enabled = false;
-            cashierForm.WhereTicketBox.Enabled = false;
-            cashierForm.AirplaneTicketBox.Enabled = false;
-            cashierForm.SenderTicketBox.Enabled = false;
-
-            cashierForm.UpdateButton1.Image = Resources.done;
-            cashierForm.AddButton1.Enabled = false;
-            cashierForm.RemoveButton1.Enabled = false;
-
-        }
+       
 
         public bool ChekingOnNotEmptryPriceAndNumber(string price,string number)
         {
             if (price  == "" && number  == "")
             {
-                cashierForm.ErorLabel.Text = "Пусте значення.\nОновлення неможливе";
-                cashierForm.ErorLabel.Visible = true;
+                TicketPanel.ErorLabel.Text = "Пусте значення.\nОновлення неможливе";
+                TicketPanel.ErorLabel.Visible = true;
                 ErorIsActive = true;
                 return false;
             }
@@ -50,10 +44,10 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
         }
         public bool ChekingOnNotOldValuePrice(decimal price)
         {
-            if (price == decimal.Parse(cashierForm.PriceTicketBox.Text))
+            if (price == decimal.Parse(TicketPanel.PriceTicketBox.Text))
             {
-                cashierForm.ErorLabel.Text = "Значення не змінились.\nОновлення неможливе";
-                cashierForm.ErorLabel.Visible = true;
+                TicketPanel.ErorLabel.Text = "Значення не змінились.\nОновлення неможливе";
+                TicketPanel.ErorLabel.Visible = true;
                 return false;
             }
             return true;
@@ -65,21 +59,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
               .Where(w => w.NumberTicket == id)
               .Select(s => s.Price)
               .FirstOrDefault();           
-        }
-
-        public void ReturnStateUpdateButton()
-        {
-            cashierForm.NumberTicketBox.Enabled = true;
-
-            cashierForm.FromWhereTicketBox.Enabled = true;
-            cashierForm.WhereTicketBox.Enabled = true;
-            cashierForm.AirplaneTicketBox.Enabled = true;
-            cashierForm.SenderTicketBox.Enabled = true;
-
-            cashierForm.UpdateButton1.Image = Resources.update;
-            cashierForm.AddButton1.Enabled = true;
-            cashierForm.RemoveButton1.Enabled = true;
-            IsNowUpdate = false;
-        }
+        }     
     }
+
 }

@@ -3,7 +3,7 @@ using AdminingDataBaseAirLine.UserControls.Config;
 
 namespace AdminingDataBaseAirLine.Themes
 {
-    internal class ControlsTheme
+    public class ControlsTheme
     {
         private ControlConfiguration _config;
 

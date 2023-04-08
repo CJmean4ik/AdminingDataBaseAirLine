@@ -69,10 +69,11 @@
             // 
             // FlightLabel
             // 
+            this.FlightLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.FlightLabel.AutoSize = true;
             this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.FlightLabel.Location = new System.Drawing.Point(3, 58);
+            this.FlightLabel.Location = new System.Drawing.Point(3, 22);
             this.FlightLabel.Name = "FlightLabel";
             this.FlightLabel.Size = new System.Drawing.Size(100, 25);
             this.FlightLabel.TabIndex = 4;
@@ -80,10 +81,11 @@
             // 
             // flightField
             // 
+            this.flightField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.flightField.AutoSize = true;
             this.flightField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.flightField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.flightField.Location = new System.Drawing.Point(3, 82);
+            this.flightField.Location = new System.Drawing.Point(3, 46);
             this.flightField.Name = "flightField";
             this.flightField.Size = new System.Drawing.Size(45, 25);
             this.flightField.TabIndex = 4;
@@ -91,10 +93,11 @@
             // 
             // priceLabel
             // 
+            this.priceLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceLabel.Location = new System.Drawing.Point(386, 58);
+            this.priceLabel.Location = new System.Drawing.Point(386, 22);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.priceLabel.Size = new System.Drawing.Size(67, 25);
@@ -103,10 +106,11 @@
             // 
             // priceField
             // 
+            this.priceField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.priceField.AutoSize = true;
             this.priceField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceField.Location = new System.Drawing.Point(386, 82);
+            this.priceField.Location = new System.Drawing.Point(386, 46);
             this.priceField.Name = "priceField";
             this.priceField.Size = new System.Drawing.Size(45, 25);
             this.priceField.TabIndex = 6;
@@ -114,10 +118,11 @@
             // 
             // deparField
             // 
+            this.deparField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deparField.AutoSize = true;
             this.deparField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparField.ForeColor = System.Drawing.Color.Black;
-            this.deparField.Location = new System.Drawing.Point(6, 195);
+            this.deparField.Location = new System.Drawing.Point(6, 159);
             this.deparField.Name = "deparField";
             this.deparField.Size = new System.Drawing.Size(45, 25);
             this.deparField.TabIndex = 7;
@@ -125,10 +130,11 @@
             // 
             // deparLabel
             // 
+            this.deparLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deparLabel.AutoSize = true;
             this.deparLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparLabel.ForeColor = System.Drawing.Color.Black;
-            this.deparLabel.Location = new System.Drawing.Point(6, 172);
+            this.deparLabel.Location = new System.Drawing.Point(6, 136);
             this.deparLabel.Name = "deparLabel";
             this.deparLabel.Size = new System.Drawing.Size(155, 25);
             this.deparLabel.TabIndex = 8;
@@ -136,10 +142,11 @@
             // 
             // arrivalField
             // 
+            this.arrivalField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.arrivalField.AutoSize = true;
             this.arrivalField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalField.ForeColor = System.Drawing.Color.Black;
-            this.arrivalField.Location = new System.Drawing.Point(386, 195);
+            this.arrivalField.Location = new System.Drawing.Point(386, 159);
             this.arrivalField.Name = "arrivalField";
             this.arrivalField.Size = new System.Drawing.Size(45, 25);
             this.arrivalField.TabIndex = 9;
@@ -147,10 +154,11 @@
             // 
             // arrivalLabel
             // 
+            this.arrivalLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.arrivalLabel.AutoSize = true;
             this.arrivalLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalLabel.ForeColor = System.Drawing.Color.Black;
-            this.arrivalLabel.Location = new System.Drawing.Point(386, 172);
+            this.arrivalLabel.Location = new System.Drawing.Point(386, 136);
             this.arrivalLabel.Name = "arrivalLabel";
             this.arrivalLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.arrivalLabel.Size = new System.Drawing.Size(166, 25);
@@ -159,10 +167,11 @@
             // 
             // whereField
             // 
+            this.whereField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.whereField.AutoSize = true;
             this.whereField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereField.ForeColor = System.Drawing.Color.Black;
-            this.whereField.Location = new System.Drawing.Point(386, 142);
+            this.whereField.Location = new System.Drawing.Point(386, 106);
             this.whereField.Name = "whereField";
             this.whereField.Size = new System.Drawing.Size(45, 25);
             this.whereField.TabIndex = 13;
@@ -170,10 +179,11 @@
             // 
             // whereLabel
             // 
+            this.whereLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.whereLabel.AutoSize = true;
             this.whereLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereLabel.ForeColor = System.Drawing.Color.Black;
-            this.whereLabel.Location = new System.Drawing.Point(386, 118);
+            this.whereLabel.Location = new System.Drawing.Point(386, 82);
             this.whereLabel.Name = "whereLabel";
             this.whereLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whereLabel.Size = new System.Drawing.Size(67, 25);
@@ -182,10 +192,11 @@
             // 
             // fromWField
             // 
+            this.fromWField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.fromWField.AutoSize = true;
             this.fromWField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWField.ForeColor = System.Drawing.Color.Black;
-            this.fromWField.Location = new System.Drawing.Point(6, 142);
+            this.fromWField.Location = new System.Drawing.Point(6, 106);
             this.fromWField.Name = "fromWField";
             this.fromWField.Size = new System.Drawing.Size(45, 25);
             this.fromWField.TabIndex = 11;
@@ -193,10 +204,11 @@
             // 
             // fromWLabele
             // 
+            this.fromWLabele.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.fromWLabele.AutoSize = true;
             this.fromWLabele.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWLabele.ForeColor = System.Drawing.Color.Black;
-            this.fromWLabele.Location = new System.Drawing.Point(6, 118);
+            this.fromWLabele.Location = new System.Drawing.Point(6, 82);
             this.fromWLabele.Name = "fromWLabele";
             this.fromWLabele.Size = new System.Drawing.Size(89, 25);
             this.fromWLabele.TabIndex = 12;
@@ -204,10 +216,11 @@
             // 
             // modelAirPlaneField
             // 
+            this.modelAirPlaneField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modelAirPlaneField.AutoSize = true;
             this.modelAirPlaneField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.modelAirPlaneField.Location = new System.Drawing.Point(6, 253);
+            this.modelAirPlaneField.Location = new System.Drawing.Point(6, 217);
             this.modelAirPlaneField.Name = "modelAirPlaneField";
             this.modelAirPlaneField.Size = new System.Drawing.Size(45, 25);
             this.modelAirPlaneField.TabIndex = 15;
@@ -215,10 +228,11 @@
             // 
             // modelAirPlaneLabel
             // 
+            this.modelAirPlaneLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modelAirPlaneLabel.AutoSize = true;
             this.modelAirPlaneLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.modelAirPlaneLabel.Location = new System.Drawing.Point(6, 230);
+            this.modelAirPlaneLabel.Location = new System.Drawing.Point(6, 194);
             this.modelAirPlaneLabel.Name = "modelAirPlaneLabel";
             this.modelAirPlaneLabel.Size = new System.Drawing.Size(166, 25);
             this.modelAirPlaneLabel.TabIndex = 16;
@@ -226,10 +240,11 @@
             // 
             // senderField
             // 
+            this.senderField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.senderField.AutoSize = true;
             this.senderField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.senderField.Location = new System.Drawing.Point(386, 253);
+            this.senderField.Location = new System.Drawing.Point(386, 217);
             this.senderField.Name = "senderField";
             this.senderField.Size = new System.Drawing.Size(45, 25);
             this.senderField.TabIndex = 17;
@@ -237,10 +252,11 @@
             // 
             // senderLabel
             // 
+            this.senderLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.senderLabel.AutoSize = true;
             this.senderLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.senderLabel.Location = new System.Drawing.Point(386, 230);
+            this.senderLabel.Location = new System.Drawing.Point(386, 194);
             this.senderLabel.Name = "senderLabel";
             this.senderLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.senderLabel.Size = new System.Drawing.Size(133, 25);
@@ -254,7 +270,7 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.Control;
             this.panel3.Location = new System.Drawing.Point(742, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 293);
+            this.panel3.Size = new System.Drawing.Size(5, 257);
             this.panel3.TabIndex = 19;
             // 
             // panel4
@@ -264,13 +280,14 @@
             this.panel4.ForeColor = System.Drawing.SystemColors.Control;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 293);
+            this.panel4.Size = new System.Drawing.Size(5, 257);
             this.panel4.TabIndex = 20;
             // 
             // BarCodeBox
             // 
+            this.BarCodeBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BarCodeBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCodeBox.Image")));
-            this.BarCodeBox.Location = new System.Drawing.Point(609, 37);
+            this.BarCodeBox.Location = new System.Drawing.Point(609, 1);
             this.BarCodeBox.Name = "BarCodeBox";
             this.BarCodeBox.Size = new System.Drawing.Size(127, 256);
             this.BarCodeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -282,15 +299,16 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(0, 293);
+            this.panel2.Location = new System.Drawing.Point(0, 257);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(747, 10);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(237, 173);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 137);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(143, 103);
             this.pictureBox2.TabIndex = 22;
@@ -306,7 +324,7 @@
             this.panel1.Size = new System.Drawing.Size(737, 10);
             this.panel1.TabIndex = 23;
             // 
-            // Ticket
+            // TicketControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,8 +350,8 @@
             this.Controls.Add(this.FlightLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "Ticket";
-            this.Size = new System.Drawing.Size(747, 303);
+            this.Name = "TicketControl";
+            this.Size = new System.Drawing.Size(747, 267);
             this.Load += new System.EventHandler(this.Ticket_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Ticket_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.BarCodeBox)).EndInit();

@@ -1,24 +1,26 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.Data;
-using DataBaseModel.Entities;
-using DataBaseModel.Entities.Accounts;
 using System.Data.Entity;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
 {
     internal class AddingTicket : TicketOperation
     {
-        public AddingTicket(CashierForm cashierForm, AirlineContext db) : base(cashierForm, db)
+        public AddingTicket(TicketPanelControl control, AirlineContext db) : base(control, db)
         {
         }
-
+        
         public void PreperingForAddingTicket()
         {
 
             ClearRelatedTextInTicketPanel();
-            ChangeStateAddButton();
+            TicketPanel.NumberTicketBox.Enabled = false;
+            TicketPanel.AddButton.Image = Resources.save;
+            TicketPanel.UpdateButton.Enabled = false;
+            TicketPanel.RemoveButton.Enabled = false;
+
         }
         public async Task<bool> LoadDataToLocalCash()
         {
@@ -33,47 +35,33 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
         public DataTicketControl GetDataTicketControl()
         {
             DataTicketControl dataTicket = new DataTicketControl();
-            dataTicket.PriceTicket = decimal.Parse(cashierForm.PriceTicketBox.Text);
-            dataTicket.FromWhereTicket = cashierForm.FromWhereTicketBox.Text;
-            dataTicket.WhereTicket = cashierForm.WhereTicketBox.Text;
-            dataTicket.ModelAirplane = cashierForm.AirplaneTicketBox.Text;
-            dataTicket.SenderTicket = cashierForm.SenderTicketBox.Text;
+            dataTicket.PriceTicket = decimal.Parse(TicketPanel.PriceTicketBox.Text);
+            dataTicket.FromWhereTicket = TicketPanel.FromWhereTicketBox.Text;
+            dataTicket.WhereTicket = TicketPanel.WhereTicketBox.Text;
+            dataTicket.ModelAirplane = TicketPanel.AirplaneTicketBox.Text;
+            dataTicket.SenderTicket = TicketPanel.SenderTicketBox.Text;
             return dataTicket;
         }
 
         private void ClearRelatedTextInTicketPanel()
         {
-            cashierForm.NumberTicketBox.Text = "";
-            cashierForm.PriceTicketBox.Text = "";
-            cashierForm. FromWhereTicketBox.Text = "";
-            cashierForm.WhereTicketBox.Text = "";
-            cashierForm.AirplaneTicketBox.Text = "";
-            cashierForm.SenderTicketBox.Text = "";
+            TicketPanel.NumberTicketBox.Text = "";
+            TicketPanel.PriceTicketBox.Text = "";
+            TicketPanel. FromWhereTicketBox.Text = "";
+            TicketPanel.WhereTicketBox.Text = "";
+            TicketPanel.AirplaneTicketBox.Text = "";
+            TicketPanel.SenderTicketBox.Text = "";
         }
-        private void ChangeStateAddButton()
-        {
-            cashierForm.NumberTicketBox.Enabled = false;
-            cashierForm.AddButton1.Image = Resources.save;
-            cashierForm.UpdateButton1.Enabled = false;
-            cashierForm.RemoveButton1.Enabled = false;
-        }
-
-        public void ReturnStateAddButton()
-        {
-            cashierForm.NumberTicketBox.Enabled = true;
-            cashierForm.AddButton1.Image = Resources.add;
-            cashierForm.UpdateButton1.Enabled = true;
-            cashierForm.RemoveButton1.Enabled = true;
-        }
+               
         public void ErorHandling()
         {
             if (ErorIsActive)
             {
                 ErorIsActive = false;
-                cashierForm.ErorLabel.Visible = false;
+                TicketPanel.ErorLabel.Visible = false;
                 return;
             }
         }
-       
+      
     }
 }

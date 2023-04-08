@@ -1,4 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting;
+using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +12,31 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
 {
     public abstract class TicketOperation
     {
-        public CashierForm cashierForm { get; set; }
+        public TicketPanelControl TicketPanel { get; set; }
         public AirlineContext db { get; set; }
         public bool ErorIsActive { get; set; }
 
-        protected TicketOperation(CashierForm cashierForm, AirlineContext db)
+        protected TicketOperation(TicketPanelControl ticketPanel, AirlineContext db)
         {
-            this.cashierForm = cashierForm;
+            TicketPanel = ticketPanel;
             this.db = db;
+        }
+        public void ChangeStateButton()
+        {
+            TicketPanel.NumberTicketBox.Enabled = false;
+            TicketPanel.FromWhereTicketBox.Enabled = false;
+            TicketPanel.WhereTicketBox.Enabled = false;
+            TicketPanel.AirplaneTicketBox.Enabled = false;
+            TicketPanel.SenderTicketBox.Enabled = false;
+
+        }
+        public void ReturnState()
+        {
+            TicketPanel.NumberTicketBox.Enabled = true;
+            TicketPanel.FromWhereTicketBox.Enabled = true;
+            TicketPanel.WhereTicketBox.Enabled = true;
+            TicketPanel.AirplaneTicketBox.Enabled = true;
+            TicketPanel.SenderTicketBox.Enabled = true;                
         }
     }
 }

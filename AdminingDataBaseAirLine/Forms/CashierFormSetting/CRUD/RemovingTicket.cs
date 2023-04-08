@@ -1,5 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
+using AdminingDataBaseAirLine.UserControls;
 using DataBaseModel.Entities.TicketAndOrders;
 using System;
 using System.Collections.Generic;
@@ -11,44 +13,28 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
 {
     internal class RemovingTicket : TicketOperation
     {
+        public RemovingTicket(TicketPanelControl ticketPanel, AirlineContext db) : base(ticketPanel, db)
+        {
+
+        }
+
         public bool IsNowRemove { get; set; }
-        public RemovingTicket(CashierForm cashierForm, AirlineContext db) : base(cashierForm, db)
-        {
-        }
-
+    
+        
         public void PreperingDeleteTicket()
-        {
-            ChangeStateUpdateButton();
+        {   
+            ChangeStateButton();
+            TicketPanel.RemoveButton.Image = Resources.doneDelete;
+            TicketPanel.AddButton.Enabled = false;
+            TicketPanel.UpdateButton.Enabled = false;
         }
-        private void ChangeStateUpdateButton()
-        {
-            cashierForm.PriceTicketBox.Enabled = false;
-            cashierForm.FromWhereTicketBox.Enabled = false;
-            cashierForm.WhereTicketBox.Enabled = false;
-            cashierForm.AirplaneTicketBox.Enabled = false;
-            cashierForm.SenderTicketBox.Enabled = false;
-            cashierForm.RemoveButton1.Image = Resources.doneDelete;
-            cashierForm.AddButton1.Enabled = false;
-            cashierForm.UpdateButton1.Enabled = false;
-
-        }
-        public void ReturnStateUpdateButton()
-        {
-            cashierForm.PriceTicketBox.Enabled = true;
-            cashierForm.FromWhereTicketBox.Enabled = true;
-            cashierForm.WhereTicketBox.Enabled = true;
-            cashierForm.AirplaneTicketBox.Enabled = true;
-            cashierForm.SenderTicketBox.Enabled = true;
-            cashierForm.RemoveButton1.Image = Resources.remove;
-            cashierForm.AddButton1.Enabled = true;
-            cashierForm.UpdateButton1.Enabled = true;
-        }
+        
         public bool ChekingOnNotEmptryIdTicket(string number)
         {
             if (number == "")
             {
-                cashierForm.ErorLabel.Text = "Пусте значення.\nВидалення неможливе";
-                cashierForm.ErorLabel.Visible = true;
+                TicketPanel.ErorLabel.Text = "Пусте значення.\nВидалення неможливе";
+                TicketPanel.ErorLabel.Visible = true;
                 ErorIsActive = true;
                 return false;
             }
@@ -60,14 +46,15 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
 
             if (ticket == null)
             {
-                cashierForm.ErorLabel.Text = "Такого квитка не існує!";
-                cashierForm.ErorLabel.Visible = true;
+                TicketPanel.ErorLabel.Text = "Такого квитка не існує!";
+                TicketPanel.ErorLabel.Visible = true;
                 ErorIsActive = true;
                 return false;  
             }
             
             return true;
         }
+        
 
     }
 }

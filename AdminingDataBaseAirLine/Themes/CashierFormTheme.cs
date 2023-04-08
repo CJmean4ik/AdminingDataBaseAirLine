@@ -26,8 +26,8 @@ namespace AdminingDataBaseAirLine.Themes
             cashierForm.ThemeButton_P.Image = Resources.dark_mode;
             cashierForm.CloseButton.BackColor = _config.darkColorSecondView;
             cashierForm.CollapseButton.BackColor = _config.darkColorSecondView;
-            cashierForm.FlowTicketPanel.BackColor = _config.darkColorSecondView;
-            cashierForm.TicketPanel.BackColor = _config.darkColorSecondView;
+           // cashierForm.FlowTicketPanel.BackColor = _config.darkColorSecondView;
+           // cashierForm.TicketPanel.BackColor = _config.darkColorSecondView;
 
 
             foreach (var item in _buttonResourse)
@@ -56,8 +56,8 @@ namespace AdminingDataBaseAirLine.Themes
             cashierForm.ThemeButton_P.Image = Resources.light_mode;
             cashierForm.CloseButton.BackColor = _config.blueColor;
             cashierForm.CollapseButton.BackColor = _config.blueColor;
-            cashierForm.FlowTicketPanel.BackColor = _config.whiteColor;
-            cashierForm.TicketPanel.BackColor = _config.whiteColor;
+            //cashierForm.FlowTicketPanel.BackColor = _config.whiteColor;
+           // cashierForm.TicketPanel.BackColor = _config.whiteColor;
             foreach (var item in _buttonResourse)
             {
                 if (item.Value.IsOpen)
