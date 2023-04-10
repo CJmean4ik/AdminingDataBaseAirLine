@@ -1,15 +1,8 @@
-﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD;
-using AdminingDataBaseAirLine.Properties;
+﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Themes;
 using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.Config;
-using AdminingDataBaseAirLine.UserControls.Data;
-using DataBaseModel.Entities.TicketAndOrders;
-using System.Data.Entity;
-
-using TicketControl = AdminingDataBaseAirLine.UserControls.TicketControl;
+using AdminingDataBaseAirLine.UserControls.FlightPanel;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
@@ -26,7 +19,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private CashierFormTheme _cashierFormTheme;
         private ControlsTheme _ticketControlsTheme;
         private ControlConfiguration _controlConfig;
-       
+        private TicketPanelControl ticketPanel;
 
         private bool _ligthMode = true;
         private bool _isAdedItem;
@@ -75,8 +68,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             {
                 _isAdedItem = true;
 
-                TicketPanelControl ticketPanel = new TicketPanelControl(_airlineContext,_ligthMode,_controlConfig,_ticketControlsTheme);
-                ticketPanel.Visible = false;
+                ticketPanel = new TicketPanelControl(_airlineContext,_ligthMode,_controlConfig,_ticketControlsTheme);
                 ticketPanel.Location = new Point(109, 53);
                 await ticketPanel.InsertDataToFlowPanel();
                 ThemeButton.Click += new EventHandler(ticketPanel.ChangeTheme!);
@@ -91,9 +83,21 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
                 ticketDataLoad.Visible = false;
             }
         }
-        private void FlightButton_Click(object sender, EventArgs e)
+        private async void FlightButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("flightButtonOpen", _ligthMode);
+            if (ticketPanel != null)
+            {
+                ticketPanel.Visible = false;
+            }
+
+            ticketDataLoad.Visible = true;
+
+            FlightPanelControl flightPanel = new FlightPanelControl(_airlineContext);
+            flightPanel.Location = new Point(109, 53);
+            await Task.Run(() => flightPanel.InsertDataToDataGrigview());
+            ticketDataLoad.Visible = false;
+            this.Controls.Add(flightPanel);         
         }
         private void PassengerButton_Click(object sender, EventArgs e)
         {

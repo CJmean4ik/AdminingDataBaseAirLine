@@ -125,8 +125,9 @@
             this.panelControlsTicket.MaximumSize = new System.Drawing.Size(0, 570);
             this.panelControlsTicket.MinimumSize = new System.Drawing.Size(269, 30);
             this.panelControlsTicket.Name = "panelControlsTicket";
-            this.panelControlsTicket.Size = new System.Drawing.Size(273, 462);
+            this.panelControlsTicket.Size = new System.Drawing.Size(273, 32);
             this.panelControlsTicket.TabIndex = 1;
+            this.panelControlsTicket.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlsTicket_Paint);
             // 
             // slideSortPanel
             // 
@@ -138,7 +139,7 @@
             this.slideSortPanel.MaximumSize = new System.Drawing.Size(160, 140);
             this.slideSortPanel.MinimumSize = new System.Drawing.Size(131, 0);
             this.slideSortPanel.Name = "slideSortPanel";
-            this.slideSortPanel.Size = new System.Drawing.Size(158, 140);
+            this.slideSortPanel.Size = new System.Drawing.Size(158, 10);
             this.slideSortPanel.TabIndex = 5;
             this.slideSortPanel.Visible = false;
             // 

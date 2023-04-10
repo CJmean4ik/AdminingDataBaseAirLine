@@ -515,5 +515,10 @@ namespace AdminingDataBaseAirLine.UserControls
             var sortedDown = ticketControls.OrderByDescending(f => f.FromWField.Text).ToList();
             BinControlsToFlowTicketPanel(sortedDown);
         }
+
+        private void panelControlsTicket_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

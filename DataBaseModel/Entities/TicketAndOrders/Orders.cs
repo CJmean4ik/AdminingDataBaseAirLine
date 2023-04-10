@@ -9,11 +9,14 @@ namespace DataBaseModel.Entities.TicketAndOrders
 
         public int PassengerId { get; set; }
         public Passenger Passenger { get; set; }
+        public int BoockedSeat { get; set; }
 
         public int TicketId { get; set; }
         public Ticket  Ticket { get; set; }
 
         public int CashierId { get; set; }
         public Cashier Cashier { get; set; }
+
+
     }
 }

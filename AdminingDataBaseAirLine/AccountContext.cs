@@ -5,7 +5,7 @@ using DataBaseModel.Entities.AirlinePlanes;
 using DataBaseModel.Entities.RouteAndFlight;
 using DataBaseModel.Entities.TicketAndOrders;
 
-namespace AdminingDataBaseAirLine.Authentication
+namespace AdminingDataBaseAirLine
 {
     public class AirlineContext : DbContext
     {
@@ -27,6 +27,11 @@ namespace AdminingDataBaseAirLine.Authentication
         {
 
         }
+
+        public AirlineContext()
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.ConfigureAirlinePlanes();
