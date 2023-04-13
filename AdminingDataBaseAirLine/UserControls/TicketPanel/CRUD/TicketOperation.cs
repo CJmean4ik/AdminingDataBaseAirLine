@@ -1,5 +1,4 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
 using System;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     public abstract class TicketOperation
     {
@@ -28,7 +27,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
             TicketPanel.WhereTicketBox.Enabled = false;
             TicketPanel.AirplaneTicketBox.Enabled = false;
             TicketPanel.SenderTicketBox.Enabled = false;
-
         }
         public void ReturnState()
         {
@@ -36,7 +34,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
             TicketPanel.FromWhereTicketBox.Enabled = true;
             TicketPanel.WhereTicketBox.Enabled = true;
             TicketPanel.AirplaneTicketBox.Enabled = true;
-            TicketPanel.SenderTicketBox.Enabled = true;                
+            TicketPanel.SenderTicketBox.Enabled = true;
         }
     }
 }

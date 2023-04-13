@@ -41,7 +41,7 @@ namespace AdminingDataBaseAirLine.UserControls.FlightPanel
 
         public void InsertDataToDataGrigview()
         {
-            var Flights = _context.Flights.AsNoTracking().Select(s => new
+            var Flights = _context.Flights.Select(s => new
             {
                 s.NumberFlight,
                 s.Route.FromWhere,

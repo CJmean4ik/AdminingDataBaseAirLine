@@ -4,14 +4,14 @@ using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.Data;
 using System.Data.Entity;
 
-namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     internal class AddingTicket : TicketOperation
     {
         public AddingTicket(TicketPanelControl control, AirlineContext db) : base(control, db)
         {
         }
-        
+
         public void PreperingForAddingTicket()
         {
 
@@ -47,12 +47,12 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
         {
             TicketPanel.NumberTicketBox.Text = "";
             TicketPanel.PriceTicketBox.Text = "";
-            TicketPanel. FromWhereTicketBox.Text = "";
+            TicketPanel.FromWhereTicketBox.Text = "";
             TicketPanel.WhereTicketBox.Text = "";
             TicketPanel.AirplaneTicketBox.Text = "";
             TicketPanel.SenderTicketBox.Text = "";
         }
-               
+
         public void ErorHandling()
         {
             if (ErorIsActive)
@@ -62,6 +62,6 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
                 return;
             }
         }
-      
+
     }
 }

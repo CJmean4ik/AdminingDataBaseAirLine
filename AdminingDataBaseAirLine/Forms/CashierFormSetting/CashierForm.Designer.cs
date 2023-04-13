@@ -119,7 +119,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.AirlineButton.Name = "AirlineButton";
             this.AirlineButton.Size = new System.Drawing.Size(85, 65);
             this.AirlineButton.TabIndex = 6;
-            this.AirlineButton.Text = "Авіак-нії";
+            this.AirlineButton.Text = "Авіакомпанії";
             this.AirlineButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AirlineButton.UseVisualStyleBackColor = false;
             this.AirlineButton.Click += new System.EventHandler(this.AirlineButton_Click);

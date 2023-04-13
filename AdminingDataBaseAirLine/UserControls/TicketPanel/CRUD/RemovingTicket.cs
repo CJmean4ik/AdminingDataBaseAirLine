@@ -1,5 +1,4 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
 using DataBaseModel.Entities.TicketAndOrders;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     internal class RemovingTicket : TicketOperation
     {
@@ -19,16 +18,16 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
         }
 
         public bool IsNowRemove { get; set; }
-    
-        
+
+
         public void PreperingDeleteTicket()
-        {   
+        {
             ChangeStateButton();
             TicketPanel.RemoveButton.Image = Resources.doneDelete;
             TicketPanel.AddButton.Enabled = false;
             TicketPanel.UpdateButton.Enabled = false;
         }
-        
+
         public bool ChekingOnNotEmptryIdTicket(string number)
         {
             if (number == "")
@@ -40,7 +39,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
             }
             return true;
         }
-        public bool ContainsEntityById(int id,ref Ticket ticket)
+        public bool ContainsEntityById(int id, ref Ticket ticket)
         {
             ticket = db.Tickets.Where(w => w.NumberTicket == id).Select(s => s).FirstOrDefault()!;
 
@@ -49,12 +48,12 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
                 TicketPanel.ErorLabel.Text = "Такого квитка не існує!";
                 TicketPanel.ErorLabel.Visible = true;
                 ErorIsActive = true;
-                return false;  
+                return false;
             }
-            
+
             return true;
         }
-        
+
 
     }
 }

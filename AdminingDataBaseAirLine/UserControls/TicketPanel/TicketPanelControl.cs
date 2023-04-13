@@ -1,9 +1,9 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.Themes;
 using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.Data;
+using AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD;
 using DataBaseModel.Entities.TicketAndOrders;
 using System.Data.Entity;
 using System.Windows.Forms;

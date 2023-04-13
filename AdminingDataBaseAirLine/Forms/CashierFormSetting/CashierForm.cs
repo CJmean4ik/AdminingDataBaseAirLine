@@ -1,8 +1,10 @@
 ﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Themes;
 using AdminingDataBaseAirLine.UserControls;
+using AdminingDataBaseAirLine.UserControls.AirlineplanePanel;
 using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.FlightPanel;
+using AdminingDataBaseAirLine.UserControls.PassangerPanel;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
@@ -96,12 +98,24 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             FlightPanelControl flightPanel = new FlightPanelControl(_airlineContext);
             flightPanel.Location = new Point(109, 53);
             await Task.Run(() => flightPanel.InsertDataToDataGrigview());
+
             ticketDataLoad.Visible = false;
+
             this.Controls.Add(flightPanel);         
         }
-        private void PassengerButton_Click(object sender, EventArgs e)
+        private async void PassengerButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("passengerButtonOpen", _ligthMode);
+
+            ticketDataLoad.Visible = true;
+
+            PassangerPanelControl passangerPanel = new PassangerPanelControl(_airlineContext);
+            passangerPanel.Location = new Point(109, 53);
+            await Task.Run(() => passangerPanel.AddPassengerToDataGrid());
+
+            ticketDataLoad.Visible = false;
+
+            this.Controls.Add(passangerPanel);
         }
         private void OrdersButton_Click(object sender, EventArgs e)
         {
@@ -112,9 +126,15 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         {
             _buttonChanges.ChangeButtonProperties("accountButtonOpen", _ligthMode);
         }
-        private void AirlineButton_Click(object sender, EventArgs e)
+        private async void AirlineButton_Click(object sender, EventArgs e)
         {
             _buttonChanges.ChangeButtonProperties("airlineButtonOpen", _ligthMode);
+            ticketDataLoad.Visible = true;
+            AirlineplaneControl airlineplane = new AirlineplaneControl(_airlineContext);
+            airlineplane.Location = new Point(109, 53);
+            await  Task.Run(() => airlineplane.AddItemToDataGridView());
+            ticketDataLoad.Visible = false;
+            this.Controls.Add(airlineplane);
         }
         private void AirplaneButton_Click(object sender, EventArgs e)
         {

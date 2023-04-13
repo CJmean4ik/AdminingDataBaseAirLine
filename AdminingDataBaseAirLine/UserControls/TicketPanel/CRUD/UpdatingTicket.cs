@@ -1,5 +1,4 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
 using DataBaseModel.Entities.TicketAndOrders;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     internal class UpdatingTicket : TicketOperation
     {
@@ -21,19 +20,19 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
             EntryTicket = new Dictionary<int, bool>();
         }
 
-        
+
         public void PreperingUpdateTicket()
-        {          
-            ChangeStateButton();           
+        {
+            ChangeStateButton();
             TicketPanel.UpdateButton.Image = Resources.done;
             TicketPanel.AddButton.Enabled = false;
             TicketPanel.RemoveButton.Enabled = false;
         }
-       
 
-        public bool ChekingOnNotEmptryPriceAndNumber(string price,string number)
+
+        public bool ChekingOnNotEmptryPriceAndNumber(string price, string number)
         {
-            if (price  == "" && number  == "")
+            if (price == "" && number == "")
             {
                 TicketPanel.ErorLabel.Text = "Пусте значення.\nОновлення неможливе";
                 TicketPanel.ErorLabel.Visible = true;
@@ -58,8 +57,8 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting.CRUD
             return db.Tickets
               .Where(w => w.NumberTicket == id)
               .Select(s => s.Price)
-              .FirstOrDefault();           
-        }     
+              .FirstOrDefault();
+        }
     }
 
 }
