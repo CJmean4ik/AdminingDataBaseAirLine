@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,14 +51,15 @@
             this.InRaceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonSlide = new System.Windows.Forms.Button();
-            this.panelControlsTicket = new System.Windows.Forms.Panel();
+            this.panelControlsPassenger = new System.Windows.Forms.Panel();
             this.filterButton = new System.Windows.Forms.Button();
             this.slideFilterPanel = new System.Windows.Forms.Panel();
-            this.priceFromBox = new System.Windows.Forms.TextBox();
-            this.priceToBox = new System.Windows.Forms.TextBox();
-            this.SenderBox = new System.Windows.Forms.TextBox();
-            this.fromWhereBox = new System.Windows.Forms.TextBox();
-            this.whereToBox = new System.Windows.Forms.TextBox();
+            this.declineFilter = new System.Windows.Forms.Button();
+            this.ageFromBox = new System.Windows.Forms.TextBox();
+            this.ageToBox = new System.Windows.Forms.TextBox();
+            this.passNameBox = new System.Windows.Forms.TextBox();
+            this.phoneBox = new System.Windows.Forms.TextBox();
+            this.SurnameBox = new System.Windows.Forms.TextBox();
             this.acceptFilterBtn = new System.Windows.Forms.Button();
             this.whereToLabel = new System.Windows.Forms.Label();
             this.fromWhereLabel = new System.Windows.Forms.Label();
@@ -82,11 +84,6 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.slideSortPanel = new System.Windows.Forms.Panel();
-            this.priceButtonDown = new System.Windows.Forms.Button();
-            this.nameButtonDown = new System.Windows.Forms.Button();
-            this.priceButtonUp = new System.Windows.Forms.Button();
-            this.nameButtonUp = new System.Windows.Forms.Button();
             this.erorLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -98,12 +95,12 @@
             this.removeButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.sortButton = new System.Windows.Forms.Button();
+            this.slideFilterPanelTimer = new System.Windows.Forms.Timer(this.components);
+            this.slideControlPanel = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelControlsTicket.SuspendLayout();
+            this.panelControlsPassenger.SuspendLayout();
             this.slideFilterPanel.SuspendLayout();
-            this.slideSortPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -285,143 +282,159 @@
             this.buttonSlide.Size = new System.Drawing.Size(308, 30);
             this.buttonSlide.TabIndex = 7;
             this.buttonSlide.UseVisualStyleBackColor = true;
+            this.buttonSlide.Click += new System.EventHandler(this.buttonSlide_Click);
             // 
-            // panelControlsTicket
+            // panelControlsPassenger
             // 
-            this.panelControlsTicket.Controls.Add(this.filterButton);
-            this.panelControlsTicket.Controls.Add(this.slideFilterPanel);
-            this.panelControlsTicket.Controls.Add(this.panel9);
-            this.panelControlsTicket.Controls.Add(this.panel5);
-            this.panelControlsTicket.Controls.Add(this.genderBox);
-            this.panelControlsTicket.Controls.Add(this.genderLabel);
-            this.panelControlsTicket.Controls.Add(this.ageBox);
-            this.panelControlsTicket.Controls.Add(this.patronicLabel);
-            this.panelControlsTicket.Controls.Add(this.panel8);
-            this.panelControlsTicket.Controls.Add(this.patronicBox);
-            this.panelControlsTicket.Controls.Add(this.emailLabel);
-            this.panelControlsTicket.Controls.Add(this.panel7);
-            this.panelControlsTicket.Controls.Add(this.emailBox);
-            this.panelControlsTicket.Controls.Add(this.phoneNumberLabel);
-            this.panelControlsTicket.Controls.Add(this.panel6);
-            this.panelControlsTicket.Controls.Add(this.phoneNumberBox);
-            this.panelControlsTicket.Controls.Add(this.ageLabe);
-            this.panelControlsTicket.Controls.Add(this.nameLabel);
-            this.panelControlsTicket.Controls.Add(this.panel4);
-            this.panelControlsTicket.Controls.Add(this.nameBox);
-            this.panelControlsTicket.Controls.Add(this.slideSortPanel);
-            this.panelControlsTicket.Controls.Add(this.buttonSlide);
-            this.panelControlsTicket.Controls.Add(this.erorLabel);
-            this.panelControlsTicket.Controls.Add(this.clearButton);
-            this.panelControlsTicket.Controls.Add(this.label6);
-            this.panelControlsTicket.Controls.Add(this.IdLabel);
-            this.panelControlsTicket.Controls.Add(this.panel3);
-            this.panelControlsTicket.Controls.Add(this.panel2);
-            this.panelControlsTicket.Controls.Add(this.secondNameBox);
-            this.panelControlsTicket.Controls.Add(this.idpassBox);
-            this.panelControlsTicket.Controls.Add(this.removeButton);
-            this.panelControlsTicket.Controls.Add(this.updateButton);
-            this.panelControlsTicket.Controls.Add(this.addButton);
-            this.panelControlsTicket.Controls.Add(this.sortButton);
-            this.panelControlsTicket.Location = new System.Drawing.Point(730, 0);
-            this.panelControlsTicket.MaximumSize = new System.Drawing.Size(0, 570);
-            this.panelControlsTicket.MinimumSize = new System.Drawing.Size(269, 30);
-            this.panelControlsTicket.Name = "panelControlsTicket";
-            this.panelControlsTicket.Size = new System.Drawing.Size(308, 570);
-            this.panelControlsTicket.TabIndex = 4;
+            this.panelControlsPassenger.Controls.Add(this.filterButton);
+            this.panelControlsPassenger.Controls.Add(this.slideFilterPanel);
+            this.panelControlsPassenger.Controls.Add(this.panel9);
+            this.panelControlsPassenger.Controls.Add(this.panel5);
+            this.panelControlsPassenger.Controls.Add(this.genderBox);
+            this.panelControlsPassenger.Controls.Add(this.genderLabel);
+            this.panelControlsPassenger.Controls.Add(this.ageBox);
+            this.panelControlsPassenger.Controls.Add(this.patronicLabel);
+            this.panelControlsPassenger.Controls.Add(this.panel8);
+            this.panelControlsPassenger.Controls.Add(this.patronicBox);
+            this.panelControlsPassenger.Controls.Add(this.emailLabel);
+            this.panelControlsPassenger.Controls.Add(this.panel7);
+            this.panelControlsPassenger.Controls.Add(this.emailBox);
+            this.panelControlsPassenger.Controls.Add(this.phoneNumberLabel);
+            this.panelControlsPassenger.Controls.Add(this.panel6);
+            this.panelControlsPassenger.Controls.Add(this.phoneNumberBox);
+            this.panelControlsPassenger.Controls.Add(this.ageLabe);
+            this.panelControlsPassenger.Controls.Add(this.nameLabel);
+            this.panelControlsPassenger.Controls.Add(this.panel4);
+            this.panelControlsPassenger.Controls.Add(this.nameBox);
+            this.panelControlsPassenger.Controls.Add(this.buttonSlide);
+            this.panelControlsPassenger.Controls.Add(this.erorLabel);
+            this.panelControlsPassenger.Controls.Add(this.clearButton);
+            this.panelControlsPassenger.Controls.Add(this.label6);
+            this.panelControlsPassenger.Controls.Add(this.IdLabel);
+            this.panelControlsPassenger.Controls.Add(this.panel3);
+            this.panelControlsPassenger.Controls.Add(this.panel2);
+            this.panelControlsPassenger.Controls.Add(this.secondNameBox);
+            this.panelControlsPassenger.Controls.Add(this.idpassBox);
+            this.panelControlsPassenger.Controls.Add(this.removeButton);
+            this.panelControlsPassenger.Controls.Add(this.updateButton);
+            this.panelControlsPassenger.Controls.Add(this.addButton);
+            this.panelControlsPassenger.Location = new System.Drawing.Point(726, 4);
+            this.panelControlsPassenger.MaximumSize = new System.Drawing.Size(0, 570);
+            this.panelControlsPassenger.MinimumSize = new System.Drawing.Size(269, 30);
+            this.panelControlsPassenger.Name = "panelControlsPassenger";
+            this.panelControlsPassenger.Size = new System.Drawing.Size(308, 30);
+            this.panelControlsPassenger.TabIndex = 4;
             // 
             // filterButton
             // 
             this.filterButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.filterButton.Image = ((System.Drawing.Image)(resources.GetObject("filterButton.Image")));
-            this.filterButton.Location = new System.Drawing.Point(254, 82);
+            this.filterButton.Location = new System.Drawing.Point(253, 33);
             this.filterButton.Name = "filterButton";
             this.filterButton.Size = new System.Drawing.Size(50, 50);
             this.filterButton.TabIndex = 0;
             this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // slideFilterPanel
             // 
-            this.slideFilterPanel.Controls.Add(this.priceFromBox);
-            this.slideFilterPanel.Controls.Add(this.priceToBox);
-            this.slideFilterPanel.Controls.Add(this.SenderBox);
-            this.slideFilterPanel.Controls.Add(this.fromWhereBox);
-            this.slideFilterPanel.Controls.Add(this.whereToBox);
+            this.slideFilterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.slideFilterPanel.Controls.Add(this.declineFilter);
+            this.slideFilterPanel.Controls.Add(this.ageFromBox);
+            this.slideFilterPanel.Controls.Add(this.ageToBox);
+            this.slideFilterPanel.Controls.Add(this.passNameBox);
+            this.slideFilterPanel.Controls.Add(this.phoneBox);
+            this.slideFilterPanel.Controls.Add(this.SurnameBox);
             this.slideFilterPanel.Controls.Add(this.acceptFilterBtn);
             this.slideFilterPanel.Controls.Add(this.whereToLabel);
             this.slideFilterPanel.Controls.Add(this.fromWhereLabel);
             this.slideFilterPanel.Controls.Add(this.SenderLabel);
             this.slideFilterPanel.Controls.Add(this.priceToLabel);
             this.slideFilterPanel.Controls.Add(this.surnameLabel);
-            this.slideFilterPanel.Location = new System.Drawing.Point(68, 133);
-            this.slideFilterPanel.MaximumSize = new System.Drawing.Size(238, 180);
+            this.slideFilterPanel.Location = new System.Drawing.Point(46, 84);
+            this.slideFilterPanel.MaximumSize = new System.Drawing.Size(0, 200);
             this.slideFilterPanel.MinimumSize = new System.Drawing.Size(238, 0);
             this.slideFilterPanel.Name = "slideFilterPanel";
-            this.slideFilterPanel.Size = new System.Drawing.Size(238, 10);
+            this.slideFilterPanel.Size = new System.Drawing.Size(257, 10);
             this.slideFilterPanel.TabIndex = 6;
             this.slideFilterPanel.Visible = false;
+            this.slideFilterPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.slideFilterPanel_Paint);
             // 
-            // priceFromBox
+            // declineFilter
             // 
-            this.priceFromBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.priceFromBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceFromBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceFromBox.Location = new System.Drawing.Point(101, 7);
-            this.priceFromBox.Name = "priceFromBox";
-            this.priceFromBox.Size = new System.Drawing.Size(134, 23);
-            this.priceFromBox.TabIndex = 10;
+            this.declineFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.declineFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.declineFilter.Location = new System.Drawing.Point(184, 143);
+            this.declineFilter.Name = "declineFilter";
+            this.declineFilter.Size = new System.Drawing.Size(68, 23);
+            this.declineFilter.TabIndex = 11;
+            this.declineFilter.Text = "Скинути";
+            this.declineFilter.UseVisualStyleBackColor = true;
+            this.declineFilter.Click += new System.EventHandler(this.declineFilter_Click);
             // 
-            // priceToBox
+            // ageFromBox
             // 
-            this.priceToBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.priceToBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceToBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceToBox.Location = new System.Drawing.Point(101, 33);
-            this.priceToBox.Name = "priceToBox";
-            this.priceToBox.Size = new System.Drawing.Size(134, 23);
-            this.priceToBox.TabIndex = 9;
+            this.ageFromBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ageFromBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ageFromBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.ageFromBox.Location = new System.Drawing.Point(118, 7);
+            this.ageFromBox.Name = "ageFromBox";
+            this.ageFromBox.Size = new System.Drawing.Size(134, 23);
+            this.ageFromBox.TabIndex = 10;
             // 
-            // SenderBox
+            // ageToBox
             // 
-            this.SenderBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SenderBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SenderBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.SenderBox.Location = new System.Drawing.Point(101, 59);
-            this.SenderBox.Name = "SenderBox";
-            this.SenderBox.Size = new System.Drawing.Size(134, 23);
-            this.SenderBox.TabIndex = 8;
+            this.ageToBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ageToBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ageToBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.ageToBox.Location = new System.Drawing.Point(118, 33);
+            this.ageToBox.Name = "ageToBox";
+            this.ageToBox.Size = new System.Drawing.Size(134, 23);
+            this.ageToBox.TabIndex = 9;
             // 
-            // fromWhereBox
+            // passNameBox
             // 
-            this.fromWhereBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fromWhereBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fromWhereBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.fromWhereBox.Location = new System.Drawing.Point(101, 84);
-            this.fromWhereBox.Name = "fromWhereBox";
-            this.fromWhereBox.Size = new System.Drawing.Size(134, 23);
-            this.fromWhereBox.TabIndex = 7;
+            this.passNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passNameBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.passNameBox.Location = new System.Drawing.Point(118, 59);
+            this.passNameBox.Name = "passNameBox";
+            this.passNameBox.Size = new System.Drawing.Size(134, 23);
+            this.passNameBox.TabIndex = 8;
             // 
-            // whereToBox
+            // phoneBox
             // 
-            this.whereToBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.whereToBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.whereToBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.whereToBox.Location = new System.Drawing.Point(101, 109);
-            this.whereToBox.Name = "whereToBox";
-            this.whereToBox.Size = new System.Drawing.Size(134, 23);
-            this.whereToBox.TabIndex = 6;
+            this.phoneBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phoneBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.phoneBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.phoneBox.Location = new System.Drawing.Point(118, 84);
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.Size = new System.Drawing.Size(134, 23);
+            this.phoneBox.TabIndex = 7;
+            // 
+            // SurnameBox
+            // 
+            this.SurnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SurnameBox.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SurnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.SurnameBox.Location = new System.Drawing.Point(118, 109);
+            this.SurnameBox.Name = "SurnameBox";
+            this.SurnameBox.Size = new System.Drawing.Size(134, 23);
+            this.SurnameBox.TabIndex = 6;
             // 
             // acceptFilterBtn
             // 
             this.acceptFilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acceptFilterBtn.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acceptFilterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.acceptFilterBtn.Location = new System.Drawing.Point(3, 154);
+            this.acceptFilterBtn.Location = new System.Drawing.Point(1, 172);
             this.acceptFilterBtn.Name = "acceptFilterBtn";
-            this.acceptFilterBtn.Size = new System.Drawing.Size(232, 23);
+            this.acceptFilterBtn.Size = new System.Drawing.Size(251, 23);
             this.acceptFilterBtn.TabIndex = 5;
             this.acceptFilterBtn.Text = "Застосувати";
             this.acceptFilterBtn.UseVisualStyleBackColor = true;
+            this.acceptFilterBtn.Click += new System.EventHandler(this.acceptFilterBtn_Click);
             // 
             // whereToLabel
             // 
@@ -430,9 +443,9 @@
             this.whereToLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.whereToLabel.Location = new System.Drawing.Point(12, 116);
             this.whereToLabel.Name = "whereToLabel";
-            this.whereToLabel.Size = new System.Drawing.Size(84, 16);
+            this.whereToLabel.Size = new System.Drawing.Size(70, 16);
             this.whereToLabel.TabIndex = 4;
-            this.whereToLabel.Text = "Прибуття в:";
+            this.whereToLabel.Text = "Прізвище:";
             // 
             // fromWhereLabel
             // 
@@ -441,9 +454,9 @@
             this.fromWhereLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.fromWhereLabel.Location = new System.Drawing.Point(12, 91);
             this.fromWhereLabel.Name = "fromWhereLabel";
-            this.fromWhereLabel.Size = new System.Drawing.Size(63, 16);
+            this.fromWhereLabel.Size = new System.Drawing.Size(84, 16);
             this.fromWhereLabel.TabIndex = 3;
-            this.fromWhereLabel.Text = "Виліт з:";
+            this.fromWhereLabel.Text = "Н.телефону:";
             // 
             // SenderLabel
             // 
@@ -452,9 +465,9 @@
             this.SenderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.SenderLabel.Location = new System.Drawing.Point(12, 66);
             this.SenderLabel.Name = "SenderLabel";
-            this.SenderLabel.Size = new System.Drawing.Size(84, 16);
+            this.SenderLabel.Size = new System.Drawing.Size(35, 16);
             this.SenderLabel.TabIndex = 2;
-            this.SenderLabel.Text = "Відправник:";
+            this.SenderLabel.Text = "Ім\'я";
             // 
             // priceToLabel
             // 
@@ -463,9 +476,9 @@
             this.priceToLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.priceToLabel.Location = new System.Drawing.Point(12, 40);
             this.priceToLabel.Name = "priceToLabel";
-            this.priceToLabel.Size = new System.Drawing.Size(63, 16);
+            this.priceToLabel.Size = new System.Drawing.Size(56, 16);
             this.priceToLabel.TabIndex = 1;
-            this.priceToLabel.Text = "Ціна до:";
+            this.priceToLabel.Text = "Вік до:";
             // 
             // surnameLabel
             // 
@@ -474,9 +487,9 @@
             this.surnameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.surnameLabel.Location = new System.Drawing.Point(12, 14);
             this.surnameLabel.Name = "surnameLabel";
-            this.surnameLabel.Size = new System.Drawing.Size(70, 16);
+            this.surnameLabel.Size = new System.Drawing.Size(63, 16);
             this.surnameLabel.TabIndex = 0;
-            this.surnameLabel.Text = "Ціна від:";
+            this.surnameLabel.Text = "Вік від:";
             // 
             // panel9
             // 
@@ -655,84 +668,6 @@
             this.nameBox.Size = new System.Drawing.Size(185, 27);
             this.nameBox.TabIndex = 24;
             // 
-            // slideSortPanel
-            // 
-            this.slideSortPanel.Controls.Add(this.priceButtonDown);
-            this.slideSortPanel.Controls.Add(this.nameButtonDown);
-            this.slideSortPanel.Controls.Add(this.priceButtonUp);
-            this.slideSortPanel.Controls.Add(this.nameButtonUp);
-            this.slideSortPanel.Location = new System.Drawing.Point(147, 78);
-            this.slideSortPanel.MaximumSize = new System.Drawing.Size(160, 140);
-            this.slideSortPanel.MinimumSize = new System.Drawing.Size(131, 0);
-            this.slideSortPanel.Name = "slideSortPanel";
-            this.slideSortPanel.Size = new System.Drawing.Size(158, 10);
-            this.slideSortPanel.TabIndex = 5;
-            this.slideSortPanel.Visible = false;
-            // 
-            // priceButtonDown
-            // 
-            this.priceButtonDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceButtonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.priceButtonDown.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceButtonDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceButtonDown.Image = ((System.Drawing.Image)(resources.GetObject("priceButtonDown.Image")));
-            this.priceButtonDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.priceButtonDown.Location = new System.Drawing.Point(0, 35);
-            this.priceButtonDown.Name = "priceButtonDown";
-            this.priceButtonDown.Size = new System.Drawing.Size(157, 32);
-            this.priceButtonDown.TabIndex = 7;
-            this.priceButtonDown.Text = "Ціна від більшої";
-            this.priceButtonDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.priceButtonDown.UseVisualStyleBackColor = true;
-            // 
-            // nameButtonDown
-            // 
-            this.nameButtonDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.nameButtonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nameButtonDown.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameButtonDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.nameButtonDown.Image = ((System.Drawing.Image)(resources.GetObject("nameButtonDown.Image")));
-            this.nameButtonDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.nameButtonDown.Location = new System.Drawing.Point(0, 104);
-            this.nameButtonDown.Name = "nameButtonDown";
-            this.nameButtonDown.Size = new System.Drawing.Size(157, 32);
-            this.nameButtonDown.TabIndex = 7;
-            this.nameButtonDown.Text = "Маршрут від";
-            this.nameButtonDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nameButtonDown.UseVisualStyleBackColor = true;
-            // 
-            // priceButtonUp
-            // 
-            this.priceButtonUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceButtonUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.priceButtonUp.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceButtonUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.priceButtonUp.Image = ((System.Drawing.Image)(resources.GetObject("priceButtonUp.Image")));
-            this.priceButtonUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.priceButtonUp.Location = new System.Drawing.Point(4, 0);
-            this.priceButtonUp.Name = "priceButtonUp";
-            this.priceButtonUp.Size = new System.Drawing.Size(154, 29);
-            this.priceButtonUp.TabIndex = 7;
-            this.priceButtonUp.Text = "Ціна від меншої";
-            this.priceButtonUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.priceButtonUp.UseVisualStyleBackColor = true;
-            // 
-            // nameButtonUp
-            // 
-            this.nameButtonUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.nameButtonUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nameButtonUp.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameButtonUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.nameButtonUp.Image = ((System.Drawing.Image)(resources.GetObject("nameButtonUp.Image")));
-            this.nameButtonUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.nameButtonUp.Location = new System.Drawing.Point(0, 69);
-            this.nameButtonUp.Name = "nameButtonUp";
-            this.nameButtonUp.Size = new System.Drawing.Size(157, 32);
-            this.nameButtonUp.TabIndex = 7;
-            this.nameButtonUp.Text = "Маршрут від";
-            this.nameButtonUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nameButtonUp.UseVisualStyleBackColor = true;
-            // 
             // erorLabel
             // 
             this.erorLabel.AutoSize = true;
@@ -853,34 +788,31 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // sortButton
+            // slideFilterPanelTimer
             // 
-            this.sortButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.sortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sortButton.Image = ((System.Drawing.Image)(resources.GetObject("sortButton.Image")));
-            this.sortButton.Location = new System.Drawing.Point(253, 31);
-            this.sortButton.Name = "sortButton";
-            this.sortButton.Size = new System.Drawing.Size(51, 50);
-            this.sortButton.TabIndex = 1;
-            this.sortButton.UseVisualStyleBackColor = true;
+            this.slideFilterPanelTimer.Interval = 10;
+            this.slideFilterPanelTimer.Tick += new System.EventHandler(this.slideFilterPanelTimer_Tick);
+            // 
+            // slideControlPanel
+            // 
+            this.slideControlPanel.Interval = 10;
+            this.slideControlPanel.Tick += new System.EventHandler(this.slideControlPanel_Tick);
             // 
             // PassangerPanelControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.panelControlsTicket);
+            this.Controls.Add(this.panelControlsPassenger);
             this.Controls.Add(this.panel1);
             this.Name = "PassangerPanelControl";
-            this.Size = new System.Drawing.Size(1039, 574);
+            this.Size = new System.Drawing.Size(1041, 576);
             this.Load += new System.EventHandler(this.PassangerPanelControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panelControlsTicket.ResumeLayout(false);
-            this.panelControlsTicket.PerformLayout();
+            this.panelControlsPassenger.ResumeLayout(false);
+            this.panelControlsPassenger.PerformLayout();
             this.slideFilterPanel.ResumeLayout(false);
             this.slideFilterPanel.PerformLayout();
-            this.slideSortPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -890,7 +822,7 @@
         private DataGridView dataGridView1;
         private Panel panel1;
         private Button buttonSlide;
-        private Panel panelControlsTicket;
+        private Panel panelControlsPassenger;
         private Label phoneNumberLabel;
         private Panel panel6;
         private TextBox phoneNumberBox;
@@ -899,17 +831,12 @@
         private Label nameLabel;
         private Panel panel4;
         private TextBox nameBox;
-        private Panel slideSortPanel;
-        private Button priceButtonDown;
-        private Button nameButtonDown;
-        private Button priceButtonUp;
-        private Button nameButtonUp;
         private Panel slideFilterPanel;
-        private TextBox priceFromBox;
-        private TextBox priceToBox;
-        private TextBox SenderBox;
-        private TextBox fromWhereBox;
-        private TextBox whereToBox;
+        private TextBox ageFromBox;
+        private TextBox ageToBox;
+        private TextBox passNameBox;
+        private TextBox phoneBox;
+        private TextBox SurnameBox;
         private Button acceptFilterBtn;
         private Label whereToLabel;
         private Label fromWhereLabel;
@@ -927,7 +854,6 @@
         private Button removeButton;
         private Button updateButton;
         private Button addButton;
-        private Button sortButton;
         private Button filterButton;
         private Label emailLabel;
         private Panel panel7;
@@ -947,11 +873,13 @@
         private DataGridViewTextBoxColumn AgeColumn;
         private DataGridViewTextBoxColumn arrivalColumn;
         private DataGridViewTextBoxColumn InRaceColumn;
+        private System.Windows.Forms.Timer slideFilterPanelTimer;
+        private Button declineFilter;
+        private System.Windows.Forms.Timer slideControlPanel;
 
         public Button RemoveButton { get => removeButton; set => removeButton = value; }
         public Button UpdateButton { get => updateButton; set => updateButton = value; }
         public Button AddButton { get => addButton; set => addButton = value; }
-        public Button SortButton { get => sortButton; set => sortButton = value; }
         public Button FilterButton { get => filterButton; set => filterButton = value; }
         public Button ClearButton { get => clearButton; set => clearButton = value; }
         public Label ErorLabel { get => erorLabel; set => erorLabel = value; }

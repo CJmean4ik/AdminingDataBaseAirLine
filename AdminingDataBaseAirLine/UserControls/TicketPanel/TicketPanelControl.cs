@@ -1,13 +1,10 @@
-﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Properties;
-using AdminingDataBaseAirLine.Themes;
+﻿using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls.Config;
-using AdminingDataBaseAirLine.UserControls.Data;
 using AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD;
-using DataBaseModel.Entities.TicketAndOrders;
+using AdminingDataBaseAirLine.UserControls.TicketPanel.Data;
 using System.Data.Entity;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using AirlineDataBase.DataBaseContext;
+using AirlineDataBase.Entityes.TicketAndOrders;
 
 namespace AdminingDataBaseAirLine.UserControls
 {
@@ -15,12 +12,12 @@ namespace AdminingDataBaseAirLine.UserControls
     {
         private List<TicketControl> ticketControls;
 
-        private AirlineContext _airlineContext;
+        private AirCompanyContext _airlineContext;
         private ControlConfiguration config;
         private AddingTicket _addTicket;
         private UpdatingTicket _updateTicket;
         private RemovingTicket _removeTicket;
-        private ControlsTheme _ticketControlsTheme;
+
         private bool _isNowAdded;
         private bool _isLocal;
         private bool light;
@@ -37,7 +34,7 @@ namespace AdminingDataBaseAirLine.UserControls
 
         }
 
-        public TicketPanelControl(AirlineContext airlineContext, bool light, ControlConfiguration config,ControlsTheme theme)
+        public TicketPanelControl(AirCompanyContext airlineContext, bool light, ControlConfiguration config)
             : this()
         {
             _airlineContext = airlineContext;
@@ -47,13 +44,13 @@ namespace AdminingDataBaseAirLine.UserControls
             _addTicket = new AddingTicket(this, airlineContext);
             _updateTicket = new UpdatingTicket(this, airlineContext);
             _removeTicket = new RemovingTicket(this,airlineContext);
-            _ticketControlsTheme = theme;
+
         }
 
 
         private void TicketPanelControl_Load(object sender, EventArgs e)
         {
-            
+           
         }
         private void clearButton_Click(object sender, EventArgs e)
         {
@@ -188,7 +185,6 @@ namespace AdminingDataBaseAirLine.UserControls
 
             foreach (var dataTicket in data)
             {
-
                 TicketControl ticket = new TicketControl(light, config, dataTicket);
                 ticket.Binder += BindDataForBoxFormTicket;
                 flowTicketPanel.Controls.Add(ticket);
@@ -202,7 +198,7 @@ namespace AdminingDataBaseAirLine.UserControls
 
             var Flights = _airlineContext.Tickets.Select(s => new
             {
-                numberTicket = s.NumberTicket,
+                numberTicket = s.Flight.NameRoute,
                 price = s.Price,
                 fromWhere = s.Flight.Route.FromWhere,
                 where = s.Flight.Route.Where,
@@ -497,12 +493,7 @@ namespace AdminingDataBaseAirLine.UserControls
         }
         public  void ChangeTheme(object sender, EventArgs e)
         {
-            if (light)
-            {
-                _ticketControlsTheme.ChangeThemeControlInFlowPanel(ref light, flowTicketPanel);
-                return;
-            }           
-             _ticketControlsTheme.ChangeThemeControlInFlowPanel(ref light, flowTicketPanel);
+           
         }
         private void nameButtonUp_Click(object sender, EventArgs e)
         {
@@ -517,6 +508,11 @@ namespace AdminingDataBaseAirLine.UserControls
         }
 
         private void panelControlsTicket_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowTicketPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

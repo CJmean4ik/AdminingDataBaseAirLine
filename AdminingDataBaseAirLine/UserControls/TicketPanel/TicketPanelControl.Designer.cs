@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketPanelControl));
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControlsTicket = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.slideSortPanel = new System.Windows.Forms.Panel();
             this.priceButtonDown = new System.Windows.Forms.Button();
             this.nameButtonDown = new System.Windows.Forms.Button();
@@ -90,9 +94,15 @@
             this.flowTicketPanel.Name = "flowTicketPanel";
             this.flowTicketPanel.Size = new System.Drawing.Size(769, 578);
             this.flowTicketPanel.TabIndex = 0;
+            this.flowTicketPanel.Tag = "1";
+            this.flowTicketPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowTicketPanel_Paint);
             // 
             // panelControlsTicket
             // 
+            this.panelControlsTicket.Controls.Add(this.panel9);
+            this.panelControlsTicket.Controls.Add(this.panel10);
+            this.panelControlsTicket.Controls.Add(this.panel8);
+            this.panelControlsTicket.Controls.Add(this.panel1);
             this.panelControlsTicket.Controls.Add(this.slideSortPanel);
             this.panelControlsTicket.Controls.Add(this.slideFilterPanel);
             this.panelControlsTicket.Controls.Add(this.buttonSlide);
@@ -121,13 +131,50 @@
             this.panelControlsTicket.Controls.Add(this.addButton);
             this.panelControlsTicket.Controls.Add(this.sortButton);
             this.panelControlsTicket.Controls.Add(this.filterButton);
-            this.panelControlsTicket.Location = new System.Drawing.Point(769, 3);
+            this.panelControlsTicket.Location = new System.Drawing.Point(770, 3);
             this.panelControlsTicket.MaximumSize = new System.Drawing.Size(0, 570);
             this.panelControlsTicket.MinimumSize = new System.Drawing.Size(269, 30);
             this.panelControlsTicket.Name = "panelControlsTicket";
-            this.panelControlsTicket.Size = new System.Drawing.Size(273, 32);
+            this.panelControlsTicket.Size = new System.Drawing.Size(269, 30);
             this.panelControlsTicket.TabIndex = 1;
+            this.panelControlsTicket.Tag = "1";
             this.panelControlsTicket.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlsTicket_Paint);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel9.Location = new System.Drawing.Point(15, 403);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(226, 5);
+            this.panel9.TabIndex = 28;
+            this.panel9.Tag = "2";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel10.Location = new System.Drawing.Point(15, 460);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(226, 5);
+            this.panel10.TabIndex = 28;
+            this.panel10.Tag = "2";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel8.Location = new System.Drawing.Point(15, 342);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(226, 5);
+            this.panel8.TabIndex = 27;
+            this.panel8.Tag = "2";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel1.Location = new System.Drawing.Point(15, 283);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(226, 5);
+            this.panel1.TabIndex = 26;
+            this.panel1.Tag = "2";
             // 
             // slideSortPanel
             // 
@@ -139,8 +186,9 @@
             this.slideSortPanel.MaximumSize = new System.Drawing.Size(160, 140);
             this.slideSortPanel.MinimumSize = new System.Drawing.Size(131, 0);
             this.slideSortPanel.Name = "slideSortPanel";
-            this.slideSortPanel.Size = new System.Drawing.Size(158, 10);
+            this.slideSortPanel.Size = new System.Drawing.Size(151, 10);
             this.slideSortPanel.TabIndex = 5;
+            this.slideSortPanel.Tag = "5";
             this.slideSortPanel.Visible = false;
             // 
             // priceButtonDown
@@ -153,7 +201,7 @@
             this.priceButtonDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.priceButtonDown.Location = new System.Drawing.Point(0, 35);
             this.priceButtonDown.Name = "priceButtonDown";
-            this.priceButtonDown.Size = new System.Drawing.Size(157, 32);
+            this.priceButtonDown.Size = new System.Drawing.Size(151, 32);
             this.priceButtonDown.TabIndex = 7;
             this.priceButtonDown.Text = "Ціна від більшої";
             this.priceButtonDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +218,7 @@
             this.nameButtonDown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.nameButtonDown.Location = new System.Drawing.Point(0, 104);
             this.nameButtonDown.Name = "nameButtonDown";
-            this.nameButtonDown.Size = new System.Drawing.Size(157, 32);
+            this.nameButtonDown.Size = new System.Drawing.Size(151, 32);
             this.nameButtonDown.TabIndex = 7;
             this.nameButtonDown.Text = "Маршрут від";
             this.nameButtonDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +235,7 @@
             this.priceButtonUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.priceButtonUp.Location = new System.Drawing.Point(0, 0);
             this.priceButtonUp.Name = "priceButtonUp";
-            this.priceButtonUp.Size = new System.Drawing.Size(154, 29);
+            this.priceButtonUp.Size = new System.Drawing.Size(148, 29);
             this.priceButtonUp.TabIndex = 7;
             this.priceButtonUp.Text = "Ціна від меншої";
             this.priceButtonUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +252,7 @@
             this.nameButtonUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.nameButtonUp.Location = new System.Drawing.Point(0, 69);
             this.nameButtonUp.Name = "nameButtonUp";
-            this.nameButtonUp.Size = new System.Drawing.Size(157, 32);
+            this.nameButtonUp.Size = new System.Drawing.Size(151, 32);
             this.nameButtonUp.TabIndex = 7;
             this.nameButtonUp.Text = "Маршрут від";
             this.nameButtonUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,6 +278,7 @@
             this.slideFilterPanel.Name = "slideFilterPanel";
             this.slideFilterPanel.Size = new System.Drawing.Size(238, 10);
             this.slideFilterPanel.TabIndex = 6;
+            this.slideFilterPanel.Tag = "5";
             this.slideFilterPanel.Visible = false;
             // 
             // priceFromBox
@@ -304,6 +353,7 @@
             this.whereToLabel.Name = "whereToLabel";
             this.whereToLabel.Size = new System.Drawing.Size(84, 16);
             this.whereToLabel.TabIndex = 4;
+            this.whereToLabel.Tag = "5";
             this.whereToLabel.Text = "Прибуття в:";
             // 
             // fromWhereLabel
@@ -315,6 +365,7 @@
             this.fromWhereLabel.Name = "fromWhereLabel";
             this.fromWhereLabel.Size = new System.Drawing.Size(63, 16);
             this.fromWhereLabel.TabIndex = 3;
+            this.fromWhereLabel.Tag = "5";
             this.fromWhereLabel.Text = "Виліт з:";
             // 
             // SenderLabel
@@ -326,6 +377,7 @@
             this.SenderLabel.Name = "SenderLabel";
             this.SenderLabel.Size = new System.Drawing.Size(84, 16);
             this.SenderLabel.TabIndex = 2;
+            this.SenderLabel.Tag = "5";
             this.SenderLabel.Text = "Відправник:";
             // 
             // priceToLabel
@@ -337,6 +389,7 @@
             this.priceToLabel.Name = "priceToLabel";
             this.priceToLabel.Size = new System.Drawing.Size(63, 16);
             this.priceToLabel.TabIndex = 1;
+            this.priceToLabel.Tag = "5";
             this.priceToLabel.Text = "Ціна до:";
             // 
             // priceFromLabel
@@ -348,6 +401,7 @@
             this.priceFromLabel.Name = "priceFromLabel";
             this.priceFromLabel.Size = new System.Drawing.Size(70, 16);
             this.priceFromLabel.TabIndex = 0;
+            this.priceFromLabel.Tag = "5";
             this.priceFromLabel.Text = "Ціна від:";
             // 
             // buttonSlide
@@ -358,7 +412,7 @@
             this.buttonSlide.Image = global::AdminingDataBaseAirLine.Properties.Resources.angle_small_down;
             this.buttonSlide.Location = new System.Drawing.Point(0, 0);
             this.buttonSlide.Name = "buttonSlide";
-            this.buttonSlide.Size = new System.Drawing.Size(273, 30);
+            this.buttonSlide.Size = new System.Drawing.Size(269, 30);
             this.buttonSlide.TabIndex = 7;
             this.buttonSlide.UseVisualStyleBackColor = true;
             this.buttonSlide.Click += new System.EventHandler(this.buttonSlide_Click);
@@ -367,10 +421,11 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel7.Location = new System.Drawing.Point(15, 253);
+            this.panel7.Location = new System.Drawing.Point(15, 254);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 32);
+            this.panel7.Size = new System.Drawing.Size(5, 34);
             this.panel7.TabIndex = 25;
+            this.panel7.Tag = "2";
             // 
             // panel6
             // 
@@ -378,8 +433,9 @@
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel6.Location = new System.Drawing.Point(15, 313);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 32);
+            this.panel6.Size = new System.Drawing.Size(5, 33);
             this.panel6.TabIndex = 25;
+            this.panel6.Tag = "2";
             // 
             // panel5
             // 
@@ -387,8 +443,9 @@
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel5.Location = new System.Drawing.Point(15, 373);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 32);
+            this.panel5.Size = new System.Drawing.Size(5, 33);
             this.panel5.TabIndex = 25;
+            this.panel5.Tag = "2";
             // 
             // panel4
             // 
@@ -396,8 +453,9 @@
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel4.Location = new System.Drawing.Point(15, 432);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 32);
+            this.panel4.Size = new System.Drawing.Size(5, 33);
             this.panel4.TabIndex = 24;
+            this.panel4.Tag = "2";
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // erorLabel
@@ -409,6 +467,7 @@
             this.erorLabel.Name = "erorLabel";
             this.erorLabel.Size = new System.Drawing.Size(43, 17);
             this.erorLabel.TabIndex = 23;
+            this.erorLabel.Tag = "0";
             this.erorLabel.Text = "label7";
             this.erorLabel.Visible = false;
             this.erorLabel.Click += new System.EventHandler(this.erorLabel_Click);
@@ -436,6 +495,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 21;
+            this.label6.Tag = "0";
             this.label6.Text = "Ціна";
             // 
             // label5
@@ -447,6 +507,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 17);
             this.label5.TabIndex = 20;
+            this.label5.Tag = "0";
             this.label5.Text = "Номер квитка";
             // 
             // label4
@@ -458,6 +519,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 17);
             this.label4.TabIndex = 19;
+            this.label4.Tag = "4";
             this.label4.Text = "Компанія відправник";
             // 
             // label3
@@ -469,6 +531,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 18;
+            this.label3.Tag = "4";
             this.label3.Text = "Літак";
             // 
             // label2
@@ -480,6 +543,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 17);
             this.label2.TabIndex = 17;
+            this.label2.Tag = "4";
             this.label2.Text = "Куди";
             // 
             // label1
@@ -491,6 +555,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 16;
+            this.label1.Tag = "4";
             this.label1.Text = "Звідки";
             // 
             // panel3
@@ -500,14 +565,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 5);
             this.panel3.TabIndex = 15;
+            this.panel3.Tag = "2";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.panel2.Location = new System.Drawing.Point(15, 150);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 5);
+            this.panel2.Size = new System.Drawing.Size(226, 5);
             this.panel2.TabIndex = 14;
+            this.panel2.Tag = "2";
             // 
             // senderTicketBox
             // 
@@ -652,11 +719,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panelControlsTicket);
             this.Controls.Add(this.flowTicketPanel);
             this.Name = "TicketPanelControl";
-            this.Size = new System.Drawing.Size(1041, 576);
+            this.Size = new System.Drawing.Size(1044, 578);
             this.Load += new System.EventHandler(this.TicketPanelControl_Load);
             this.panelControlsTicket.ResumeLayout(false);
             this.panelControlsTicket.PerformLayout();
@@ -717,6 +783,10 @@
         private System.Windows.Forms.Timer slideSortButtonPanel;
         private System.Windows.Forms.Timer slideFilterButtonPanel;
         private System.Windows.Forms.Timer slideControlsPanel;
+        private Panel panel9;
+        private Panel panel10;
+        private Panel panel8;
+        private Panel panel1;
 
         public ComboBox SenderTicketBox { get => senderTicketBox; set => senderTicketBox = value; }
         public ComboBox AirplaneTicketBox { get => airplaneTicketBox; set => airplaneTicketBox = value; }

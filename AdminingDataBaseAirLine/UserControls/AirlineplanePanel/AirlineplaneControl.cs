@@ -1,17 +1,18 @@
-﻿using System.Data;
+﻿using AirlineDataBase.DataBaseContext;
+using System.Data;
 
 namespace AdminingDataBaseAirLine.UserControls.AirlineplanePanel
 {
     public partial class AirlineplaneControl : UserControl
     {
-        private AirlineContext _airlineContext;
+        private AirCompanyContext _airlineContext;
 
         public AirlineplaneControl()
         {
             InitializeComponent();
         }
 
-        public AirlineplaneControl(AirlineContext airlineContext) : this()
+        public AirlineplaneControl(AirCompanyContext airlineContext) : this()
         {
             _airlineContext = airlineContext;
         }

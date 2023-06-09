@@ -1,14 +1,15 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
-using AdminingDataBaseAirLine.UserControls.Data;
+using AdminingDataBaseAirLine.UserControls.TicketPanel.Data;
+using AirlineDataBase.DataBaseContext;
 using System.Data.Entity;
 
 namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     internal class AddingTicket : TicketOperation
     {
-        public AddingTicket(TicketPanelControl control, AirlineContext db) : base(control, db)
+        public AddingTicket(TicketPanelControl control, AirCompanyContext db) : base(control, db)
         {
         }
 

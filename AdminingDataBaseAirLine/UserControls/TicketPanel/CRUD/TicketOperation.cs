@@ -1,6 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
+using AirlineDataBase.DataBaseContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,10 @@ namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
     public abstract class TicketOperation
     {
         public TicketPanelControl TicketPanel { get; set; }
-        public AirlineContext db { get; set; }
+        public AirCompanyContext db { get; set; }
         public bool ErorIsActive { get; set; }
 
-        protected TicketOperation(TicketPanelControl ticketPanel, AirlineContext db)
+        protected TicketOperation(TicketPanelControl ticketPanel, AirCompanyContext db)
         {
             TicketPanel = ticketPanel;
             this.db = db;

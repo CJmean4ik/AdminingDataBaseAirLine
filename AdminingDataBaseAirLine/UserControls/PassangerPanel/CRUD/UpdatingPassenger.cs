@@ -1,12 +1,12 @@
 ﻿using AdminingDataBaseAirLine.Properties;
-using AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD;
-using DataBaseModel.Entities.Accounts;
+using AirlineDataBase.DataBaseContext;
+using AirlineDataBase.Entityes.Accounts;
 
 namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD
 {
     internal class UpdatingPassenger : PassengerOperation
     {
-        private Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments> modifiedProperty;
+        private Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments<Passenger,AirCompanyContext, PassangerPanelControl>> modifiedProperty;
         public bool IsNowUpdate { get; internal set; }
 
         public UpdatingPassenger(PassangerPanelControl ticketPanel) : base(ticketPanel)
@@ -20,7 +20,7 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD
             ticketPanel.AddButton.Enabled = false;
             ticketPanel.RemoveButton.Enabled = false;
         }
-        public void SearchModifiePassengerProperty(Passenger comparablePassenger, Passenger oldPassenger, AirlineContext context)
+        public void SearchModifiePassengerProperty(Passenger comparablePassenger, Passenger oldPassenger, AirCompanyContext context)
         {
             foreach (var attachment in modifiedProperty)
             {
@@ -53,11 +53,11 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD
     }
 
     
-    public class TrackingModifierArguments
+    public class TrackingModifierArguments<T,V,P>
     {
         public bool IsModified { get; set; }
-        public Action<Passenger, Passenger> ValueModifier { get; set; }
-        public Action<Passenger,AirlineContext> Attacher { get; set; }
-         public Action<Passenger, PassangerPanelControl,int> ChangerCells { get; set; }
+        public Action<T, T> ValueModifier { get; set; }
+        public Action<T, V> Attacher { get; set; }
+        public Action<T, P, int> ChangerCells { get; set; }
     }
 }

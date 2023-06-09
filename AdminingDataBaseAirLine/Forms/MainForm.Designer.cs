@@ -146,8 +146,11 @@
             // 
             this.LogInBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogInBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.LogInBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.LogInBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.LogInBtn.FlatAppearance.BorderSize = 0;
+            this.LogInBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.LogInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogInBtn.Font = new System.Drawing.Font("JetBrains Mono", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LogInBtn.ForeColor = System.Drawing.SystemColors.Control;
@@ -156,7 +159,7 @@
             this.LogInBtn.Location = new System.Drawing.Point(38, 442);
             this.LogInBtn.Name = "LogInBtn";
             this.LogInBtn.Size = new System.Drawing.Size(292, 67);
-            this.LogInBtn.TabIndex = 7;
+            this.LogInBtn.TabIndex = 0;
             this.LogInBtn.Text = "УВІЙТИ";
             this.LogInBtn.UseVisualStyleBackColor = false;
             this.LogInBtn.Click += new System.EventHandler(this.LogInBtn_Click);
@@ -195,15 +198,17 @@
             this.ShowPasswordBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ShowPasswordBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ShowPasswordBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.ShowPasswordBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ShowPasswordBtn.CausesValidation = false;
             this.ShowPasswordBtn.FlatAppearance.BorderSize = 0;
+            this.ShowPasswordBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.ShowPasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowPasswordBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.ShowPasswordBtn.Image = global::AdminingDataBaseAirLine.Properties.Resources.eye_crossed;
-            this.ShowPasswordBtn.Location = new System.Drawing.Point(295, 321);
+            this.ShowPasswordBtn.Location = new System.Drawing.Point(295, 329);
             this.ShowPasswordBtn.Name = "ShowPasswordBtn";
-            this.ShowPasswordBtn.Size = new System.Drawing.Size(35, 36);
-            this.ShowPasswordBtn.TabIndex = 10;
+            this.ShowPasswordBtn.Size = new System.Drawing.Size(35, 28);
+            this.ShowPasswordBtn.TabIndex = 0;
             this.ShowPasswordBtn.TabStop = false;
             this.ShowPasswordBtn.UseVisualStyleBackColor = false;
             this.ShowPasswordBtn.Click += new System.EventHandler(this.ShowPasswordBtn_Click);
@@ -230,6 +235,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 519);
             this.panel1.TabIndex = 16;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // passwordMistake
             // 

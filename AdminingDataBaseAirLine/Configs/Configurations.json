@@ -1,9 +1,11 @@
 {
   "Connections": {
-    "MsSqlConnection": "Data Source=СТАС-ПК\\SQLEXPRESS;Initial Catalog=AIRCOMPANYS;Integrated Security=True"
+    "MsSqlConnection": "Data Source=stas\\sqlexpress;Initial Catalog=AIRCOMPANYS;Integrated Security=True"
   },
 
   "Paths": {
-    "JsonAccount": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\bin\\Debug\\net6.0-windows10.0.22621.0\\Accounts.json" 
+    "JsonAccount": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\bin\\Debug\\net6.0-windows10.0.22621.0\\Accounts.json",
+    "TemplateWord": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\UserControls\\ReservedSeatsPanel\\PDFReport\\Template\\ReservedTicketTemplateWord.docx"
   }
+
 }

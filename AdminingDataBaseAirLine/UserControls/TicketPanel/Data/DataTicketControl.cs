@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminingDataBaseAirLine.UserControls.Data
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.Data
 {
     public class DataTicketControl
     {
-        public int NumberTicket { get; set; }
+        public string NumberTicket { get; set; }
         public decimal PriceTicket { get; set; }
         public string FromWhereTicket { get; set; }
         public string WhereTicket { get; set; }

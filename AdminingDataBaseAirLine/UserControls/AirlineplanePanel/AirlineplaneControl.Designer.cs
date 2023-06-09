@@ -62,7 +62,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
@@ -90,9 +90,8 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
@@ -110,18 +109,18 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(929, 573);
+            this.dataGridView1.Size = new System.Drawing.Size(1036, 558);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel1.Location = new System.Drawing.Point(18, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(941, 576);
+            this.panel1.Size = new System.Drawing.Size(1048, 561);
             this.panel1.TabIndex = 2;
             // 
             // idColumn
@@ -135,7 +134,6 @@
             this.idColumn.FillWeight = 50F;
             this.idColumn.HeaderText = "ID";
             this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
             this.idColumn.Width = 50;
             // 
             // senderColumn
@@ -149,8 +147,7 @@
             this.senderColumn.FillWeight = 150F;
             this.senderColumn.HeaderText = "Авіакомпанія";
             this.senderColumn.Name = "senderColumn";
-            this.senderColumn.ReadOnly = true;
-            this.senderColumn.Width = 150;
+            this.senderColumn.Width = 170;
             // 
             // fromWhereColumn
             // 
@@ -162,7 +159,6 @@
             this.fromWhereColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fromWhereColumn.HeaderText = "ID літака";
             this.fromWhereColumn.Name = "fromWhereColumn";
-            this.fromWhereColumn.ReadOnly = true;
             // 
             // WhereColumn
             // 
@@ -174,7 +170,7 @@
             this.WhereColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.WhereColumn.HeaderText = "Тип літака";
             this.WhereColumn.Name = "WhereColumn";
-            this.WhereColumn.ReadOnly = true;
+            this.WhereColumn.Width = 150;
             // 
             // departmentColumn
             // 
@@ -187,7 +183,6 @@
             this.departmentColumn.FillWeight = 170F;
             this.departmentColumn.HeaderText = "Вмісткість";
             this.departmentColumn.Name = "departmentColumn";
-            this.departmentColumn.ReadOnly = true;
             // 
             // arrivalColumn
             // 
@@ -200,14 +195,12 @@
             this.arrivalColumn.FillWeight = 170F;
             this.arrivalColumn.HeaderText = "Модель літака";
             this.arrivalColumn.Name = "arrivalColumn";
-            this.arrivalColumn.ReadOnly = true;
             this.arrivalColumn.Width = 180;
             // 
             // InRaceColumn
             // 
             this.InRaceColumn.HeaderText = "В рейсі";
             this.InRaceColumn.Name = "InRaceColumn";
-            this.InRaceColumn.ReadOnly = true;
             // 
             // airplaneSender
             // 
@@ -220,8 +213,7 @@
             this.airplaneSender.FillWeight = 150F;
             this.airplaneSender.HeaderText = "Країна ласник";
             this.airplaneSender.Name = "airplaneSender";
-            this.airplaneSender.ReadOnly = true;
-            this.airplaneSender.Width = 150;
+            this.airplaneSender.Width = 190;
             // 
             // AirlineplaneControl
             // 
@@ -230,7 +222,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "AirlineplaneControl";
-            this.Size = new System.Drawing.Size(977, 576);
+            this.Size = new System.Drawing.Size(1045, 576);
             this.Load += new System.EventHandler(this.AirlineplaneControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

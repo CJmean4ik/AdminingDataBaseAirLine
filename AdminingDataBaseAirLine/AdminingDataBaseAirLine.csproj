@@ -10,10 +10,11 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="GroupDocs.Assembly" Version="22.12.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataBaseModel\DataBaseModel.csproj" />
+    <ProjectReference Include="..\..\AirlineDataBase\AirlineDataBase\AirlineDataBase.csproj" />
   </ItemGroup>
 
   <ItemGroup>

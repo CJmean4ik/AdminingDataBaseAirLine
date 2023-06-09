@@ -1,95 +1,94 @@
 ﻿using AdminingDataBaseAirLine.UserControls.PassangerPanel;
-using AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD;
-using DataBaseModel.Entities.Accounts;
+using AirlineDataBase.DataBaseContext;
+using AirlineDataBase.Entityes.Accounts;
 
-
-namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
+namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD
 {
     public static class SourseBinder
     {
-        public static Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments> InitializeDictionary()
+        public static Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments<Passenger, AirCompanyContext, PassangerPanelControl>> InitializeDictionary()
         {
-            return new Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments>()
+            return new Dictionary<Func<Passenger, Passenger, bool>, TrackingModifierArguments<Passenger, AirCompanyContext, PassangerPanelControl>>()
             {
-                [(Passenger newV, Passenger oldV) => newV.Name != oldV.Name] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Name != oldV.Name] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Name = newV.Name,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Name = newV.Name,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Name)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[2].Value = oldV.Name
                 },
-                [(Passenger newV, Passenger oldV) => newV.Surname != oldV.Surname] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Surname != oldV.Surname] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Surname = newV.Surname,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Surname = newV.Surname,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Surname)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[1].Value = oldV.Surname
 
                 },
-                [(Passenger newV, Passenger oldV) => newV.Patronymic != oldV.Patronymic] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Patronymic != oldV.Patronymic] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Patronymic = newV.Patronymic,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Patronymic = newV.Patronymic,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Patronymic)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[3].Value = oldV.Patronymic
 
                 },
-                [(Passenger newV, Passenger oldV) => newV.Gender != oldV.Gender] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Gender != oldV.Gender] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Gender = newV.Gender,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Gender = newV.Gender,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Gender)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[4].Value = oldV.Gender
 
                 },
-                [(Passenger newV, Passenger oldV) => newV.Age != oldV.Age] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Age != oldV.Age] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Age = newV.Age,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Age = newV.Age,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Age)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[5].Value = oldV.Age
 
                 },
-                [(Passenger newV, Passenger oldV) => newV.PhoneNumber != oldV.PhoneNumber] = new TrackingModifierArguments
+                [(newV, oldV) => newV.PhoneNumber != oldV.PhoneNumber] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.PhoneNumber = newV.PhoneNumber,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.PhoneNumber = newV.PhoneNumber,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.PhoneNumber)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV, PassangerPanelControl panel, int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                        .DataGridView1.Rows[rowIndex]
                                                                        .Cells[6].Value = oldV.PhoneNumber
 
                 },
-                [(Passenger newV, Passenger oldV) => newV.Email != oldV.Email] = new TrackingModifierArguments
+                [(newV, oldV) => newV.Email != oldV.Email] = new()
                 {
                     IsModified = false,
-                    ValueModifier = (Passenger newV, Passenger oldV) => oldV.Email = newV.Email,
-                    Attacher = (Passenger oldVm, AirlineContext db) => db.Entry(oldVm)
+                    ValueModifier = (newV, oldV) => oldV.Email = newV.Email,
+                    Attacher = (oldVm, db) => db.Entry(oldVm)
                                                                          .Property(p => p.Email)
                                                                          .IsModified = true,
-                    ChangerCells = (Passenger oldV,PassangerPanelControl panel,int rowIndex) => panel
+                    ChangerCells = (oldV, panel, rowIndex) => panel
                                                                          .DataGridView1.Rows[rowIndex]
                                                                          .Cells[7].Value = oldV.Email
 

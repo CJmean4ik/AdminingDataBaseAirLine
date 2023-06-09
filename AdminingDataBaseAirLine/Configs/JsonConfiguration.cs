@@ -26,5 +26,13 @@ namespace AdminingDataBaseAirLine.Configs
             }
 
         }
+        public static async Task<string> GetPathToTemplateWord(string path)
+        {
+            using (JsonDocument jsonDocument = await JsonDocument.ParseAsync(File.OpenRead(path)))
+            {
+                return jsonDocument.RootElement.GetProperty("Paths").GetProperty("TemplateWord").GetString()!;
+            }
+
+        }
     }
 }

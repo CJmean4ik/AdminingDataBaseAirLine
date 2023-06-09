@@ -1,6 +1,6 @@
 ﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 
-namespace AdminingDataBaseAirLine.UserControls.Data
+namespace AdminingDataBaseAirLine.UserControls.TicketPanel.Data
 {
     internal class DataTicketBinder
     {
@@ -22,7 +22,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
             ticket.ModelAirPlaneField.Text = dataTicket.ModelAirplane;
             ticket.SenderField.Text = dataTicket.SenderTicket;
         }
-     
+
 
         /// <summary>
         /// Возвращает данные из Ticket в  виде обьекта DataTicketControl
@@ -32,7 +32,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
         public static DataTicketControl GetDataTicket(TicketControl ticket)
         {
             DataTicketControl dataTicket = new DataTicketControl();
-            dataTicket.NumberTicket = int.Parse(ticket.FlightField.Text);
+            dataTicket.NumberTicket = ticket.FlightField.Text;
             dataTicket.PriceTicket = decimal.Parse(ticket.PriceField.Text);
             dataTicket.FromWhereTicket = ticket.FromWField.Text;
             dataTicket.WhereTicket = ticket.WhereField.Text;
@@ -42,7 +42,7 @@ namespace AdminingDataBaseAirLine.UserControls.Data
             dataTicket.SenderTicket = ticket.SenderField.Text;
             return dataTicket;
         }
-        
+
 
     }
 }

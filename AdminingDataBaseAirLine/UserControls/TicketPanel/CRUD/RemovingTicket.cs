@@ -1,7 +1,8 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
-using DataBaseModel.Entities.TicketAndOrders;
+using AirlineDataBase.DataBaseContext;
+using AirlineDataBase.Entityes.TicketAndOrders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
     internal class RemovingTicket : TicketOperation
     {
-        public RemovingTicket(TicketPanelControl ticketPanel, AirlineContext db) : base(ticketPanel, db)
+        public RemovingTicket(TicketPanelControl ticketPanel, AirCompanyContext db) : base(ticketPanel, db)
         {
 
         }

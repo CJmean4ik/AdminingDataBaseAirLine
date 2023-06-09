@@ -83,49 +83,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap airline_dark {
-            get {
-                object obj = ResourceManager.GetObject("airline_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap airline_white {
             get {
                 object obj = ResourceManager.GetObject("airline_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap airplane_blue {
-            get {
-                object obj = ResourceManager.GetObject("airplane_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap airplane_dark {
-            get {
-                object obj = ResourceManager.GetObject("airplane_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap airplane_white {
-            get {
-                object obj = ResourceManager.GetObject("airplane_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +113,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkmark__1_ {
+        internal static System.Drawing.Bitmap bookSeats_blue {
             get {
-                object obj = ResourceManager.GetObject("checkmark__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("bookSeats_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +123,19 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dark_mode {
+        internal static System.Drawing.Bitmap bookSeats_white {
             get {
-                object obj = ResourceManager.GetObject("dark_mode", resourceCulture);
+                object obj = ResourceManager.GetObject("bookSeats_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkmark__1_ {
+            get {
+                object obj = ResourceManager.GetObject("checkmark__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +183,19 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap light_mode {
+        internal static System.Drawing.Bitmap file_pdf {
             get {
-                object obj = ResourceManager.GetObject("light_mode", resourceCulture);
+                object obj = ResourceManager.GetObject("file_pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inbox_out {
+            get {
+                object obj = ResourceManager.GetObject("inbox_out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,16 +213,6 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap orders_dark {
-            get {
-                object obj = ResourceManager.GetObject("orders_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap orders_white {
             get {
                 object obj = ResourceManager.GetObject("orders_white", resourceCulture);
@@ -253,9 +223,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pass_blue {
+        internal static System.Drawing.Bitmap people_blue {
             get {
-                object obj = ResourceManager.GetObject("pass_blue", resourceCulture);
+                object obj = ResourceManager.GetObject("people_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,19 +233,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pass_dark {
+        internal static System.Drawing.Bitmap people_white {
             get {
-                object obj = ResourceManager.GetObject("pass_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pass_white {
-            get {
-                object obj = ResourceManager.GetObject("pass_white", resourceCulture);
+                object obj = ResourceManager.GetObject("people_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,16 +256,6 @@ namespace AdminingDataBaseAirLine.Properties {
         internal static System.Drawing.Bitmap route_blue {
             get {
                 object obj = ResourceManager.GetObject("route_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap route_dark {
-            get {
-                object obj = ResourceManager.GetObject("route_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,16 +293,6 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings_dark {
-            get {
-                object obj = ResourceManager.GetObject("settings_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap settings_white {
             get {
                 object obj = ResourceManager.GetObject("settings_white", resourceCulture);
@@ -363,9 +303,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ticket_blue {
+        internal static System.Drawing.Bitmap ticket_airline_blue {
             get {
-                object obj = ResourceManager.GetObject("ticket_blue", resourceCulture);
+                object obj = ResourceManager.GetObject("ticket_airline_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,19 +313,9 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ticket_dark {
+        internal static System.Drawing.Bitmap ticket_airline_white {
             get {
-                object obj = ResourceManager.GetObject("ticket_dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ticket_white {
-            get {
-                object obj = ResourceManager.GetObject("ticket_white", resourceCulture);
+                object obj = ResourceManager.GetObject("ticket_airline_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

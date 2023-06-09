@@ -12,7 +12,7 @@ namespace AdminingDataBaseAirLine.Authentication
             this.path = path;
         }
 
-        public void CreateAccountInJson(string name, string password, bool IsAdmin)
+        public void CreateAccountInJson(string name, string password, bool IsAdmin,int Id)
         {
             var jsonAccount = new JsonObject
             {
@@ -21,14 +21,15 @@ namespace AdminingDataBaseAirLine.Authentication
                     [name] = new JsonObject()
                     {
                         ["Password"] = password,
-                        ["IsAdmin"] = IsAdmin
+                        ["IsAdmin"] = IsAdmin,
+                        ["CashierId"] = Id
                     }
                 }
             };
             File.AppendAllText(path, jsonAccount.ToJsonString());
         }
 
-        public (string password, bool isAdmin) GetAccountFromJson(string name)
+        public (string password, bool isAdmin,int cashierId) GetAccountFromJson(string name)
         {
             ReadOnlyMemory<char> JsonAccount = File.ReadAllText(path).AsMemory();
             JsonDocument document = JsonDocument.Parse(JsonAccount);
@@ -39,10 +40,11 @@ namespace AdminingDataBaseAirLine.Authentication
                 {
                     var password = item.Value.GetProperty("Password").GetString();
                     var isAdmin = item.Value.GetProperty("IsAdmin").GetBoolean();
-                    return (password, isAdmin)!;
+                    var cashierId = item.Value.GetProperty("CashierId").GetInt32();
+                    return (password, isAdmin, cashierId)!;
                 }
             }
-            return ("none", false);
+            return ("none", false,0);
         }
     }
 }

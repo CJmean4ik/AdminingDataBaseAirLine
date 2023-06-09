@@ -1,4 +1,5 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
+using AirlineDataBase.DataBaseContext;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace AdminingDataBaseAirLine.UserControls.FlightPanel
 {
     public partial class FlightPanelControl : UserControl
     {
-        private AirlineContext _context;
+        private AirCompanyContext _context;
 
         public FlightPanelControl()
         {
@@ -22,7 +23,7 @@ namespace AdminingDataBaseAirLine.UserControls.FlightPanel
           
             
         }
-        public FlightPanelControl(AirlineContext airlineContext) : this()
+        public FlightPanelControl(AirCompanyContext airlineContext) : this()
         {
             _context = airlineContext;
 
@@ -43,13 +44,15 @@ namespace AdminingDataBaseAirLine.UserControls.FlightPanel
         {
             var Flights = _context.Flights.Select(s => new
             {
+               
                 s.NumberFlight,
                 s.Route.FromWhere,
                 s.Route.Where,
                 s.Route.Incoming,
                 s.Route.Departure,
                 s.AirlinePlane.SendingAirline,
-                s.AirlinePlane.Airplane.Model
+                s.AirlinePlane.Airplane.Model,
+                s.NameRoute
             }).ToList();
 
             int count = Flights.Count();
@@ -64,6 +67,7 @@ namespace AdminingDataBaseAirLine.UserControls.FlightPanel
                 dataGridView1.Rows[i].Cells[4].Value = Flights[i].Departure;
                 dataGridView1.Rows[i].Cells[5].Value = Flights[i].Incoming;
                 dataGridView1.Rows[i].Cells[6].Value = Flights[i].Model;
+                dataGridView1.Rows[i].Cells[7].Value = Flights[i].NameRoute;
             }
         }
     }

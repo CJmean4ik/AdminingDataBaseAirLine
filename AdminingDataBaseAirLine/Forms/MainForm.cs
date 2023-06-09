@@ -3,6 +3,7 @@ using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
+using AirlineDataBase.DataBaseContext;
 
 namespace AdminingDataBaseAirLine
 {
@@ -10,7 +11,7 @@ namespace AdminingDataBaseAirLine
     {
         private Loginer _loginer;
         private string _connectString;
-        private AirlineContext _airlineContext;
+        private AirCompanyContext _airlineContext;
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
         private bool _haveEror;
         public MainForm()
@@ -29,7 +30,7 @@ namespace AdminingDataBaseAirLine
 
             _connectString = await JsonConfiguration.GetConnectionString(path);
             string Path = await JsonConfiguration.GetPathToJsonAccount(path);
-            _airlineContext = new AirlineContext(_connectString);
+            _airlineContext = new AirCompanyContext(_connectString);
             _loginer = new Loginer(_airlineContext, Path);
             
         }
@@ -68,7 +69,7 @@ namespace AdminingDataBaseAirLine
                 if (!resultChecked.isAdmin)
                 {
                     this.Hide();
-                    CashierForm cashierForm = new CashierForm(_airlineContext);
+                    CashierForm cashierForm = new CashierForm(_airlineContext, resultChecked.cashierId);
                     cashierForm.ClosingFrom = CloseForm;
                     cashierForm.Show();
                     return;
@@ -127,5 +128,9 @@ namespace AdminingDataBaseAirLine
             this.Dispose();
         }
 
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

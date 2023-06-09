@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "AdminingDataBaseAirLine": {
+      "commandName": "Project"
+    },
+    "Профиль 1": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\DataBaseModel"
+    }
+  }
+}

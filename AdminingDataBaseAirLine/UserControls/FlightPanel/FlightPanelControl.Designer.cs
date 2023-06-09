@@ -40,7 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fromWhereColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,8 @@
             this.departmentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.airplaneSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,8 @@
             this.WhereColumn,
             this.departmentColumn,
             this.arrivalColumn,
-            this.airplaneSender});
+            this.airplaneSender,
+            this.Column1});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -88,7 +90,7 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -110,16 +112,8 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(859, 573);
+            this.dataGridView1.Size = new System.Drawing.Size(1048, 558);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.panel1.Location = new System.Drawing.Point(-2, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 576);
-            this.panel1.TabIndex = 1;
             // 
             // idColumn
             // 
@@ -160,6 +154,7 @@
             this.fromWhereColumn.HeaderText = "Звідки";
             this.fromWhereColumn.Name = "fromWhereColumn";
             this.fromWhereColumn.ReadOnly = true;
+            this.fromWhereColumn.Width = 120;
             // 
             // WhereColumn
             // 
@@ -172,6 +167,7 @@
             this.WhereColumn.HeaderText = "Куди";
             this.WhereColumn.Name = "WhereColumn";
             this.WhereColumn.ReadOnly = true;
+            this.WhereColumn.Width = 120;
             // 
             // departmentColumn
             // 
@@ -214,15 +210,30 @@
             this.airplaneSender.Name = "airplaneSender";
             this.airplaneSender.ReadOnly = true;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Назва рейсу";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.panel1.Location = new System.Drawing.Point(7, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1056, 561);
+            this.panel1.TabIndex = 1;
+            // 
             // FlightPanelControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "FlightPanelControl";
-            this.Size = new System.Drawing.Size(977, 576);
+            this.Size = new System.Drawing.Size(1071, 576);
             this.Load += new System.EventHandler(this.FlightPanelControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -240,5 +251,6 @@
         private DataGridViewTextBoxColumn departmentColumn;
         private DataGridViewTextBoxColumn arrivalColumn;
         private DataGridViewTextBoxColumn airplaneSender;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

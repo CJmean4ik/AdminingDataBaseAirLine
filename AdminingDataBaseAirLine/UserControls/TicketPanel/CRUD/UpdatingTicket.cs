@@ -1,12 +1,5 @@
-﻿using AdminingDataBaseAirLine.Authentication;
-using AdminingDataBaseAirLine.Properties;
-using AdminingDataBaseAirLine.UserControls;
-using DataBaseModel.Entities.TicketAndOrders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdminingDataBaseAirLine.Properties;
+using AirlineDataBase.DataBaseContext;
 
 namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {
@@ -15,7 +8,7 @@ namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
         public bool IsNowUpdate { get; set; }
         public Dictionary<int, bool> EntryTicket;
 
-        public UpdatingTicket(TicketPanelControl ticketPanel, AirlineContext db) : base(ticketPanel, db)
+        public UpdatingTicket(TicketPanelControl ticketPanel, AirCompanyContext db) : base(ticketPanel, db)
         {
             EntryTicket = new Dictionary<int, bool>();
         }
