@@ -19,16 +19,17 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD
             ticketPanel.AddButton.Enabled = false;
             ticketPanel.UpdateButton.Enabled = false;
         }
-        public void ChangeStateBox(bool isEnable = true)
+        public void ChangeStateBox(bool isEnable)
         {
-            ticketPanel.NameBox.Enabled = isEnable ? false : true;
-            ticketPanel.SecondNameBox.Enabled = isEnable ? false : true;
-            ticketPanel.PatronicBox.Enabled = isEnable ? false : true;
-            ticketPanel.AgeBox.Enabled = isEnable ? false : true;
-            ticketPanel.GenderBox.Enabled = isEnable ? false : true;
-            ticketPanel.PhoneNumberBox.Enabled = isEnable ? false : true;
-            ticketPanel.EmailBox.Enabled = isEnable ? false : true;
-
+            ticketPanel.NameBox.Enabled = isEnable;
+            ticketPanel.SecondNameBox.Enabled = isEnable;
+            ticketPanel.PatronicBox.Enabled = isEnable;
+            ticketPanel.AgeBox.Enabled = isEnable;
+            ticketPanel.GenderBox.Enabled = isEnable;
+            ticketPanel.PhoneNumberBox.Enabled = isEnable;
+            ticketPanel.EmailBox.Enabled = isEnable;
+            ticketPanel.AddButton.Enabled = isEnable;
+            ticketPanel.UpdateButton.Enabled = isEnable;
 
         }
     }

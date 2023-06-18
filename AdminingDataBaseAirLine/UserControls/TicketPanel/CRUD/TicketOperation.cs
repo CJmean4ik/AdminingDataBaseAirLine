@@ -1,7 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;

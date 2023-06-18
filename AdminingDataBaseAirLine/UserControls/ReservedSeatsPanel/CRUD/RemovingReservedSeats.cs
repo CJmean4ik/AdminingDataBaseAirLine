@@ -1,4 +1,4 @@
-﻿using AirlineDataBase.DataBaseContext;
+﻿using AirlineDataBase;
 using AirlineDataBase.Entityes.TicketAndOrders;
 
 namespace AdminingDataBaseAirLine.UserControls.ReservedSeatsPanel.CRUD

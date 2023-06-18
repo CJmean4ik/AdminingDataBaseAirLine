@@ -1,7 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.Properties;
-using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting.FormConfiguration;
+using AdminingDataBaseAirLine.ControlConfigs;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
@@ -239,6 +239,9 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1126, 37);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // button1
             // 

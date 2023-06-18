@@ -1,12 +1,12 @@
-﻿using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
+﻿using AdminingDataBaseAirLine.ControlConfigs;
+using AdminingDataBaseAirLine.Forms.CashierFormSetting.ButtonSettings;
 using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.AirlineplanePanel;
-using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.FlightPanel;
 using AdminingDataBaseAirLine.UserControls.OrdersPanel;
 using AdminingDataBaseAirLine.UserControls.PassangerPanel;
 using AdminingDataBaseAirLine.UserControls.ReservedSeatsPanel;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 
 namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 {
@@ -24,8 +24,8 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private ControlConfiguration _controlConfig;
         private TicketPanelControl ticketPanel;
 
-        private int _cashierId;
-
+        private int? _cashierId;
+        private readonly bool isAdmin;
         private bool _ligthMode = true;
         private bool _isAddedTicket;
         private bool _isAddedFlight;
@@ -38,17 +38,21 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
 
         private Action _closingFrom;
         private bool _reservedSeatsIsAded;
+        private bool isMousePress;
+        private Point _clickPoint;
+        private Point _formStartPoint;
 
         public Action ClosingFrom { get => _closingFrom; set => _closingFrom = value; }
 
 
 
-        public CashierForm(AirCompanyContext airlineContext, int cashierId)
+        public CashierForm(AirCompanyContext airlineContext, int? cashierId, bool isAdmin)
         {
             _airlineContext = airlineContext;
             InitializeComponent();
             InitializeModule();
             _cashierId = cashierId;
+            this.isAdmin = isAdmin;
         }
         private void CashierForm_Load(object sender, EventArgs e)
         {
@@ -99,7 +103,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             if (!_isAddedFlight)
             {
                 DataLoad.Visible = true;
-                FlightPanelControl flightPanel = new FlightPanelControl(_airlineContext);
+                FlightPanelControl flightPanel = new FlightPanelControl(_airlineContext,isAdmin);
                 flightPanel.Location = _panelPosition;
                 await Task.Run(() => flightPanel.InsertDataToDataGrigview());
 
@@ -197,7 +201,7 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
             {
                 DataLoad.Visible = true;
 
-                AirlineplaneControl airlineplane = new AirlineplaneControl(_airlineContext);
+                AirlineplaneControl airlineplane = new AirlineplaneControl(_airlineContext, isAdmin);
                 airlineplane.Location = new Point(222, 53);
 
                 await Task.Run(() => airlineplane.AddItemToDataGridView());
@@ -255,6 +259,33 @@ namespace AdminingDataBaseAirLine.Forms.CashierFormSetting
         private void orderPanelControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMousePress = false;
+            _clickPoint = Point.Empty;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMousePress = true;
+            _clickPoint = Cursor.Position;
+            _formStartPoint = Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMousePress)
+            {
+                var cursorOffsetPoint = new Point(
+                    Cursor.Position.X - _clickPoint.X,
+                    Cursor.Position.Y - _clickPoint.Y);
+
+                Location = new Point(
+                    _formStartPoint.X + cursorOffsetPoint.X,
+                    _formStartPoint.Y + cursorOffsetPoint.Y);
+            }
         }
     }
 }

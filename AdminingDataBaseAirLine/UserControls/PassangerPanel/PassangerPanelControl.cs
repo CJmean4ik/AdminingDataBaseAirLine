@@ -1,7 +1,8 @@
 ﻿using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.Accounts;
+using AirlineDataBase.Entityes.TicketAndOrders;
 
 namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
 {
@@ -79,9 +80,10 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
         }
         private void AddDataToCells(Passenger passenger)
         {
-            int rowsCount = dataGridView1.RowCount;
+            
             dataGridView1.Rows.Add(1);
-            AddDataToCells(passenger, rowsCount + 1);
+            int rowsCount = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.None);
+            AddDataToCells(passenger, rowsCount);
         }
         private void clearButton_Click(object sender, EventArgs e)
         {
@@ -140,7 +142,9 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
 
             _context.Passengers.Add(passenger);
             await _context.SaveChangesAsync();
-            AddDataToCells(passenger);
+            dataGridView1.Rows.Add(1);
+            int lasRowIndex = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.None);
+            AddDataToCells(passenger, lasRowIndex);
 
             idpassBox.Enabled = true;
             addButton.Image = Resources.add;
@@ -190,7 +194,7 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
             if (!_removePassenger.IsNowRemoving)
             {
                 _removePassenger.PreperingDeletePassenger();
-                _removePassenger.ChangeStateBox();
+                _removePassenger.ChangeStateBox(false);
                 _removePassenger.IsNowRemoving = true;
                 return;
             }
@@ -204,13 +208,20 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
                 return;
             }
 
+            var orders = _context.Orders.Where(w => w.PassengerId == beingDelPassngr.ID).ToList();
+            var reservedSeats = _context.ReservedSeats.Where(w => w.Order.PassengerId == beingDelPassngr.ID).ToList();
+
+            _context.ReservedSeats.RemoveRange(reservedSeats);
+            _context.Orders.RemoveRange(orders);
+
             _context.Passengers.Remove(beingDelPassngr);
             await _context.SaveChangesAsync();
 
             int index = dataGridView1.CurrentRow.Index;
+            removeButton.Image = Resources.remove;
 
             dataGridView1.Rows.RemoveAt(index);
-            _removePassenger.ChangeStateBox();
+            _removePassenger.ChangeStateBox(true);
         }
         private void slideFilterPanelTimer_Tick(object sender, EventArgs e)
         {
@@ -246,14 +257,14 @@ namespace AdminingDataBaseAirLine.UserControls.PassangerPanel
         }
         private void acceptFilterBtn_Click(object sender, EventArgs e)
         {
-            bool IsAgeFilter = ageFromBox.Text != "" && ageToBox.Text != "" ? true : false;
+            bool IsAgeFilter = ageFromBox.Text != "" || ageToBox.Text != "" ? true : false;
             var sortedList = new List<Passenger>();
 
             if (IsAgeFilter)
             {
                 int ageFrom = int.Parse(ageFromBox.Text);
-                int ageTo = int.Parse(ageToBox.Text);
-                foreach (var passenger in _passengers.Where(w => w.Age >= ageFrom && w.Age <= ageTo))
+                int.TryParse(ageToBox.Text, out int ageTo);
+                foreach (var passenger in _passengers.Where(w => w.Age >= ageFrom || w.Age <= ageTo))
                 {
                     sortedList.Add(passenger);
                 }

@@ -1,7 +1,7 @@
 ﻿using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.TicketAndOrders;
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
             }
             return true;
         }
-        public bool ContainsEntityById(int id, ref Ticket ticket)
+        public bool ContainsEntityById(int id, out Ticket ticket)
         {
             ticket = db.Tickets.Where(w => w.NumberTicket == id).Select(s => s).FirstOrDefault()!;
 

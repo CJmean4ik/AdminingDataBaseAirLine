@@ -43,6 +43,7 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.ShowPasswordBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.connectToDbLbl = new System.Windows.Forms.Label();
             this.passwordMistake = new System.Windows.Forms.Label();
             this.nameMistake = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -149,14 +150,16 @@
             this.LogInBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.LogInBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.LogInBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LogInBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.LogInBtn.FlatAppearance.BorderSize = 0;
             this.LogInBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.LogInBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(169)))), ((int)(((byte)(248)))));
             this.LogInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogInBtn.Font = new System.Drawing.Font("JetBrains Mono", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LogInBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.LogInBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogInBtn.Image")));
             this.LogInBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogInBtn.Location = new System.Drawing.Point(38, 442);
+            this.LogInBtn.Location = new System.Drawing.Point(38, 444);
             this.LogInBtn.Name = "LogInBtn";
             this.LogInBtn.Size = new System.Drawing.Size(292, 67);
             this.LogInBtn.TabIndex = 0;
@@ -169,12 +172,12 @@
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Silver;
+            this.linkLabel1.ForeColor = System.Drawing.Color.Silver;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.linkLabel1.Location = new System.Drawing.Point(210, 424);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(120, 17);
             this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Забули пароль?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -216,6 +219,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.connectToDbLbl);
             this.panel1.Controls.Add(this.panelName);
             this.panel1.Controls.Add(this.panelName2);
             this.panel1.Controls.Add(this.passwordMistake);
@@ -233,9 +237,21 @@
             this.panel1.Controls.Add(this.panelPass2);
             this.panel1.Location = new System.Drawing.Point(466, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 519);
+            this.panel1.Size = new System.Drawing.Size(367, 521);
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // connectToDbLbl
+            // 
+            this.connectToDbLbl.AutoSize = true;
+            this.connectToDbLbl.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.connectToDbLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
+            this.connectToDbLbl.Location = new System.Drawing.Point(49, 367);
+            this.connectToDbLbl.Name = "connectToDbLbl";
+            this.connectToDbLbl.Size = new System.Drawing.Size(216, 17);
+            this.connectToDbLbl.TabIndex = 0;
+            this.connectToDbLbl.Text = "З\'єднання з базою даних...";
+            this.connectToDbLbl.Visible = false;
             // 
             // passwordMistake
             // 
@@ -266,7 +282,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(63, 294);
+            this.label5.Location = new System.Drawing.Point(79, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 30);
             this.label5.TabIndex = 19;
@@ -326,6 +342,9 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -354,6 +373,7 @@
         private Label label2;
         private Label label1;
         private Label label3;
+        private Label connectToDbLbl;
 
         public TextBox UserNameBox1 { get => UserNameBox; set => UserNameBox = value; }
         public Panel PanelName { get => panelName; set => panelName = value; }
@@ -364,5 +384,6 @@
         public Button LogInBtn1 { get => LogInBtn; set => LogInBtn = value; }
         public Label NameMistake { get => nameMistake; set => nameMistake = value; }
         public Label PasswordMistake { get => passwordMistake; set => passwordMistake = value; }
+        public Label ConnectToDbLbl { get => connectToDbLbl; set => connectToDbLbl = value; }
     }
 }

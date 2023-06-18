@@ -1,4 +1,4 @@
-﻿using AirlineDataBase.DataBaseContext;
+﻿using AirlineDataBase;
 using AirlineDataBase.Entityes.TicketAndOrders;
 using System.Data.Entity;
 
@@ -21,7 +21,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
             await AirCompany.Orders.LoadAsync();
         }
         public void EnableIdBox(bool state) => OrderPanelControl.IdpassBox.Enabled = state;
-        private Orders PreperingToAddingOrders(int cashierId)
+        private Orders PreperingToAddingOrders(int? cashierId)
         {
             if (!ExistPassenger(out int passengerId))
             {
@@ -44,7 +44,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
             }
             return orders;
         }
-        public async Task<Orders> AddOrdersAsync(int cashierId)
+        public async Task<Orders> AddOrdersAsync(int? cashierId)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
                 return null;
             }
         }
-        private Orders OrderFormation(int cashierId, int passengerId, int ticketId)
+        private Orders OrderFormation(int? cashierId, int passengerId, int ticketId)
         {
             Orders orders = new Orders()
             {

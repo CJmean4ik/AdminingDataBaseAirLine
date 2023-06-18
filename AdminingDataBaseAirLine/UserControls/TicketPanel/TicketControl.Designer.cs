@@ -68,7 +68,7 @@
             // FlightLabel
             // 
             this.FlightLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlightLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.FlightLabel.Image = ((System.Drawing.Image)(resources.GetObject("FlightLabel.Image")));
             this.FlightLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -84,18 +84,18 @@
             // 
             this.flightField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.flightField.AutoSize = true;
-            this.flightField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flightField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.flightField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.flightField.Location = new System.Drawing.Point(14, 67);
             this.flightField.Name = "flightField";
-            this.flightField.Size = new System.Drawing.Size(51, 27);
+            this.flightField.Size = new System.Drawing.Size(45, 25);
             this.flightField.TabIndex = 4;
             this.flightField.Text = "___";
             // 
             // priceLabel
             // 
             this.priceLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.priceLabel.Image = ((System.Drawing.Image)(resources.GetObject("priceLabel.Image")));
             this.priceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,11 +111,11 @@
             // 
             this.priceField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.priceField.AutoSize = true;
-            this.priceField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.priceField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.priceField.Location = new System.Drawing.Point(377, 67);
             this.priceField.Name = "priceField";
-            this.priceField.Size = new System.Drawing.Size(51, 27);
+            this.priceField.Size = new System.Drawing.Size(45, 25);
             this.priceField.TabIndex = 6;
             this.priceField.Text = "___";
             // 
@@ -123,11 +123,11 @@
             // 
             this.deparField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deparField.AutoSize = true;
-            this.deparField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deparField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.deparField.Location = new System.Drawing.Point(14, 216);
             this.deparField.Name = "deparField";
-            this.deparField.Size = new System.Drawing.Size(51, 27);
+            this.deparField.Size = new System.Drawing.Size(45, 25);
             this.deparField.TabIndex = 7;
             this.deparField.Text = "___";
             // 
@@ -135,13 +135,13 @@
             // 
             this.deparLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deparLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.deparLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deparLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deparLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.deparLabel.Image = ((System.Drawing.Image)(resources.GetObject("deparLabel.Image")));
             this.deparLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deparLabel.Location = new System.Drawing.Point(14, 179);
             this.deparLabel.Name = "deparLabel";
-            this.deparLabel.Size = new System.Drawing.Size(216, 37);
+            this.deparLabel.Size = new System.Drawing.Size(204, 37);
             this.deparLabel.TabIndex = 8;
             this.deparLabel.Text = "Дата вильоту:";
             this.deparLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -150,25 +150,25 @@
             // 
             this.arrivalField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.arrivalField.AutoSize = true;
-            this.arrivalField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.arrivalField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.arrivalField.Location = new System.Drawing.Point(377, 216);
             this.arrivalField.Name = "arrivalField";
-            this.arrivalField.Size = new System.Drawing.Size(51, 27);
+            this.arrivalField.Size = new System.Drawing.Size(45, 25);
             this.arrivalField.TabIndex = 9;
             this.arrivalField.Text = "___";
             // 
             // arrivalLabel
             // 
             this.arrivalLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.arrivalLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.arrivalLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.arrivalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.arrivalLabel.Image = ((System.Drawing.Image)(resources.GetObject("arrivalLabel.Image")));
             this.arrivalLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.arrivalLabel.Location = new System.Drawing.Point(377, 179);
             this.arrivalLabel.Name = "arrivalLabel";
             this.arrivalLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.arrivalLabel.Size = new System.Drawing.Size(230, 37);
+            this.arrivalLabel.Size = new System.Drawing.Size(204, 37);
             this.arrivalLabel.TabIndex = 10;
             this.arrivalLabel.Text = "Дата прибуття:";
             this.arrivalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,18 +177,18 @@
             // 
             this.whereField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.whereField.AutoSize = true;
-            this.whereField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.whereField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.whereField.Location = new System.Drawing.Point(377, 142);
             this.whereField.Name = "whereField";
-            this.whereField.Size = new System.Drawing.Size(51, 27);
+            this.whereField.Size = new System.Drawing.Size(45, 25);
             this.whereField.TabIndex = 13;
             this.whereField.Text = "___";
             // 
             // whereLabel
             // 
             this.whereLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.whereLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.whereLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.whereLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.whereLabel.Image = ((System.Drawing.Image)(resources.GetObject("whereLabel.Image")));
             this.whereLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,18 +204,18 @@
             // 
             this.fromWField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.fromWField.AutoSize = true;
-            this.fromWField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fromWField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.fromWField.Location = new System.Drawing.Point(14, 142);
             this.fromWField.Name = "fromWField";
-            this.fromWField.Size = new System.Drawing.Size(51, 27);
+            this.fromWField.Size = new System.Drawing.Size(45, 25);
             this.fromWField.TabIndex = 11;
             this.fromWField.Text = "___";
             // 
             // fromWLabele
             // 
             this.fromWLabele.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.fromWLabele.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fromWLabele.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fromWLabele.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.fromWLabele.Image = ((System.Drawing.Image)(resources.GetObject("fromWLabele.Image")));
             this.fromWLabele.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,24 +230,24 @@
             // 
             this.modelAirPlaneField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modelAirPlaneField.AutoSize = true;
-            this.modelAirPlaneField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.modelAirPlaneField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.modelAirPlaneField.Location = new System.Drawing.Point(14, 283);
             this.modelAirPlaneField.Name = "modelAirPlaneField";
-            this.modelAirPlaneField.Size = new System.Drawing.Size(51, 27);
+            this.modelAirPlaneField.Size = new System.Drawing.Size(45, 25);
             this.modelAirPlaneField.TabIndex = 15;
             this.modelAirPlaneField.Text = "___";
             // 
             // modelAirPlaneLabel
             // 
             this.modelAirPlaneLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.modelAirPlaneLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.modelAirPlaneLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.modelAirPlaneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.modelAirPlaneLabel.Image = ((System.Drawing.Image)(resources.GetObject("modelAirPlaneLabel.Image")));
             this.modelAirPlaneLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.modelAirPlaneLabel.Location = new System.Drawing.Point(14, 246);
             this.modelAirPlaneLabel.Name = "modelAirPlaneLabel";
-            this.modelAirPlaneLabel.Size = new System.Drawing.Size(228, 37);
+            this.modelAirPlaneLabel.Size = new System.Drawing.Size(214, 37);
             this.modelAirPlaneLabel.TabIndex = 16;
             this.modelAirPlaneLabel.Text = "Модель літака:";
             this.modelAirPlaneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,18 +256,18 @@
             // 
             this.senderField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.senderField.AutoSize = true;
-            this.senderField.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.senderField.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.senderField.Location = new System.Drawing.Point(377, 283);
             this.senderField.Name = "senderField";
-            this.senderField.Size = new System.Drawing.Size(51, 27);
+            this.senderField.Size = new System.Drawing.Size(45, 25);
             this.senderField.TabIndex = 17;
             this.senderField.Text = "___";
             // 
             // senderLabel
             // 
             this.senderLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.senderLabel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.senderLabel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.senderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
             this.senderLabel.Image = ((System.Drawing.Image)(resources.GetObject("senderLabel.Image")));
             this.senderLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

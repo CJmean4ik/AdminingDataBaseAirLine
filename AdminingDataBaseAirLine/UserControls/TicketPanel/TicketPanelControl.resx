@@ -58,6 +58,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cancelOperationBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnBR8GMBG2dCOQAAABWElEQVRIS91VQVLCQBDcN1hqqXyA
+        gk2A4hnqX8SD6FnLpyjsgR+Af9CD71C8cMLpoTNFUqtYWXOhq6aYTE96ZjbJ4PYH0zy/DFn2Ms2yL7F1
+        TcO9i0m3e0HZDUT4sZKYbBPvH1QcnTO4Ert5HgzOlKgB3CsaY2qtdRIeCwqMmZeM4P2tano/d+IscTFr
+        t0/JJwNabPoTBfTMyJUQOp0D4UZPw+EhQwbEwCGHoRJM15wIZNRr5b1/m+X5McMOPmK8d8RwCaZrTgTa
+        ZSHEIiVx+Y1NB5iuOT+gKrjtb09Vhema8wtCv38kOa9Frti7nP0J6SiK3NoFdr11Re7OAo0eUeMPufHX
+        lB/aVaxLnU64v3xouipSllwVoddrscAHCixwgQVFPhlyfHdaAMsOK5XVViiSMol2vhHXdS1650rgz4FF
+        /s1E/F7FC+gkMpKQ+kxq2hIa1vkewLlvBaeywhZ2fTYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="priceButtonDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1

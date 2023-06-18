@@ -2,7 +2,7 @@
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls;
 using AdminingDataBaseAirLine.UserControls.TicketPanel.Data;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using System.Data.Entity;
 
 namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD

@@ -1,5 +1,5 @@
 ﻿using AdminingDataBaseAirLine.UserControls.ReservedSeatsPanel;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using GroupDocs.Assembly;
 using PDFGroupDocs.PDFReport.ReportEntity;
 

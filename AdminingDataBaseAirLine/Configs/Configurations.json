@@ -4,7 +4,7 @@
   },
 
   "Paths": {
-    "JsonAccount": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\bin\\Debug\\net6.0-windows10.0.22621.0\\Accounts.json",
+    "JsonAccount": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\bin\\Debug\\net6.0-windows10.0.22621.0\\Accounts\\PATH_NAME",
     "TemplateWord": "C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\UserControls\\ReservedSeatsPanel\\PDFReport\\Template\\ReservedTicketTemplateWord.docx"
   }
 

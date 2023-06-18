@@ -1,5 +1,5 @@
 ﻿using AdminingDataBaseAirLine.Properties;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 
 namespace AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD
 {

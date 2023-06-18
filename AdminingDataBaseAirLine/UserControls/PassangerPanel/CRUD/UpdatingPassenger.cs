@@ -1,5 +1,5 @@
 ﻿using AdminingDataBaseAirLine.Properties;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.Accounts;
 
 namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD

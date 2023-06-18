@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketPanelControl));
             this.flowTicketPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControlsTicket = new System.Windows.Forms.Panel();
+            this.cancelOperationBtn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -82,6 +83,7 @@
             this.slideSortButtonPanel = new System.Windows.Forms.Timer(this.components);
             this.slideFilterButtonPanel = new System.Windows.Forms.Timer(this.components);
             this.slideControlsPanel = new System.Windows.Forms.Timer(this.components);
+            this.dropFilter = new System.Windows.Forms.Button();
             this.panelControlsTicket.SuspendLayout();
             this.slideSortPanel.SuspendLayout();
             this.slideFilterPanel.SuspendLayout();
@@ -99,6 +101,7 @@
             // 
             // panelControlsTicket
             // 
+            this.panelControlsTicket.Controls.Add(this.cancelOperationBtn);
             this.panelControlsTicket.Controls.Add(this.panel9);
             this.panelControlsTicket.Controls.Add(this.panel10);
             this.panelControlsTicket.Controls.Add(this.panel8);
@@ -135,10 +138,23 @@
             this.panelControlsTicket.MaximumSize = new System.Drawing.Size(0, 570);
             this.panelControlsTicket.MinimumSize = new System.Drawing.Size(269, 30);
             this.panelControlsTicket.Name = "panelControlsTicket";
-            this.panelControlsTicket.Size = new System.Drawing.Size(269, 30);
+            this.panelControlsTicket.Size = new System.Drawing.Size(350, 570);
             this.panelControlsTicket.TabIndex = 1;
             this.panelControlsTicket.Tag = "1";
             this.panelControlsTicket.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlsTicket_Paint);
+            // 
+            // cancelOperationBtn
+            // 
+            this.cancelOperationBtn.Enabled = false;
+            this.cancelOperationBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.cancelOperationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelOperationBtn.Image = ((System.Drawing.Image)(resources.GetObject("cancelOperationBtn.Image")));
+            this.cancelOperationBtn.Location = new System.Drawing.Point(233, 526);
+            this.cancelOperationBtn.Name = "cancelOperationBtn";
+            this.cancelOperationBtn.Size = new System.Drawing.Size(72, 32);
+            this.cancelOperationBtn.TabIndex = 139;
+            this.cancelOperationBtn.UseVisualStyleBackColor = true;
+            this.cancelOperationBtn.Click += new System.EventHandler(this.cancelOperationBtn_Click);
             // 
             // panel9
             // 
@@ -261,6 +277,7 @@
             // 
             // slideFilterPanel
             // 
+            this.slideFilterPanel.Controls.Add(this.dropFilter);
             this.slideFilterPanel.Controls.Add(this.priceFromBox);
             this.slideFilterPanel.Controls.Add(this.priceToBox);
             this.slideFilterPanel.Controls.Add(this.SenderBox);
@@ -273,10 +290,10 @@
             this.slideFilterPanel.Controls.Add(this.priceToLabel);
             this.slideFilterPanel.Controls.Add(this.priceFromLabel);
             this.slideFilterPanel.Location = new System.Drawing.Point(8, 87);
-            this.slideFilterPanel.MaximumSize = new System.Drawing.Size(238, 180);
+            this.slideFilterPanel.MaximumSize = new System.Drawing.Size(238, 190);
             this.slideFilterPanel.MinimumSize = new System.Drawing.Size(238, 0);
             this.slideFilterPanel.Name = "slideFilterPanel";
-            this.slideFilterPanel.Size = new System.Drawing.Size(238, 10);
+            this.slideFilterPanel.Size = new System.Drawing.Size(238, 190);
             this.slideFilterPanel.TabIndex = 6;
             this.slideFilterPanel.Tag = "5";
             this.slideFilterPanel.Visible = false;
@@ -336,7 +353,7 @@
             this.acceptFilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acceptFilterBtn.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acceptFilterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
-            this.acceptFilterBtn.Location = new System.Drawing.Point(3, 154);
+            this.acceptFilterBtn.Location = new System.Drawing.Point(3, 164);
             this.acceptFilterBtn.Name = "acceptFilterBtn";
             this.acceptFilterBtn.Size = new System.Drawing.Size(232, 23);
             this.acceptFilterBtn.TabIndex = 5;
@@ -412,7 +429,7 @@
             this.buttonSlide.Image = global::AdminingDataBaseAirLine.Properties.Resources.angle_small_down;
             this.buttonSlide.Location = new System.Drawing.Point(0, 0);
             this.buttonSlide.Name = "buttonSlide";
-            this.buttonSlide.Size = new System.Drawing.Size(269, 30);
+            this.buttonSlide.Size = new System.Drawing.Size(350, 27);
             this.buttonSlide.TabIndex = 7;
             this.buttonSlide.UseVisualStyleBackColor = true;
             this.buttonSlide.Click += new System.EventHandler(this.buttonSlide_Click);
@@ -479,7 +496,7 @@
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.ForeColor = System.Drawing.SystemColors.Window;
             this.clearButton.Image = ((System.Drawing.Image)(resources.GetObject("clearButton.Image")));
-            this.clearButton.Location = new System.Drawing.Point(208, 471);
+            this.clearButton.Location = new System.Drawing.Point(11, 526);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(33, 32);
             this.clearButton.TabIndex = 22;
@@ -715,6 +732,19 @@
             this.slideControlsPanel.Interval = 10;
             this.slideControlsPanel.Tick += new System.EventHandler(this.slideControlsPanel_Tick);
             // 
+            // dropFilter
+            // 
+            this.dropFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dropFilter.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(126)))), ((int)(((byte)(245)))));
+            this.dropFilter.Location = new System.Drawing.Point(3, 138);
+            this.dropFilter.Name = "dropFilter";
+            this.dropFilter.Size = new System.Drawing.Size(232, 23);
+            this.dropFilter.TabIndex = 11;
+            this.dropFilter.Text = "Скинути";
+            this.dropFilter.UseVisualStyleBackColor = true;
+            this.dropFilter.Click += new System.EventHandler(this.dropFilter_Click);
+            // 
             // TicketPanelControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -722,7 +752,7 @@
             this.Controls.Add(this.panelControlsTicket);
             this.Controls.Add(this.flowTicketPanel);
             this.Name = "TicketPanelControl";
-            this.Size = new System.Drawing.Size(1044, 578);
+            this.Size = new System.Drawing.Size(1123, 578);
             this.Load += new System.EventHandler(this.TicketPanelControl_Load);
             this.panelControlsTicket.ResumeLayout(false);
             this.panelControlsTicket.PerformLayout();
@@ -787,6 +817,8 @@
         private Panel panel10;
         private Panel panel8;
         private Panel panel1;
+        private Button cancelOperationBtn;
+        private Button dropFilter;
 
         public ComboBox SenderTicketBox { get => senderTicketBox; set => senderTicketBox = value; }
         public ComboBox AirplaneTicketBox { get => airplaneTicketBox; set => airplaneTicketBox = value; }

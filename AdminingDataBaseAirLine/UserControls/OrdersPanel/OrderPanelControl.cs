@@ -1,5 +1,5 @@
 ﻿using AdminingDataBaseAirLine.Properties;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.Accounts;
 using AirlineDataBase.Entityes.AirlinePlanes;
 using AirlineDataBase.Entityes.RouteAndFlight;
@@ -17,7 +17,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
         private List<Orders> _listForSorting;
         private OrderSorter _sorter;
 
-        private int _cashierId;
+        private int? _cashierId;
         private bool _prepering;
         private bool _loadedToLocalCash;
 
@@ -25,7 +25,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
         {
             InitializeComponent();
         }
-        public OrderPanelControl(AirCompanyContext airCompanyContext, int cashierId) : this()
+        public OrderPanelControl(AirCompanyContext airCompanyContext, int? cashierId) : this()
         {
             Context = airCompanyContext;
             _cashierId = cashierId;
@@ -175,7 +175,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
                 _addingOrders.EnableIdBox(true);
                 removeButton.Enabled = true;
                 _prepering = false;
-
+                erorLabel.Visible = false;
                 InsertDataToDataGridView(orders);
                 _listForSorting.Add(orders);
                 return;
@@ -218,8 +218,7 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
         private void flightNamesBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (fromWhereBox.Text != "" && whereBox.Text != "") return;
-
+        
             var routes = Context.Flights.Local
                 .Where(w => w.NameRoute == FlightNamesBox.Text)
                 .Select(s => new
@@ -243,16 +242,13 @@ namespace AdminingDataBaseAirLine.UserControls.OrdersPanel
                 int rowsIndex = dataGridView1.CurrentCell.RowIndex;
                 Guid ordersId = Guid.Parse(dataGridView1.Rows[rowsIndex].Cells[0].Value.ToString()!);
 
-                Orders orders = new Orders()
-                {
-                    ID = ordersId,
-                };
+                Orders orders = Context.Orders.Find(ordersId);
 
-                Context.Orders.Attach(orders);
                 Context.Orders.Remove(orders);
 
                 await Context.SaveChangesAsync();
                 dataGridView1.Rows.RemoveAt(rowsIndex);
+                erorLabel.Visible = false;
             }
             catch (Exception ex)
             {

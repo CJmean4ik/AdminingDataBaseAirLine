@@ -1,5 +1,4 @@
-﻿using AdminingDataBaseAirLine.UserControls.PassangerPanel;
-using AirlineDataBase.DataBaseContext;
+﻿using AirlineDataBase;
 using AirlineDataBase.Entityes.Accounts;
 
 namespace AdminingDataBaseAirLine.UserControls.PassangerPanel.CRUD

@@ -1,9 +1,10 @@
 
 using AdminingDataBaseAirLine.Authentication;
 using AdminingDataBaseAirLine.Configs;
+using AdminingDataBaseAirLine.Forms.AdminfFormSetting;
 using AdminingDataBaseAirLine.Forms.CashierFormSetting;
 using AdminingDataBaseAirLine.Properties;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 
 namespace AdminingDataBaseAirLine
 {
@@ -14,10 +15,21 @@ namespace AdminingDataBaseAirLine
         private AirCompanyContext _airlineContext;
         private readonly string path = @"C:\Users\Стас\source\repos\AdminingDataBaseAirLine\AdminingDataBaseAirLine\Configs\Configurations.json";
         private bool _haveEror;
+        private bool isMousePress;
+        private Point _clickPoint;
+        private Point _formStartPoint;
+
         public MainForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();         
+           
+
+            _connectString = JsonConfiguration.GetConnectionString(path);
+            string Path = JsonConfiguration.GetPathToJsonAccount(path);
+            _airlineContext = new AirCompanyContext(_connectString);
+            _loginer = new Loginer(_airlineContext, this);
+            _loginer.Path = Path;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -25,15 +37,12 @@ namespace AdminingDataBaseAirLine
 
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
-            _connectString = await JsonConfiguration.GetConnectionString(path);
-            string Path = await JsonConfiguration.GetPathToJsonAccount(path);
-            _airlineContext = new AirCompanyContext(_connectString);
-            _loginer = new Loginer(_airlineContext, Path);
-            
+                    
         }
+
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             WarningMessageForm warningMessage = new WarningMessageForm(this);
@@ -42,7 +51,8 @@ namespace AdminingDataBaseAirLine
         }
         private async void LogInBtn_Click(object sender, EventArgs e)
         {
-
+          
+           
             string name = string.Empty;
             string password = string.Empty;
             string nameMistake = string.Empty;
@@ -61,6 +71,7 @@ namespace AdminingDataBaseAirLine
                       
             LogInBtn.Enabled = false;
 
+            _loginer.Path = JsonConfiguration.GetPathToJsonAccount(path);
             var resultChecked = await Task.Run(() => _loginer.CheckingAccount(name, password,ref nameMistake));
 
 
@@ -69,16 +80,18 @@ namespace AdminingDataBaseAirLine
                 if (!resultChecked.isAdmin)
                 {
                     this.Hide();
-                    CashierForm cashierForm = new CashierForm(_airlineContext, resultChecked.cashierId);
+                    CashierForm cashierForm = new CashierForm(_airlineContext, resultChecked.cashierId,resultChecked.isAdmin);
                     cashierForm.ClosingFrom = CloseForm;
                     cashierForm.Show();
                     return;
                 }
-                //Инициализация формы AdminForm..
+                this.Hide();
+                AdminForm adminForm = new AdminForm(_airlineContext, resultChecked.isAdmin);
+                adminForm.ClosingFrom = CloseForm;
+                adminForm.Show();
+                return;
             }
-  
-            
-                ValidationUserAccount.ErrorHandling(nameMistake,this);
+                 ValidationUserAccount.ErrorHandling(nameMistake,this);
                 _haveEror = true;
            
         }
@@ -91,7 +104,6 @@ namespace AdminingDataBaseAirLine
             PasswordBox.ForeColor = Color.FromArgb(10, 126, 245);
             this.passwordMistake.Visible = false;
         }
-
         private void UserNameBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -120,17 +132,41 @@ namespace AdminingDataBaseAirLine
         {
             CloseForm();
         }
-
-
         public void CloseForm()
         {
             this.Close();
             this.Dispose();
         }
-
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMousePress = true;
+            _clickPoint = Cursor.Position;
+            _formStartPoint = Location;
+        }
+
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMousePress)
+            {
+                var cursorOffsetPoint = new Point(
+                    Cursor.Position.X - _clickPoint.X,
+                    Cursor.Position.Y - _clickPoint.Y);
+
+                Location = new Point(
+                    _formStartPoint.X + cursorOffsetPoint.X,
+                    _formStartPoint.Y + cursorOffsetPoint.Y);
+            }
+        }
+
+        private void MainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMousePress = false;
+            _clickPoint = Point.Empty;
         }
     }
 }

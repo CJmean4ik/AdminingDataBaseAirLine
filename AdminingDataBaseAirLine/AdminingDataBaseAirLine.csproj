@@ -11,10 +11,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="GroupDocs.Assembly" Version="22.12.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\AirlineDataBase\AirlineDataBase\AirlineDataBase.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +27,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="UserControls\CashierPanel\CRUD\Accounts\AddingAccount.cs~RF139ba26d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AirlineDataBase\AirlineDataBase\AirlineDataBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AirlineDataBase">
+      <HintPath>..\..\AirlineDataBase\AirlineDataBase\bin\Debug\AirlineDataBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

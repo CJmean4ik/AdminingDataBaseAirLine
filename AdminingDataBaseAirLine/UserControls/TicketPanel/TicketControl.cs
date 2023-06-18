@@ -1,4 +1,4 @@
-﻿using AdminingDataBaseAirLine.UserControls.Config;
+﻿using AdminingDataBaseAirLine.ControlConfigs;
 using AdminingDataBaseAirLine.UserControls.TicketPanel.Data;
 
 namespace AdminingDataBaseAirLine.UserControls

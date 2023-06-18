@@ -1,10 +1,10 @@
 ﻿using AdminingDataBaseAirLine.Properties;
-using AdminingDataBaseAirLine.UserControls.Config;
 using AdminingDataBaseAirLine.UserControls.TicketPanel.CRUD;
 using AdminingDataBaseAirLine.UserControls.TicketPanel.Data;
 using System.Data.Entity;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.TicketAndOrders;
+using AdminingDataBaseAirLine.ControlConfigs;
 
 namespace AdminingDataBaseAirLine.UserControls
 {
@@ -68,7 +68,9 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 _addTicket.PreperingForAddingTicket();
                 _isNowAdded = true;
+                cancelOperationBtn.Enabled = true;
                 return;
+
             }
 
             if (!_isLocal) _isLocal = await _addTicket.LoadDataToLocalCash();
@@ -129,6 +131,12 @@ namespace AdminingDataBaseAirLine.UserControls
                 erorLabel.Text = "Данного рейса не існує\nЗверніться до адміністратора";
                 erorLabel.Visible = true;
                 _addTicket.ErorIsActive = true;
+
+                _addTicket.ReturnState();
+                addButton.Image = Resources.add;
+                updateButton.Enabled = true;
+                removeButton.Enabled = true;
+                cancelOperationBtn.Enabled = false;
                 return;
             }
 
@@ -153,10 +161,11 @@ namespace AdminingDataBaseAirLine.UserControls
             ticket.FlightId = flight;
 
             _airlineContext.Tickets.Add(ticket);
-
             await _airlineContext.SaveChangesAsync();
+            dataTicket.NumberTicket = ticket.NumberTicket.ToString();
 
             TicketControl ticketControl = new TicketControl(light, config, dataTicket);
+            ticketControl.Binder = BindDataForBoxFormTicket;
             flowTicketPanel.Controls.Add(ticketControl);
             numberTicketBox.Enabled = true;
 
@@ -164,6 +173,7 @@ namespace AdminingDataBaseAirLine.UserControls
             addButton.Image = Resources.add;
             updateButton.Enabled = true;
             removeButton.Enabled = true;
+            cancelOperationBtn.Enabled = false;
 
         }
         public async Task InsertDataToFlowPanel()
@@ -176,11 +186,8 @@ namespace AdminingDataBaseAirLine.UserControls
 
             foreach (var route in _airlineContext.Routes.Local)
             {
-
-                fromWhereTicketBox.Items.Add(route.FromWhere);
-                fromWhereTicketBox.Items.Add(route.Where);
-                whereTicketBox.Items.Add(route.Where);
-                whereTicketBox.Items.Add(route.FromWhere);
+                fromWhereTicketBox.Items.Add(route.FromWhere);              
+                whereTicketBox.Items.Add(route.Where);               
             }
 
             foreach (var dataTicket in data)
@@ -198,7 +205,7 @@ namespace AdminingDataBaseAirLine.UserControls
 
             var Flights = _airlineContext.Tickets.Select(s => new
             {
-                numberTicket = s.Flight.NameRoute,
+                numberTicket = s.NumberTicket,
                 price = s.Price,
                 fromWhere = s.Flight.Route.FromWhere,
                 where = s.Flight.Route.Where,
@@ -211,7 +218,7 @@ namespace AdminingDataBaseAirLine.UserControls
             .AsEnumerable()
             .Select(s => new DataTicketControl
             {
-                NumberTicket = s.numberTicket,
+                NumberTicket = s.numberTicket.ToString(),
                 PriceTicket = s.price,
                 FromWhereTicket = s.fromWhere,
                 WhereTicket = s.where,
@@ -244,6 +251,7 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 erorLabel.Visible = false;
                 _updateTicket.ErorIsActive = false;
+
                 return;
             }
 
@@ -251,6 +259,7 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 _updateTicket.PreperingUpdateTicket();
                 _updateTicket.IsNowUpdate = true;
+                cancelOperationBtn.Enabled = true;
                 return;
             }
 
@@ -296,9 +305,11 @@ namespace AdminingDataBaseAirLine.UserControls
             await _airlineContext.SaveChangesAsync();
             erorLabel.Visible = false;
             _updateTicket.ReturnState();
+            _updateTicket.IsNowUpdate = false;
             updateButton.Image = Resources.update;
             addButton.Enabled = true;
             removeButton.Enabled = true;
+            cancelOperationBtn.Enabled = false;
         }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -310,19 +321,27 @@ namespace AdminingDataBaseAirLine.UserControls
             {
                 erorLabel.Visible = false;
                 _removeTicket.ErorIsActive = false;
+
                 return;
             }
+
             if (!_removeTicket.IsNowRemove)
             {
                 _removeTicket.PreperingDeleteTicket();
                 _removeTicket.IsNowRemove = true;
+                cancelOperationBtn.Enabled = true;
                 return;
             }
             if (!_removeTicket.ChekingOnNotEmptryIdTicket(numberTicketBox.Text)) return;
 
-            Ticket ticket = new Ticket();
-            if (!_removeTicket.ContainsEntityById(int.Parse(numberTicketBox.Text), ref ticket)) return;
+            if (!_removeTicket.ContainsEntityById(int.Parse(numberTicketBox.Text), out Ticket ticket)) return;
 
+
+            var orders = _airlineContext.Orders.Where(w => w.TicketId == ticket.NumberTicket).ToList();
+            var reservedSeats = _airlineContext.ReservedSeats.Where(w => w.Order.TicketId == ticket.NumberTicket).ToList();
+
+            _airlineContext.ReservedSeats.RemoveRange(reservedSeats);
+            _airlineContext.Orders.RemoveRange(orders);
             _airlineContext.Tickets.Remove(ticket);
 
             await _airlineContext.SaveChangesAsync();
@@ -330,7 +349,7 @@ namespace AdminingDataBaseAirLine.UserControls
            
          
 
-            foreach (UserControls.TicketControl ticketControl in flowTicketPanel.Controls.AsQueryable())
+            foreach (UserControls.TicketControl ticketControl in flowTicketPanel.Controls)
             {
                 if (ticketControl.FlightField.Text == numberTicketBox.Text)
                 {
@@ -340,8 +359,9 @@ namespace AdminingDataBaseAirLine.UserControls
             }
             _removeTicket.ReturnState();
             removeButton.Image = Resources.remove;
-            removeButton.Enabled = true;
-            removeButton.Enabled = true;
+            UpdateButton.Enabled = true;
+            AddButton.Enabled = true;
+            cancelOperationBtn.Enabled = false;
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -470,6 +490,14 @@ namespace AdminingDataBaseAirLine.UserControls
                 BinControlsToFlowTicketPanel(filtePriceAndRoute);
                 return;
             }
+            if (SenderBox.Text != "")
+            {
+                var senderFilter = ticketControls
+                   .Where(w => w.SenderField.Text == SenderBox.Text)                 
+                   .ToList();
+                BinControlsToFlowTicketPanel(senderFilter);
+                return;
+            }
         }
         private void BinControlsToFlowTicketPanel(List<TicketControl> sourse)
         {
@@ -515,6 +543,44 @@ namespace AdminingDataBaseAirLine.UserControls
         private void flowTicketPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cancelOperationBtn_Click(object sender, EventArgs e)
+        {
+            erorLabel.Visible = false;
+
+            if (_isNowAdded)
+            {
+                _addTicket.ReturnState();
+                addButton.Image = Resources.add;
+                updateButton.Enabled = true;
+                removeButton.Enabled = true;              
+                _isNowAdded = false;
+                return;
+            }
+            if (_updateTicket.IsNowUpdate)
+            {               
+                _updateTicket.ReturnState();
+                updateButton.Image = Resources.update;
+                addButton.Enabled = true;
+                removeButton.Enabled = true;
+                _updateTicket.IsNowUpdate = false;
+                return;
+            }
+            if (_removeTicket.IsNowRemove)
+            {              
+                _removeTicket.ReturnState();
+                removeButton.Image = Resources.remove;
+                removeButton.Enabled = true;
+                removeButton.Enabled = true;
+                _removeTicket.IsNowRemove = false;
+                return;
+            }
+        }
+
+        private void dropFilter_Click(object sender, EventArgs e)
+        {
+            BinControlsToFlowTicketPanel(ticketControls);  
         }
     }
 }

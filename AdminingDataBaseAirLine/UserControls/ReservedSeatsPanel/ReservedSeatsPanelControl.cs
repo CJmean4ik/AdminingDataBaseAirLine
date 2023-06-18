@@ -1,7 +1,8 @@
 ﻿using AdminingDataBaseAirLine.Configs;
 using AdminingDataBaseAirLine.Properties;
 using AdminingDataBaseAirLine.UserControls.ReservedSeatsPanel.CRUD;
-using AirlineDataBase.DataBaseContext;
+using AirlineDataBase;
+using AirlineDataBase;
 using AirlineDataBase.Entityes.Accounts;
 using AirlineDataBase.Entityes.AirlinePlanes;
 using AirlineDataBase.Entityes.TicketAndOrders;
@@ -453,7 +454,7 @@ namespace AdminingDataBaseAirLine.UserControls.ReservedSeatsPanel
                 return;
             }
 
-            pdfWorker.PathToDocumentTemplate = await JsonConfiguration.GetPathToTemplateWord("C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\Configs\\Configurations.json");
+            pdfWorker.PathToDocumentTemplate = JsonConfiguration.GetPathToTemplateWord("C:\\Users\\Стас\\source\\repos\\AdminingDataBaseAirLine\\AdminingDataBaseAirLine\\Configs\\Configurations.json");
 
             var result = pdfWorker.CreateReport(_db,this);
 

@@ -133,6 +133,26 @@ namespace AdminingDataBaseAirLine.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cash_register {
+            get {
+                object obj = ResourceManager.GetObject("cash_register", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_register__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cash_register__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checkmark__1_ {
             get {
                 object obj = ResourceManager.GetObject("checkmark__1_", resourceCulture);
@@ -176,6 +196,26 @@ namespace AdminingDataBaseAirLine.Properties {
         internal static System.Drawing.Bitmap eye_show {
             get {
                 object obj = ResourceManager.GetObject("eye_show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_excel {
+            get {
+                object obj = ResourceManager.GetObject("file_excel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_excel__1_ {
+            get {
+                object obj = ResourceManager.GetObject("file_excel__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,46 @@ namespace AdminingDataBaseAirLine.Properties {
         internal static System.Drawing.Bitmap people_white {
             get {
                 object obj = ResourceManager.GetObject("people_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane_alt__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plane_alt__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane_alt__2_ {
+            get {
+                object obj = ResourceManager.GetObject("plane_alt__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane_departure {
+            get {
+                object obj = ResourceManager.GetObject("plane_departure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane_departure__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plane_departure__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
